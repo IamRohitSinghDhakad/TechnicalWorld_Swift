@@ -16,6 +16,23 @@ class LoginViewController: UIViewController {
     }
     
 
+    @IBAction func btnOnContinue(_ sender: Any) {
+        
+        ObjAppdelegate.HomeNavigation()
+       // self.pushVc(viewConterlerId: "Reveal")
+        
+    }
+    @IBAction func btnOnForgotPassword(_ sender: Any) {
+        
+    }
+    @IBAction func btnOnRegisterNow(_ sender: Any) {
+    }
+    @IBAction func btnFacebookLogin(_ sender: Any) {
+        
+    }
+    @IBAction func btnGoogleLogin(_ sender: Any) {
+    }
+    @IBOutlet weak var btnOnAppleLogin: UILabel!
     /*
     // MARK: - Navigation
 
