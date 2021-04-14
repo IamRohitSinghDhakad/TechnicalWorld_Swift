@@ -70,6 +70,13 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
 
         return CGSize(width: size, height: size + 10)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+     
+        self.pushVc(viewConterlerId: "DetailViewController")
+        
+    }
+    
     /*
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.zero

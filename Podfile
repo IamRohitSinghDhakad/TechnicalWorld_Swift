@@ -10,6 +10,6 @@ target 'TechnicalWorld' do
   pod 'SVProgressHUD'
   pod 'SDWebImage/MapKit'
   pod 'IQKeyboardManagerSwift'
-  pod 'Firebase/Messaging'
+  
 
 end

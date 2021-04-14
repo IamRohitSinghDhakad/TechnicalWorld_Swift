@@ -23,14 +23,16 @@ class LoginViewController: UIViewController {
         
     }
     @IBAction func btnOnForgotPassword(_ sender: Any) {
-        
+        self.pushVc(viewConterlerId: "ForgotPasswordViewController")
     }
     @IBAction func btnOnRegisterNow(_ sender: Any) {
+        self.pushVc(viewConterlerId: "SignUpViewController")
     }
     @IBAction func btnFacebookLogin(_ sender: Any) {
         
     }
     @IBAction func btnGoogleLogin(_ sender: Any) {
+        
     }
     @IBOutlet weak var btnOnAppleLogin: UILabel!
     /*

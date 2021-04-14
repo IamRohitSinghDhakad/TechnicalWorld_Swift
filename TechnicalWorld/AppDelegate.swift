@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Firebase
 import IQKeyboardManagerSwift
 
 let ObjAppdelegate = UIApplication.shared.delegate as! AppDelegate

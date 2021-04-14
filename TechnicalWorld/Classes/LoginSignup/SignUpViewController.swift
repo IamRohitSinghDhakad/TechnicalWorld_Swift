@@ -15,6 +15,7 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func btnOnOpenCamera(_ sender: Any) {
+        
     }
     @IBAction func btnOnIndividual(_ sender: Any) {
     }
