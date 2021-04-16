@@ -19,6 +19,9 @@ class MapViewViewController: UIViewController {
     }
     
 
-  
+    @IBAction func btnOnContinue(_ sender: Any) {
+        onBackPressed()
+    }
+    
 
 }

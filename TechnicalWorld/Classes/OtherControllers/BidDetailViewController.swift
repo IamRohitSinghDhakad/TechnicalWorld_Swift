@@ -16,6 +16,9 @@ class BidDetailViewController: UIViewController {
     }
     
 
+    @IBAction func btnBackOnHeader(_ sender: Any) {
+        onBackPressed()
+    }
     /*
     // MARK: - Navigation
 

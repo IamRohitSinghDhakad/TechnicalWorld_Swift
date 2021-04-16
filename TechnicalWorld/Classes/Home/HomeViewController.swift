@@ -73,7 +73,28 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
      
-        self.pushVc(viewConterlerId: "DetailViewController")
+        switch indexPath.row {
+        case 0:
+            pushVc(viewConterlerId: "ContactListViewController")
+        case 1:
+            pushVc(viewConterlerId: "SubCategoryListViewController")
+        case 2:
+            pushVc(viewConterlerId: "SubmitOfferViewController")
+        case 3:
+            pushVc(viewConterlerId: "RentViewController")
+        case 4:
+            pushVc(viewConterlerId: "BidsViewController")
+        case 5:
+            pushVc(viewConterlerId: "GeneralAccountantViewController")
+        case 6:
+            pushVc(viewConterlerId: "BidsViewController")
+        case 7:
+            pushVc(viewConterlerId: "BidsViewController")
+        case 8:
+            pushVc(viewConterlerId: "BidsViewController")
+        default:
+            pushVc(viewConterlerId: "DetailViewController")
+        }
         
     }
     

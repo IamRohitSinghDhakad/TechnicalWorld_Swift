@@ -9,15 +9,32 @@ import UIKit
 
 class GeneralAccountantViewController: UIViewController {
 
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var imgVwUser: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func btnBackOnHeader(_ sender: Any) {
+        onBackPressed()
+    }
+    
+    @IBAction func btnOpenWhasApp(_ sender: Any) {
+        
+    }
+    @IBAction func btnOpenCall(_ sender: Any) {
+        
+    }
+    @IBAction func btnOpenLocation(_ sender: Any) {
+        
+    }
     /*
-    // MARK: - Navigation
+     @IBAction func btnHomeAction(_ sender: Any) {
+     }
+     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

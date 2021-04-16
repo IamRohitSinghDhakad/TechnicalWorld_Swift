@@ -18,6 +18,9 @@ class ForgotPasswordViewController: UIViewController {
         onBackPressed()
     }
     
-
+    @IBAction func btnOnContinue(_ sender: Any) {
+        pushVc(viewConterlerId: "OfferJobViewController")
+    }
+    
    
 }

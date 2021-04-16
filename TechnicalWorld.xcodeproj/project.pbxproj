@@ -21,6 +21,9 @@
 		6A5CACDF2623411500C66434 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5CACDE2623411500C66434 /* HomeViewController.swift */; };
 		6A5CACF52623524E00C66434 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5CACF42623524E00C66434 /* HomeCollectionViewCell.swift */; };
 		6A5CACF92623530200C66434 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5CACF82623530200C66434 /* SideMenuTableViewCell.swift */; };
+		6A71CD002629F0F6007F6200 /* SubmitOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A71CCFF2629F0F6007F6200 /* SubmitOfferViewController.swift */; };
+		6A71CD032629F124007F6200 /* AddBidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A71CD022629F124007F6200 /* AddBidViewController.swift */; };
+		6A71CD062629F8C2007F6200 /* BidsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A71CD052629F8C2007F6200 /* BidsTableViewCell.swift */; };
 		6A7C6250262459AB00C82894 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7C624F262459AB00C82894 /* DetailViewController.swift */; };
 		6A7C6253262459BE00C82894 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7C6252262459BE00C82894 /* DetailCollectionViewCell.swift */; };
 		6A7FCAA62627466500939BF0 /* BidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7FCAA52627466500939BF0 /* BidsViewController.swift */; };
@@ -65,6 +68,9 @@
 		6A5CACDE2623411500C66434 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6A5CACF42623524E00C66434 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		6A5CACF82623530200C66434 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		6A71CCFF2629F0F6007F6200 /* SubmitOfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitOfferViewController.swift; sourceTree = "<group>"; };
+		6A71CD022629F124007F6200 /* AddBidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBidViewController.swift; sourceTree = "<group>"; };
+		6A71CD052629F8C2007F6200 /* BidsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidsTableViewCell.swift; sourceTree = "<group>"; };
 		6A7C624F262459AB00C82894 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		6A7C6252262459BE00C82894 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		6A7FCAA52627466500939BF0 /* BidsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidsViewController.swift; sourceTree = "<group>"; };
@@ -281,6 +287,8 @@
 				F9FB30C726255F98003BA51C /* GeneralAccountantViewController.swift */,
 				6A7FCAA52627466500939BF0 /* BidsViewController.swift */,
 				6A7FCAA826274AD000939BF0 /* BidDetailViewController.swift */,
+				6A71CCFF2629F0F6007F6200 /* SubmitOfferViewController.swift */,
+				6A71CD022629F124007F6200 /* AddBidViewController.swift */,
 			);
 			path = OtherControllers;
 			sourceTree = "<group>";
@@ -290,6 +298,7 @@
 			children = (
 				F9FB30BD26255E95003BA51C /* RentTableViewCell.swift */,
 				F9FB30C426255F19003BA51C /* RentDetailCollectionViewCell.swift */,
+				6A71CD052629F8C2007F6200 /* BidsTableViewCell.swift */,
 			);
 			path = CellClasses;
 			sourceTree = "<group>";
@@ -428,11 +437,14 @@
 				6A3D280B2622DFD800DF3105 /* Extensions.swift in Sources */,
 				6AFAF6BB2621E87300580F96 /* AppDelegate.swift in Sources */,
 				6A7FCAA926274AD000939BF0 /* BidDetailViewController.swift in Sources */,
+				6A71CD062629F8C2007F6200 /* BidsTableViewCell.swift in Sources */,
+				6A71CD032629F124007F6200 /* AddBidViewController.swift in Sources */,
 				F9FB30BA26255E79003BA51C /* RentViewController.swift in Sources */,
 				6A3D280F2622E05D00DF3105 /* WelcomeCollectionViewCell.swift in Sources */,
 				6A7C6253262459BE00C82894 /* DetailCollectionViewCell.swift in Sources */,
 				6A5CACD82623406400C66434 /* SWRevealViewController.m in Sources */,
 				F9FB30C226255EFF003BA51C /* RentDetailViewController.swift in Sources */,
+				6A71CD002629F0F6007F6200 /* SubmitOfferViewController.swift in Sources */,
 				6AFAF6BD2621E87300580F96 /* SceneDelegate.swift in Sources */,
 				6A832D0E26249E500070FA90 /* SubCategoryTableViewCell.swift in Sources */,
 				6A5CACF92623530200C66434 /* SideMenuTableViewCell.swift in Sources */,

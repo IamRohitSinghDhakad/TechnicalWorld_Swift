@@ -32,6 +32,19 @@ class DetailViewController: UIViewController {
     @IBAction func btnOnBack(_ sender: Any) {
         onBackPressed()
     }
+    
+    @IBAction func btnOpenWhatsapp(_ sender: Any) {
+    }
+    
+    @IBAction func btnOnCallAction(_ sender: Any) {
+        
+    }
+    @IBAction func btnOnLocation(_ sender: Any) {
+        
+        self.pushVc(viewConterlerId: "MapViewViewController")
+        
+    }
+    
 }
 
 

@@ -9,21 +9,48 @@ import UIKit
 
 class BidsViewController: UIViewController {
 
+    @IBOutlet weak var tblVw: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tblVw.delegate = self
+        self.tblVw.dataSource = self
+        
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func btnBackOnHeader(_ sender: Any) {
+        onBackPressed()
     }
-    */
+    
+    @IBAction func btnHomeAction(_ sender: Any) {
+        
+    }
+    @IBAction func btnAllBids(_ sender: Any) {
+        
+    }
+    @IBAction func btnMyBids(_ sender: Any) {
+        
+    }
+   
+}
 
+extension BidsViewController: UITableViewDelegate,UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BidsTableViewCell")as! BidsTableViewCell
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        pushVc(viewConterlerId: "BidDetailViewController")
+    }
+    
+    
+    
 }

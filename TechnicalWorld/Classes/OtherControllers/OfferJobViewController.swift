@@ -15,7 +15,10 @@ class OfferJobViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func btnBackOnHeader(_ sender: Any) {
+        onBackPressed()
+    }
+    
     
 
 }

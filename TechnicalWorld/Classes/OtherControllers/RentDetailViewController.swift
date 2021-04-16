@@ -9,13 +9,32 @@ import UIKit
 
 class RentDetailViewController: UIViewController {
 
+    @IBOutlet weak var lblTitle: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func btnBackOnHeader(_ sender: Any) {
+        onBackPressed()
+    }
+    
+    @IBAction func btnHome(_ sender: Any) {
+        
+    }
+    
+    @IBAction func btnOpenWhatsapp(_ sender: Any) {
+        
+    }
+    
+    @IBAction func btnOpenCall(_ sender: Any) {
+    }
+    
+    @IBAction func btnOpenLocation(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 
