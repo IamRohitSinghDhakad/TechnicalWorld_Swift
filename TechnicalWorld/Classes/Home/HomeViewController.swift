@@ -83,13 +83,13 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         case 3:
             pushVc(viewConterlerId: "RentViewController")
         case 4:
-            pushVc(viewConterlerId: "BidsViewController")
+            pushVc(viewConterlerId: "AddPostViewController")
         case 5:
             pushVc(viewConterlerId: "GeneralAccountantViewController")
         case 6:
-            pushVc(viewConterlerId: "BidsViewController")
+            pushVc(viewConterlerId: "ReviesViewController")
         case 7:
-            pushVc(viewConterlerId: "BidsViewController")
+            pushVc(viewConterlerId: "GiveReviesViewController")
         case 8:
             pushVc(viewConterlerId: "BidsViewController")
         default:
@@ -113,5 +113,6 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
     }
      */
 }
+
 
 

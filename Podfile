@@ -10,6 +10,9 @@ target 'TechnicalWorld' do
   pod 'SVProgressHUD'
   pod 'SDWebImage/MapKit'
   pod 'IQKeyboardManagerSwift'
-  
+  pod 'Firebase/Messaging'
+  pod 'iOSDropDown'
+  pod 'FBSDKLoginKit'
+  pod 'GoogleSignIn'
 
 end
