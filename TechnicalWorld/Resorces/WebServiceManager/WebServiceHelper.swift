@@ -10,12 +10,17 @@ import UIKit
 
 
 
-let BASE_URL = "http://ambitious.in.net/Shubham/tech/"
+let BASE_URL = "http://ambitious.in.net/Shubham/tech/index.php/api/"
 
 struct WsUrl{
     
-    static let url_SignUp  = BASE_URL + "signup"
+    static let url_SignUp  = BASE_URL + "signup?"
+    static let url_getCategory = BASE_URL + "get_category"
+    static let url_getSubCategory = BASE_URL + "get_sub_category?"
     static let url_Login  = BASE_URL + "login"
+    static let url_forgotPassword = BASE_URL + "forgot_password"
+    static let url_GetUserList = BASE_URL + "get_user?"
+    static let url_GetUserImage = BASE_URL + "get_user_image"
     static let url_getUserProfile  = BASE_URL + "get_profile"
     static let url_ChangePassword  = BASE_URL + "change_password"
     static let url_ForgotPassword  = BASE_URL + "forgot_password"

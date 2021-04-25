@@ -9,6 +9,8 @@ import UIKit
 
 class SubCategoryTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lblSubCategory: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

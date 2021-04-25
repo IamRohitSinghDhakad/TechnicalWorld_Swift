@@ -29,23 +29,26 @@ class AlertViewController: UIViewController {
         view.endEditing(true)
     }
     
-   // Alert call back function
-    func showAlertCallBack(alertLeftBtn:String, alertRightBtn:String,  title: String, message: String ,controller: UIViewController, callback: @escaping () -> ()) {
-        
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        
-        alert.addAction(UIAlertAction(title:alertLeftBtn, style: .destructive, handler: {
-          alertAction in
-        
-        }))
-
-         alert.addAction(UIAlertAction(title: alertRightBtn, style: .default, handler: {
-           alertAction in
-           callback()
-         }))
-        
-         controller.present(alert, animated: true, completion: nil)
-       }
+    // Alert call back function
+     func showAlertCallBack(alertLeftBtn:String, alertRightBtn:String,  title: String, message: String ,controller: UIViewController, callback: @escaping () -> ()) {
+         
+         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+         
+         if alertLeftBtn != ""{
+             alert.addAction(UIAlertAction(title:alertLeftBtn, style: .destructive, handler: {
+               alertAction in
+             
+             }))
+         }else{
+            
+         }
+          alert.addAction(UIAlertAction(title: alertRightBtn, style: .default, handler: {
+            alertAction in
+            callback()
+          }))
+         
+          controller.present(alert, animated: true, completion: nil)
+        }
 
     
   // For alert show on UIWindow if you have no Viewcontroller then show this alert.

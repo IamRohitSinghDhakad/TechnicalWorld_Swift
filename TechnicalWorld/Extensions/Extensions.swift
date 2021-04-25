@@ -8,12 +8,6 @@
 import Foundation
 import UIKit
 
-
-
-
-
-
-
 extension UserDefaults {
     enum Keys {
         
@@ -228,6 +222,23 @@ extension UILabel {//Write this extension after close brackets of your class
         lineBreakMode = .byWordWrapping//If you want word wraping
         //OR
       //  lineBreakMode = .byCharWrapping//If you want character wraping
+    }
+}
+
+extension UIView{
+    func viewShadowHeader() {
+        self.layer.shadowOffset = CGSize(width: 0, height: 2)
+        self.layer.shadowOpacity = 0.2
+        self.layer.shadowRadius = 1.0
+        self.layer.shadowColor = #colorLiteral(red: 0.2605174184, green: 0.2605243921, blue: 0.260520637, alpha: 1)
+    }
+    
+    func viewShadowHeaderWithCorner(corner:CGFloat) {
+        self.layer.shadowOffset = CGSize(width: 0, height: 2)
+        self.layer.shadowOpacity = 0.2
+        self.layer.shadowRadius = 1.0
+        self.layer.cornerRadius = corner
+        self.layer.shadowColor = #colorLiteral(red: 0.2605174184, green: 0.2605243921, blue: 0.260520637, alpha: 1)
     }
 }
 

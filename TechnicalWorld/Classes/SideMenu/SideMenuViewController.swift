@@ -21,6 +21,16 @@ class SideMenuViewController: UIViewController {
         titleName = ["Home","Add Post","Profile","Settings","Contact Us","About Us", "LogOut"]
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let profilePic = objAppShareData.UserDetail.strProfilePicture
+        if profilePic != "" {
+            let url = URL(string: profilePic)
+            self.imgVwUser.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "logo"))
+        }
+    }
 
 }
 
@@ -41,14 +51,16 @@ extension SideMenuViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            pushVc(viewConterlerId: "HomeViewController")
+            ObjAppdelegate.HomeNavigation()
             break
         case 1:
-            pushVc(viewConterlerId: "HomeViewController")
+            ObjAppdelegate.HomeNavigation()
             break
         case 2:
-            pushVc(viewConterlerId: "HomeViewController")
-            break
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController")as! ProfileViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+           // pushVc(viewConterlerId: "ProfileViewController")
+            //break
         case 3:
             pushVc(viewConterlerId: "HomeViewController")
             break

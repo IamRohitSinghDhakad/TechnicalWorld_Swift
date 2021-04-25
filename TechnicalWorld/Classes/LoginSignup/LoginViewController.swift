@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
         self.tfEmail.delegate = self
         self.tfPassword.delegate = self
@@ -23,8 +24,10 @@ class LoginViewController: UIViewController {
     
 
     @IBAction func btnOnContinue(_ sender: Any) {
-        
-        ObjAppdelegate.HomeNavigation()
+        self.tfEmail.text = "one@gmail.com"
+        self.tfPassword.text = "123456"
+        self.call_WsLogin()
+       
        // self.pushVc(viewConterlerId: "Reveal")
         
     }
@@ -121,15 +124,18 @@ extension LoginViewController{
             objWebServiceManager.hideIndicator()
             let status = (response["status"] as? Int)
             let message = (response["message"] as? String)
-            
+          //  print(response)
             if status == MessageConstant.k_StatusCode{
                 
                 let user_details  = response["result"] as? [String:Any]
 
+                print(user_details)
                 objAppShareData.SaveUpdateUserInfoFromAppshareData(userDetail: user_details ?? [:])
                 objAppShareData.fetchUserInfoFromAppshareData()
                 
-                ObjAppdelegate.HomeNavigation()
+                self.pushVc(viewConterlerId: "Reveal")
+                
+               // ObjAppdelegate.HomeNavigation()
                 
                 
             }else{

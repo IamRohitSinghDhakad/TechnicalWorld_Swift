@@ -8,12 +8,14 @@
 import UIKit
 import iOSDropDown
 
-class SignUpViewController: UIViewController,UINavigationControllerDelegate {
+class SignUpViewController: UIViewController,UINavigationControllerDelegate,GetLocationDelegate {
+   
+    
 
     @IBOutlet weak var imgVwUser: UIImageView!
     @IBOutlet weak var imgVwIndividual: UIImageView!
     @IBOutlet weak var imgVwCompany: UIImageView!
-    
+    @IBOutlet weak var imgVwCheckUnCheck: UIImageView!
     @IBOutlet weak var vwFullName: UIView!
     @IBOutlet weak var vwEmail: UIView!
     @IBOutlet weak var vwPassword: UIView!
@@ -22,7 +24,6 @@ class SignUpViewController: UIViewController,UINavigationControllerDelegate {
     @IBOutlet weak var vwGender: UIView!
     @IBOutlet weak var vwCategory: UIView!
     @IBOutlet weak var vwLocation: UIView!
-    
     @IBOutlet weak var tfFullName:
         UITextField!
     @IBOutlet weak var tfEmail: UITextField!
@@ -37,32 +38,41 @@ class SignUpViewController: UIViewController,UINavigationControllerDelegate {
     
     var imagePicker = UIImagePickerController()
     var pickedImage:UIImage?
-    
-    let datePicker = UIDatePicker()
+    var datePicker = UIDatePicker()
+    var strType = "individual"
+    var arrCategory = [CategoryModel]()
+    var arrSubCategory = [SubCategoryModel]()
+    var arrCatName = [String]()
+    var arrCatID = [Int]()
+    var lat = ""
+    var long = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.imgVwCompany.image = #imageLiteral(resourceName: "circle")
+        self.imgVwCheckUnCheck.image = #imageLiteral(resourceName: "unc")
+        
         self.tfEmail.delegate = self
         self.tfPassword.delegate = self
         self.tfFullName.delegate = self
-       // self.tfDOB.delegate = self
         self.tfPhoneNumber.delegate = self
         
         self.vwLocation.isHidden = true
         self.vwCategory.isHidden = true
+        self.vwPhoneNumber.isHidden = true
         
         self.imagePicker.delegate = self
-        
+        self.showDatePicker()
         self.setDropDown()
+        self.call_GetCategory()
+        
+        hideKeyboardWhenTappedAround()
     }
     
     
     func setDropDown(){
         
         self.tfSelectGender.optionArray = ["Male", "Female", "Other"]
-        self.tfSelectCategory.optionArray = ["Option 1", "Option 2", "Option 3","Option 4"]
-        
         
         self.tfSelectGender.didSelect{(selectedText , index ,id) in
         self.tfSelectGender.text = selectedText
@@ -77,14 +87,20 @@ class SignUpViewController: UIViewController,UINavigationControllerDelegate {
     
     @IBAction func btnOnOpenCamera(_ sender: Any) {
         self.setImage()
-        
     }
+    
     @IBAction func btnOnIndividual(_ sender: Any) {
         self.vwLocation.isHidden = true
         self.vwCategory.isHidden = true
         
+        self.vwPhoneNumber.isHidden = true
         self.vwDOB.isHidden  = false
         self.vwGender.isHidden = false
+        
+        self.imgVwCompany.image = #imageLiteral(resourceName: "circle")
+        self.imgVwIndividual.image = #imageLiteral(resourceName: "radio")
+        
+        self.strType = "individual"
     }
     @IBAction func btnOnCompany(_ sender: Any) {
         self.vwLocation.isHidden = false
@@ -92,12 +108,22 @@ class SignUpViewController: UIViewController,UINavigationControllerDelegate {
         
         self.vwDOB.isHidden  = true
         self.vwGender.isHidden = true
+        self.vwPhoneNumber.isHidden = false
+        
+        self.imgVwCompany.image = #imageLiteral(resourceName: "radio")
+        self.imgVwIndividual.image = #imageLiteral(resourceName: "circle")
+        
+        self.strType = "company"
     }
+    
     @IBAction func btnOnTermsOfService(_ sender: Any) {
+        
     }
     @IBAction func btnOnPrivacyPolicy(_ sender: Any) {
+        
     }
     @IBAction func btnOnContinue(_ sender: Any) {
+        validateForSignUp()
     }
     
     @IBAction func btnOnExistingUser(_ sender: Any) {
@@ -105,32 +131,44 @@ class SignUpViewController: UIViewController,UINavigationControllerDelegate {
     }
     
     @IBAction func btnOnOpenLocation(_ sender: Any) {
-        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MapViewViewController")as! MapViewViewController
+        vc.delegateOfLocation = self
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    func getSelectedLocation(dictLocation: [String : Any]) {
+        self.lblLocation.text = ""
+        self.lat = ""
+        self.long = ""
     }
     
     @IBAction func btnOnOpenDatePicker(_ sender: Any) {
-        self.showDatePicker()
+        
     }
     
+    @IBAction func btnOnReadCheck(_ sender: Any) {
+        if imgVwCheckUnCheck.image == #imageLiteral(resourceName: "unc"){
+            imgVwCheckUnCheck.image = #imageLiteral(resourceName: "check")
+        }else{
+            imgVwCheckUnCheck.image = #imageLiteral(resourceName: "unc")
+        }
+    }
 }
 
 extension SignUpViewController{
     
-    
-    
     func showDatePicker(){
         
         let screenWidth = UIScreen.main.bounds.width
-        let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 216))//1
+        datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 216))//1
         datePicker.datePickerMode = .date //2
+
         // iOS 14 and above
         if #available(iOS 14, *) {// Added condition for iOS 14
             datePicker.preferredDatePickerStyle = .wheels
             datePicker.sizeToFit()
         }
-        
-        //Formate Date
-        datePicker.datePickerMode = .date
         
         //ToolBar
         let toolBar = UIToolbar(frame: CGRect(x: 0.0, y: 0.0, width: screenWidth, height: 44.0)) //4
@@ -146,11 +184,10 @@ extension SignUpViewController{
     }
 
       @objc func donedatePicker(){
-
-       let formatter = DateFormatter()
-       formatter.dateFormat = "dd/MM/yyyy"
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
         self.tfDOB.text = formatter.string(from: datePicker.date)
-       self.view.endEditing(true)
+        self.view.endEditing(true)
      }
 
      @objc func cancelDatePicker(){
@@ -164,21 +201,21 @@ extension SignUpViewController{
     
     override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == tfFullName{
-                  self.tfEmail.becomeFirstResponder()
-                  self.tfFullName.resignFirstResponder()
-              }
-              else if textField == self.tfEmail{
-                  self.tfPhoneNumber.becomeFirstResponder()
-                  self.tfEmail.resignFirstResponder()
-              }
-              else if textField == self.tfPhoneNumber{
-                  self.tfPassword.becomeFirstResponder()
-                  self.tfPhoneNumber.resignFirstResponder()
-              }
-              else if textField == self.tfPassword{
-                  self.tfPassword.resignFirstResponder()
-              }
-              return true
+            self.tfEmail.becomeFirstResponder()
+            self.tfFullName.resignFirstResponder()
+        }
+        else if textField == self.tfEmail{
+            self.tfPhoneNumber.becomeFirstResponder()
+            self.tfEmail.resignFirstResponder()
+        }
+        else if textField == self.tfPhoneNumber{
+            self.tfPassword.becomeFirstResponder()
+            self.tfPhoneNumber.resignFirstResponder()
+        }
+        else if textField == self.tfPassword{
+            self.tfPassword.resignFirstResponder()
+        }
+        return true
     }
     
     
@@ -191,7 +228,8 @@ extension SignUpViewController{
         self.tfDOB.text = self.tfDOB.text!.trim()
         self.tfPhoneNumber.text = self.tfPhoneNumber.text!.trim()
         self.tfPassword.text = self.tfPassword.text!.trim()
-        //
+        self.tfSelectGender.text = self.tfSelectGender.text?.trim()
+        
         if (tfFullName.text?.isEmpty)! {
             objAlert.showAlert(message: MessageConstant.BlankUserName, title:MessageConstant.k_AlertTitle, controller: self)
         }
@@ -200,14 +238,26 @@ extension SignUpViewController{
         }else if !objValidationManager.validateEmail(with: tfEmail.text!){
             objAlert.showAlert(message: MessageConstant.ValidEmail, title:MessageConstant.k_AlertTitle, controller: self)
         }
-        else  if (tfPhoneNumber.text?.isEmpty)! {
-            objAlert.showAlert(message: MessageConstant.BlankPhoneNo, title:MessageConstant.k_AlertTitle, controller: self)
+        else if self.strType == "company"{
+            if (tfPhoneNumber.text?.isEmpty)! {
+                objAlert.showAlert(message: MessageConstant.BlankPhoneNo, title:MessageConstant.k_AlertTitle, controller: self)
+            }
         }
+//        else  if (tfPhoneNumber.text?.isEmpty)! {
+//            objAlert.showAlert(message: MessageConstant.BlankPhoneNo, title:MessageConstant.k_AlertTitle, controller: self)
+//        }
         else if (tfPassword.text?.isEmpty)! {
             objAlert.showAlert(message: MessageConstant.BlankPassword, title:MessageConstant.k_AlertTitle, controller: self)
         }
         else{
-            self.callWebserviceForUploadUserImage()
+            
+            if self.imgVwCheckUnCheck.image == #imageLiteral(resourceName: "check"){
+                self.callWebserviceForUploadUserImage()
+            }else{
+                objAlert.showAlert(message: "Please check terms and condition first", title:MessageConstant.k_AlertTitle, controller: self)
+            }
+            
+           
         }
     }
     
@@ -336,11 +386,34 @@ extension SignUpViewController{
             imageData = (self.pickedImage?.jpegData(compressionQuality: 1.0))!
         }
         
-        let dicrParam = ["name":self.tfFullName.text!,
+        var dicrParam = [String:Any]()
+        
+        if strType == "individual"{
+            
+            dicrParam = ["name":self.tfFullName.text!,
                          "email":self.tfEmail.text!,
-                         "mobile":self.tfPhoneNumber.text!,
                          "password":self.tfPassword.text!,
-                         "type":"user"]as [String:Any]
+                         "dob":self.tfDOB.text!,
+                         "sex":self.tfSelectGender.text!,
+                         "signup_as":self.strType]as [String:Any]
+        }else{
+            dicrParam = ["name":self.tfFullName.text!,
+                         "email":self.tfEmail.text!,
+                         "password":self.tfPassword.text!,
+                         "dob":self.tfDOB.text!,
+                         "sex":self.tfSelectGender.text!,
+                         "mobile":self.tfPhoneNumber.text!,
+                         "category_id":"",
+                         "category_name":"",
+                         "sub_category_id":"",
+                         "sub_category_name":"",
+                         "address":"",
+                         "lat":"",
+                         "lon":"",
+                         "signup_as":self.strType]as [String:Any]
+        }
+        
+        
         
         objWebServiceManager.uploadMultipartWithImagesData(strURL: WsUrl.url_SignUp, params: dicrParam, showIndicator: true, customValidation: "", imageData: imageData, imageToUpload: [], imagesParam: [], fileName: "user_image", mimeType: "image/jpeg") { (response) in
             objWebServiceManager.hideIndicator()
@@ -352,6 +425,8 @@ extension SignUpViewController{
             
                 let user_details  = response["result"] as? [String:Any]
 
+                print(user_details)
+                
                 objAppShareData.SaveUpdateUserInfoFromAppshareData(userDetail: user_details ?? [:])
                 objAppShareData.fetchUserInfoFromAppshareData()
 
@@ -366,5 +441,53 @@ extension SignUpViewController{
             print(Error)
         }
     }
+    
+    func call_GetCategory(){
+        
+        if !objWebServiceManager.isNetworkAvailable(){
+            objWebServiceManager.hideIndicator()
+            objAlert.showAlert(message: "No Internet Connection", title: "Alert", controller: self)
+            return
+        }
+    
+        objWebServiceManager.showIndicator()
+        
+        
+        objWebServiceManager.requestGet(strURL: WsUrl.url_getCategory, params: [:], queryParams: [:], strCustomValidation: "") { (response) in
+            objWebServiceManager.hideIndicator()
+            let status = (response["status"] as? Int)
+            let message = (response["message"] as? String)
+            
+            if status == MessageConstant.k_StatusCode{
+               
+              //  self.call_SubCategory()
+                
+                if let arrData  = response["result"] as? [[String:Any]]{
+                    for dictdata in arrData{
+                        
+                        let obj = CategoryModel.init(dict: dictdata)
+                        self.arrCatName.append(obj.strCategoryName)
+                        self.arrCatID.append(obj.strCategoryID)
+                        self.arrCategory.append(obj)
+                    }
+                    
+                    self.tfSelectCategory.optionArray = self.arrCatName
+                    self.tfSelectCategory.optionIds = self.arrCatID
+                    
+                }
+            }else{
+                objWebServiceManager.hideIndicator()
+                objAlert.showAlert(message: message ?? "", title: "Alert", controller: self)
+                
+            }
+           
+            
+        } failure: { (Error) in
+            print(Error)
+            objWebServiceManager.hideIndicator()
+        }
+   }
+    
+
     
 }
