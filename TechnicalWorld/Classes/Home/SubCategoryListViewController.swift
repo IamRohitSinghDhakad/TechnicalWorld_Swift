@@ -14,18 +14,22 @@ class SubCategoryListViewController: UIViewController {
     @IBOutlet weak var vwRentBuy: UIView!
     @IBOutlet weak var tblVw: UITableView!
     @IBOutlet weak var tfSearchBar: UITextField!
-    
+    @IBOutlet weak var vwRentBg: UIView!
+    @IBOutlet weak var vwBuyBg: UIView!
     
     var categoryID = ""
     var isComingfrom = ""
     var arrSubCategory = [SubCategoryModel]()
     var arrSubCategoryFiltered = [SubCategoryModel]()
+    var isType = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.tblVw.delegate = self
         self.tblVw.dataSource = self
+        
+        self.isType = "Rent"
       
         self.tfSearchBar.addTarget(self, action: #selector(searchContactAsPerText(_ :)), for: .editingChanged)
         
@@ -46,6 +50,17 @@ class SubCategoryListViewController: UIViewController {
     }
     
     @IBAction func btnHomeAction(_ sender: Any) {
+    }
+    @IBAction func btnOnRent(_ sender: Any) {
+        self.isType = "Rent"
+        self.vwRentBg.backgroundColor = UIColor.init(named: "lightGreen")
+        self.vwBuyBg.backgroundColor = UIColor.white
+    }
+    @IBAction func btnOnBuy(_ sender: Any) {
+        self.isType = "Sell"
+        self.vwRentBg.backgroundColor = UIColor.white
+        self.vwBuyBg.backgroundColor = UIColor.init(named: "lightGreen")
+        
     }
 }
 
@@ -70,10 +85,11 @@ extension SubCategoryListViewController: UITableViewDelegate,UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let strCategoryID = self.arrSubCategoryFiltered[indexPath.row].strCategoryID
         let strSubCategoryID = self.arrSubCategoryFiltered[indexPath.row].strSubCategoryID
-        
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ContactListViewController")as! ContactListViewController
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RentViewController")as! RentViewController
         vc.strCategoryID = strCategoryID
         vc.strSubCategoryID = "\(strSubCategoryID)"
+        vc.strType = self.arrSubCategoryFiltered[indexPath.row].strSubCategoryName
+        vc.strPostFor = self.isType
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

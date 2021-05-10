@@ -11,6 +11,14 @@ class GeneralAccountantViewController: UIViewController {
 
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var imgVwUser: UIImageView!
+    @IBOutlet var lblTitleCategory: UILabel!
+    @IBOutlet var lblCareerLevel: UILabel!
+    @IBOutlet var lblEmployementType: UILabel!
+    @IBOutlet var lblMinimumWorkExp: UILabel!
+    @IBOutlet var lblEducationLvl: UILabel!
+    @IBOutlet var lblCompanySide: UILabel!
+    @IBOutlet var lblPostedOn: UILabel!
+    @IBOutlet var lblDescription: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -8,35 +8,45 @@
 import UIKit
 
 class AddJobPostViewController: UIViewController {
+    
+    @IBOutlet var lblTitle: UILabel!
+    @IBOutlet var vwFirst: UIView!
+    @IBOutlet var vwSecond: UIView!
+    @IBOutlet var btnWantJobRealState: UIButton!
+    @IBOutlet var btnOfferAJob: UIButton!
+    
+    var isSelected = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.vwFirst.borderColor = UIColor.lightGray
+        self.vwSecond.borderColor = UIColor.lightGray
+    
         // Do any additional setup after loading the view.
     }
     
     @IBAction func btnOnBackHeader(_ sender: Any) {
         onBackPressed()
     }
+    
     @IBAction func btnWantAJob(_ sender: Any) {
+        self.isSelected = "WantAJob"
+        self.vwFirst.borderColor = UIColor.init(named: "darkGreen")
+        self.vwSecond.borderColor = UIColor.lightGray
     }
     
     @IBAction func btnOnOfferAJob(_ sender: Any) {
-        pushVc(viewConterlerId: "OfferJobViewController")
-        
+        self.isSelected = "OfferAJob"
+        self.vwSecond.borderColor = UIColor.init(named: "darkGreen")
+        self.vwFirst.borderColor = UIColor.lightGray
     }
+    
     @IBAction func btnOnNext(_ sender: Any) {
-        pushVc(viewConterlerId: "WantJobViewController")
-        
+        if isSelected == "WantAJob"{
+            pushVc(viewConterlerId: "WantJobViewController")
+        }else{
+            pushVc(viewConterlerId: "OfferJobViewController")
+        }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

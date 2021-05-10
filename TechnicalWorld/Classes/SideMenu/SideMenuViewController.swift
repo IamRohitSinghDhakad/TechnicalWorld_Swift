@@ -51,10 +51,12 @@ extension SideMenuViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            ObjAppdelegate.HomeNavigation()
+            pushVc(viewConterlerId: "Reveal")
+           // ObjAppdelegate.HomeNavigation()
             break
         case 1:
-            ObjAppdelegate.HomeNavigation()
+            pushVc(viewConterlerId: "AddJobViewController")
+           // pushVc(viewConterlerId: "Reveal")
             break
         case 2:
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController")as! ProfileViewController

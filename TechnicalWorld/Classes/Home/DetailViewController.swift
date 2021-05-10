@@ -54,7 +54,7 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func btnOnCallAction(_ sender: Any) {
-        self.callNumber(phoneNumber: objUser.strPhoneNumber )
+        self.callNumber(phoneNumber: objUser.strPhoneNumber)
     }
     
     private func callNumber(phoneNumber: String) {

@@ -126,13 +126,13 @@
             filePath = "TechnicalWorld/Classes/SideMenu/SideMenuViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "B703E356-A2E8-4B1D-A6AD-7B582BE351CF - 1d09bfa80c4416b8"
+                  uuid = "B703E356-A2E8-4B1D-A6AD-7B582BE351CF - 1d09bfa80c4416fa"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -142,12 +142,12 @@
                   urlString = "file:///Users/rohit/Rohit&apos;s%20WorkSpace/Freelance/TechnicalWorld/TechnicalWorld/Classes/SideMenu/SideMenuViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "351">
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "367">
                </Location>
                <Location
-                  uuid = "B703E356-A2E8-4B1D-A6AD-7B582BE351CF - 1d09bfa80c4416b8"
+                  uuid = "B703E356-A2E8-4B1D-A6AD-7B582BE351CF - 1d09bfa80c4416fa"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -157,9 +157,9 @@
                   urlString = "file:///Users/rohit/Rohit&apos;s%20WorkSpace/Freelance/TechnicalWorld/TechnicalWorld/Classes/SideMenu/SideMenuViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "1162">
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "1178">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -196,7 +196,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "1ADD3824-CF5A-4004-8E40-8E8859AEE06E - ef586b86a88e0fa"
+                  uuid = "1ADD3824-CF5A-4004-8E40-8E8859AEE06E - ef586b86a88e07e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -206,12 +206,12 @@
                   urlString = "file:///Users/rohit/Rohit&apos;s%20WorkSpace/Freelance/TechnicalWorld/TechnicalWorld/Classes/Home/ProfileViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "111"
-                  endingLineNumber = "111"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
                   offsetFromSymbolStart = "106">
                </Location>
                <Location
-                  uuid = "1ADD3824-CF5A-4004-8E40-8E8859AEE06E - ef586b86a88e0fa"
+                  uuid = "1ADD3824-CF5A-4004-8E40-8E8859AEE06E - ef586b86a88e07e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -221,8 +221,8 @@
                   urlString = "file:///Users/rohit/Rohit&apos;s%20WorkSpace/Freelance/TechnicalWorld/TechnicalWorld/Classes/Home/ProfileViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "111"
-                  endingLineNumber = "111"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
                   offsetFromSymbolStart = "725">
                </Location>
             </Locations>
@@ -241,6 +241,54 @@
             startingLineNumber = "32"
             endingLineNumber = "32"
             landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "081F4E37-89E1-4D80-8AAE-2F4350F5FCDB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TechnicalWorld/Classes/OtherControllers/WantJobViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
+            landmarkName = "call_WantJob(strUserID:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "46034EB3-72C5-4DF8-887F-A1F54BC483DB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TechnicalWorld/Classes/OtherControllers/WantJobViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
+            landmarkName = "call_WantJob(strUserID:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0FA9E7CB-87C4-41F1-B131-445A0A2DF7AF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TechnicalWorld/Classes/OtherControllers/RentViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "call_getList(strUserID:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

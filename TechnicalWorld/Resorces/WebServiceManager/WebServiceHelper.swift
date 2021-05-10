@@ -18,6 +18,8 @@ struct WsUrl{
     static let url_getCategory = BASE_URL + "get_category"
     static let url_getSubCategory = BASE_URL + "get_sub_category?"
     static let url_Login  = BASE_URL + "login"
+    static let url_AddPost = BASE_URL + "add_post"
+    static let url_GetPost = BASE_URL + "get_post?"
     static let url_forgotPassword = BASE_URL + "forgot_password"
     static let url_GetUserList = BASE_URL + "get_user?"
     static let url_GetUserImage = BASE_URL + "get_user_image"

@@ -8,5 +8,11 @@
 import UIKit
 
 class RentDetailCollectionViewCell: UICollectionViewCell {
+    @IBOutlet var imgVw: UIImageView!
+    
+    
+    override func awakeFromNib() {
+        
+    }
     
 }

@@ -381,10 +381,14 @@ extension SignUpViewController{
         }
         objWebServiceManager.showIndicator()
         self.view.endEditing(true)
-        var imageData : Data?
+        var imageData = [Data]()
+        var imgData : Data?
         if self.pickedImage != nil{
-            imageData = (self.pickedImage?.jpegData(compressionQuality: 1.0))!
+            imgData = (self.pickedImage?.jpegData(compressionQuality: 1.0))!
         }
+        imageData.append(imgData!)
+        
+        var imageParam = ["user_image"]
         
         var dicrParam = [String:Any]()
         
@@ -415,7 +419,7 @@ extension SignUpViewController{
         
         
         
-        objWebServiceManager.uploadMultipartWithImagesData(strURL: WsUrl.url_SignUp, params: dicrParam, showIndicator: true, customValidation: "", imageData: imageData, imageToUpload: [], imagesParam: [], fileName: "user_image", mimeType: "image/jpeg") { (response) in
+        objWebServiceManager.uploadMultipartWithImagesData(strURL: WsUrl.url_SignUp, params: dicrParam, showIndicator: true, customValidation: "", imageData: imgData, imageToUpload: imageData, imagesParam: imageParam, fileName: "user_image", mimeType: "image/jpeg") { (response) in
             objWebServiceManager.hideIndicator()
             print(response)
             let status = (response["status"] as? Int)
@@ -425,13 +429,13 @@ extension SignUpViewController{
             
                 let user_details  = response["result"] as? [String:Any]
 
-                print(user_details)
+                print(user_details ?? "")
                 
                 objAppShareData.SaveUpdateUserInfoFromAppshareData(userDetail: user_details ?? [:])
                 objAppShareData.fetchUserInfoFromAppshareData()
+                
+                self.pushVc(viewConterlerId: "Reveal")
 
-//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddContactsViewController")as! AddContactsViewController
-//                self.navigationController?.pushViewController(vc, animated: true)
 
             }else{
                 objWebServiceManager.hideIndicator()
