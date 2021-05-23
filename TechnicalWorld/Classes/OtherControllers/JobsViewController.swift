@@ -1,18 +1,21 @@
 //
-//  RentViewController.swift
+//  JobsViewController.swift
 //  TechnicalWorld
 //
-//  Created by Rohit Singh Dhakad on 13/04/21.
+//  Created by Rohit Singh Dhakad on 16/05/21.
 //
 
 import UIKit
 
-class RentViewController: UIViewController {
+class JobsViewController: UIViewController {
 
-    @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var vwSearchBar: UIView!
-    @IBOutlet weak var vwBtns: UIView!
-    @IBOutlet weak var tblVw: UITableView!
+    @IBOutlet var lblJobsTitile: UILabel!
+    @IBOutlet var btnFullTime: UIButton!
+    @IBOutlet var tblVw: UITableView!
+    @IBOutlet var vwPartTime: UIView!
+    @IBOutlet var vwFulltime: UIView!
+    @IBOutlet var btnPartTime: UIButton!
+    
     
     var strCategoryID = ""
     var strSubCategoryID = ""
@@ -26,7 +29,6 @@ class RentViewController: UIViewController {
         self.tblVw.delegate = self
         self.tblVw.dataSource = self
         
-        self.vwSearchBar.isHidden = true
         
         if self.strType == "All"{
             self.strSubCategoryID = ""
@@ -36,21 +38,25 @@ class RentViewController: UIViewController {
         if userID != ""{
             self.call_getList(strUserID: userID)
         }
+    }
+
+    @IBAction func btnBackOnHeader(_ sender: Any) {
         
+    }
+    
+    @IBAction func btnOnFullTime(_ sender: Any) {
         
         
     }
     
-    @IBAction func btnHomeAction(_ sender: Any) {
+    
+    @IBAction func btnOnPartTime(_ sender: Any) {
         
     }
-    @IBAction func btnBackOnHeader(_ sender: Any) {
-        onBackPressed()
-    }
-
 }
 
-extension RentViewController: UITableViewDelegate,UITableViewDataSource{
+extension JobsViewController: UITableViewDelegate,UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.arrDetailsSubcategory.count
     }
@@ -80,9 +86,9 @@ extension RentViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
         let obj = self.arrDetailsSubcategory[indexPath.row]
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RentDetailViewController")as! RentDetailViewController
-        vc.objDetails = obj
-       
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SubCategoryListViewController")as! SubCategoryListViewController
+       // vc.objDetails = obj
+        vc.categoryID = obj.strCategoryID
         self.navigationController?.pushViewController(vc, animated: true)
         
         
@@ -90,7 +96,7 @@ extension RentViewController: UITableViewDelegate,UITableViewDataSource{
 }
 
 
-extension RentViewController{
+extension JobsViewController{
     
     func call_getList(strUserID:String){
         

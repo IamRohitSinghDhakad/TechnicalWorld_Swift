@@ -24,6 +24,8 @@ class OfferJobViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.lblOfferedText.text = "Offered Package"
+        self.vwOtherBenifits.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,11 +37,19 @@ class OfferJobViewController: UIViewController {
     }
     
     @IBAction func btnOnFullTime(_ sender: Any) {
+        self.imgVwFullTime.image = #imageLiteral(resourceName: "radio")
+        self.imgVwPartTime.image = #imageLiteral(resourceName: "circle")
         
+        self.lblOfferedText.text = "Offered Package"
+        self.vwOtherBenifits.isHidden = true
     }
     
     @IBAction func btnOnpartTime(_ sender: Any) {
+        self.imgVwFullTime.image = #imageLiteral(resourceName: "circle")
+        self.imgVwPartTime.image = #imageLiteral(resourceName: "radio")
         
+        self.lblOfferedText.text = "Offered Salary"
+        self.vwOtherBenifits.isHidden = false
     }
     
     @IBAction func btnOnPost(_ sender: Any) {

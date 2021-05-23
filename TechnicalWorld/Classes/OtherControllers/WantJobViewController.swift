@@ -44,6 +44,7 @@ class WantJobViewController: UIViewController {
     var arrTypesOfCategory = [String]()
     var arrTypesOfCategoryID = [Int]()
     var arrDegree = ["Associate Degree","Bachelor's Degree","Master's Degree","Doctoral Degree"]
+    var arrDays = ["Day","Week","Month"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +67,16 @@ class WantJobViewController: UIViewController {
         self.tfField.optionArray = self.arrTypesOfCategory
         self.tfField.didSelect{(selectedText , index ,id) in
         self.tfField.text = selectedText
+        }
+        
+        self.tfmonthly.optionArray = self.arrDays
+        self.tfmonthly.didSelect{(selectedText , index ,id) in
+        self.tfmonthly.text = selectedText
+        }
+        
+        self.tfWeekly.optionArray = self.arrDays
+        self.tfWeekly.didSelect{(selectedText , index ,id) in
+        self.tfWeekly.text = selectedText
         }
         
     }
