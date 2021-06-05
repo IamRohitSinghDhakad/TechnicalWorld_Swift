@@ -21,7 +21,11 @@ class ForgotPasswordViewController: UIViewController {
     }
     
     @IBAction func btnOnContinue(_ sender: Any) {
-        self.call_WsForgotPassword()
+        self.tfEmail.text = self.tfEmail.text?.trim()
+        if self.tfEmail.text != ""{
+            self.call_WsForgotPassword()
+        }
+        
         
     }
     

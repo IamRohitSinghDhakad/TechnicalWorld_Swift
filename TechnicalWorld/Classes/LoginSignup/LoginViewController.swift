@@ -59,7 +59,6 @@ class LoginViewController: UIViewController {
 extension LoginViewController{
     // TextField delegate method
     
-    
     override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == tfEmail{
             self.tfPassword.becomeFirstResponder()
@@ -71,17 +70,7 @@ extension LoginViewController{
         return true
         
     }
-    
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        if textField == tfEmail{
-//            self.tfPassword.becomeFirstResponder()
-//            self.tfEmail.resignFirstResponder()
-//        }
-//        else if textField == self.tfPassword{
-//            self.tfPassword.resignFirstResponder()
-//        }
-//        return true
-//    }
+
 }
 
 

@@ -93,6 +93,7 @@ class DetailViewController: UIViewController {
         }
     }
     
+    
     func openMaps(latitude: Double, longitude: Double, title: String?) {
         let application = UIApplication.shared
         let coordinate = "\(latitude),\(longitude)"
