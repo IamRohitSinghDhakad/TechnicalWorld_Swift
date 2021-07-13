@@ -21,8 +21,8 @@ class AddJobViewController: UIViewController {
 
         self.vwRealState.borderColor = UIColor.lightGray
         self.vwJobs.borderColor = UIColor.lightGray
-        
     }
+    
 
     @IBAction func btnRealState(_ sender: Any) {
         self.isSelected = "RealState"

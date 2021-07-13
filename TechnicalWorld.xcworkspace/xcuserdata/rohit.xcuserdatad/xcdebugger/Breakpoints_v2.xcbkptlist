@@ -80,8 +80,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "222"
             endingLineNumber = "222"
-            landmarkName = "call_GetProfile(strUserID:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -114,54 +114,6 @@
             endingLineNumber = "258"
             landmarkName = "call_GetProfile(strUserID:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B703E356-A2E8-4B1D-A6AD-7B582BE351CF"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TechnicalWorld/Classes/SideMenu/SideMenuViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "unknown"
-            landmarkType = "0">
-            <Locations>
-               <Location
-                  uuid = "B703E356-A2E8-4B1D-A6AD-7B582BE351CF - 1d09bfa80c4416fa"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TechnicalWorld.SideMenuViewController.tableView(_: __C.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "TechnicalWorld"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rohit/Rohit&apos;s%20WorkSpace/Freelance/TechnicalWorld/TechnicalWorld/Classes/SideMenu/SideMenuViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "367">
-               </Location>
-               <Location
-                  uuid = "B703E356-A2E8-4B1D-A6AD-7B582BE351CF - 1d09bfa80c4416fa"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TechnicalWorld.SideMenuViewController.tableView(_: __C.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "TechnicalWorld"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rohit/Rohit&apos;s%20WorkSpace/Freelance/TechnicalWorld/TechnicalWorld/Classes/SideMenu/SideMenuViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "1178">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

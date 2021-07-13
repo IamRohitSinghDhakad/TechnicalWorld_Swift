@@ -10,8 +10,6 @@ import iOSDropDown
 
 class SignUpViewController: UIViewController,UINavigationControllerDelegate,GetLocationDelegate {
    
-    
-
     @IBOutlet weak var imgVwUser: UIImageView!
     @IBOutlet weak var imgVwIndividual: UIImageView!
     @IBOutlet weak var imgVwCompany: UIImageView!
@@ -24,8 +22,7 @@ class SignUpViewController: UIViewController,UINavigationControllerDelegate,GetL
     @IBOutlet weak var vwGender: UIView!
     @IBOutlet weak var vwCategory: UIView!
     @IBOutlet weak var vwLocation: UIView!
-    @IBOutlet weak var tfFullName:
-        UITextField!
+    @IBOutlet weak var tfFullName: UITextField!
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfDOB: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
@@ -49,6 +46,7 @@ class SignUpViewController: UIViewController,UINavigationControllerDelegate,GetL
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.imgVwCompany.image = #imageLiteral(resourceName: "circle")
         self.imgVwCheckUnCheck.image = #imageLiteral(resourceName: "unc")
         

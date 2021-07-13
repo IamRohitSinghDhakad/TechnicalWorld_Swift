@@ -10,6 +10,7 @@ import UIKit
 class ReviesViewController: UIViewController {
 
     @IBOutlet weak var tblVw: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

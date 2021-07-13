@@ -74,6 +74,7 @@ extension SideMenuViewController: UITableViewDelegate,UITableViewDataSource{
             pushVc(viewConterlerId: "HomeViewController")
             break
         case 6:
+            ObjAppdelegate.LoginNavigation()
           //  self.LogoutDataAPI()
             break
             

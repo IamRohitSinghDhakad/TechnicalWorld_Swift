@@ -1785,6 +1785,9 @@
                                                                         <rect key="frame" x="10" y="2" width="335" height="46"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <textInputTraits key="textInputTraits"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSearchEnable" value="NO"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </textField>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1835,6 +1838,9 @@
                                                                         <rect key="frame" x="10" y="2" width="335" height="46"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <textInputTraits key="textInputTraits"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSearchEnable" value="NO"/>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </textField>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1922,7 +1928,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3m-v9-6pX">
                                                                 <rect key="frame" x="10" y="5" width="355" height="50"/>
                                                                 <subviews>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ySJ-be-TSJ">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Offered role" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ySJ-be-TSJ">
                                                                         <rect key="frame" x="10" y="2" width="335" height="46"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <textInputTraits key="textInputTraits"/>
@@ -1996,12 +2002,23 @@
                                                                 <color key="textColor" name="TextGreyColour"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(in AED)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVv-va-0uO">
+                                                                <rect key="frame" x="248" y="23.5" width="59" height="14.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="59" id="XDd-rN-AWt"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="65" id="Bmn-2S-ReH"/>
                                                             <constraint firstItem="4GG-0s-yzy" firstAttribute="leading" secondItem="xVE-qn-NiL" secondAttribute="leading" constant="10" id="GU3-m0-nF2"/>
                                                             <constraint firstItem="GzY-np-7KP" firstAttribute="centerY" secondItem="xVE-qn-NiL" secondAttribute="centerY" constant="-2" id="RE6-tB-nAH"/>
+                                                            <constraint firstItem="UVv-va-0uO" firstAttribute="leading" secondItem="GzY-np-7KP" secondAttribute="trailing" constant="10" id="qwj-ca-Y7R"/>
+                                                            <constraint firstItem="UVv-va-0uO" firstAttribute="centerY" secondItem="KN3-XM-uV8" secondAttribute="centerY" id="rv1-dh-gT3"/>
                                                             <constraint firstItem="4GG-0s-yzy" firstAttribute="centerY" secondItem="xVE-qn-NiL" secondAttribute="centerY" id="t0q-oA-LDJ"/>
                                                             <constraint firstItem="GzY-np-7KP" firstAttribute="leading" secondItem="4GG-0s-yzy" secondAttribute="trailing" constant="5" id="uur-4M-DBK"/>
                                                         </constraints>
