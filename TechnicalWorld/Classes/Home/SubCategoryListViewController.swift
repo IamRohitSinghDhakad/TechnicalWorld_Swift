@@ -22,6 +22,7 @@ class SubCategoryListViewController: UIViewController {
     var arrSubCategory = [SubCategoryModel]()
     var arrSubCategoryFiltered = [SubCategoryModel]()
     var isType = ""
+    var strTtitle = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +30,8 @@ class SubCategoryListViewController: UIViewController {
         self.tblVw.delegate = self
         self.tblVw.dataSource = self
         
+        self.lblTitle.text = self.strTtitle
         self.isType = "Rent"
-      
         self.tfSearchBar.addTarget(self, action: #selector(searchContactAsPerText(_ :)), for: .editingChanged)
         
         if isComingfrom == "3"{
@@ -83,14 +84,28 @@ extension SubCategoryListViewController: UITableViewDelegate,UITableViewDataSour
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let strCategoryID = self.arrSubCategoryFiltered[indexPath.row].strCategoryID
-        let strSubCategoryID = self.arrSubCategoryFiltered[indexPath.row].strSubCategoryID
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RentViewController")as! RentViewController
-        vc.strCategoryID = strCategoryID
-        vc.strSubCategoryID = "\(strSubCategoryID)"
-        vc.strType = self.arrSubCategoryFiltered[indexPath.row].strSubCategoryName
-        vc.strPostFor = self.isType
-        self.navigationController?.pushViewController(vc, animated: true)
+        
+        if self.isComingfrom == "3"{
+            let strCategoryID = self.arrSubCategoryFiltered[indexPath.row].strCategoryID
+            let strSubCategoryID = self.arrSubCategoryFiltered[indexPath.row].strSubCategoryID
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "RentViewController")as! RentViewController
+            vc.strCategoryID = strCategoryID
+            vc.strSubCategoryID = "\(strSubCategoryID)"
+            vc.strType = self.arrSubCategoryFiltered[indexPath.row].strSubCategoryName
+            vc.strPostFor = self.isType
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else{
+            let strCategoryID = self.arrSubCategoryFiltered[indexPath.row].strCategoryID
+            let strSubCategoryID = self.arrSubCategoryFiltered[indexPath.row].strSubCategoryID
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ContactListViewController")as! ContactListViewController
+            vc.strCategoryID = strCategoryID
+            vc.strSubCategoryID = "\(strSubCategoryID)"
+            vc.strType = self.arrSubCategoryFiltered[indexPath.row].strSubCategoryName
+            vc.strPostFor = self.isType
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+       
     }
     
 }

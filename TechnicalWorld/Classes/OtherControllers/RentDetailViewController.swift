@@ -28,7 +28,7 @@ class RentDetailViewController: UIViewController {
     @IBOutlet var lblDesc: UILabel!
     
     var objDetails:DetailsSubCategoryModel?
-    
+    var thisWidth:CGFloat = 0
     var arrImages = [String]()
     
     override func viewDidLoad() {
@@ -37,6 +37,9 @@ class RentDetailViewController: UIViewController {
         
         self.cvImages.delegate = self
         self.cvImages.dataSource = self
+        
+        thisWidth = CGFloat(self.cvImages.frame.width)
+        pgControl.hidesForSinglePage = true
     }
     
     
@@ -198,9 +201,10 @@ extension RentDetailViewController:UICollectionViewDelegate,UICollectionViewData
     }
     
     
-    
-    
-    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        pgControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+    }
+
 }
 
 

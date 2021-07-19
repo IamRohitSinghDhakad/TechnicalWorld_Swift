@@ -103,6 +103,8 @@ class DetailsSubCategoryModel: NSObject {
     var strLongitude :String = ""
     var strRating :String = ""
     
+    var strValidity : String = ""
+    
     init(dict : [String:Any]) {
         
         if let base_url = dict["base_url"] as? String{
@@ -195,6 +197,10 @@ class DetailsSubCategoryModel: NSObject {
         
         if let name = dict["name"] as? String{
             self.strName = name
+        }
+        
+        if let validity = dict["validity"] as? String{
+            self.strValidity = validity
         }
         
         if let offer_desc = dict["offer_desc"] as? String{

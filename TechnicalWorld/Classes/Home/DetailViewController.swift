@@ -198,7 +198,8 @@ extension DetailViewController{
     
        objWebServiceManager.showIndicator()
         let param = ["login_id":strLoginID,
-                     "user_id":strUserID]as [String:Any]
+                     "user_id":strLoginID]as [String:Any]
+        print(param)
         
         objWebServiceManager.requestGet(strURL: WsUrl.url_GetUserImage, params: param, queryParams: [:], strCustomValidation: "") { (response) in
             objWebServiceManager.hideIndicator()
@@ -219,7 +220,11 @@ extension DetailViewController{
                 }
             }else{
                 objWebServiceManager.hideIndicator()
-                objAlert.showAlert(message: message ?? "", title: "Alert", controller: self)
+                if response["result"] as! String == "Any Image Not Found"{
+                    self.cvPictures.displayBackgroundText(text: "Any Image Not Found Of This User")
+                }else{
+                    objAlert.showAlert(message: message ?? "", title: "Alert", controller: self)
+                }
                 
             }
            

@@ -93,38 +93,46 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         
         switch indexPath.row {
         case 0:
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "SubCategoryListViewController")as! SubCategoryListViewController
-            vc.categoryID = "\(id)"
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ContactListViewController")as! ContactListViewController
+            vc.strCategoryID = "\(id)"
+            vc.strType = self.arrCategory[indexPath.row].strCategoryName
             self.navigationController?.pushViewController(vc, animated: true)
-          //  pushVc(viewConterlerId: "ContactListViewController")
         case 1:
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "SubCategoryListViewController")as! SubCategoryListViewController
             vc.categoryID = "\(id)"
+            vc.strTtitle = self.arrCategory[indexPath.row].strCategoryName
             self.navigationController?.pushViewController(vc, animated: true)
         case 2:
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "SubCategoryListViewController")as! SubCategoryListViewController
             vc.categoryID = "\(id)"
+            vc.strTtitle = self.arrCategory[indexPath.row].strCategoryName
             self.navigationController?.pushViewController(vc, animated: true)
         case 3:
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "SubCategoryListViewController")as! SubCategoryListViewController
             vc.categoryID = "\(id)"
             vc.isComingfrom = "3"
+            vc.strTtitle = self.arrCategory[indexPath.row].strCategoryName
             self.navigationController?.pushViewController(vc, animated: true)
         case 4:
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "SubCategoryListViewController")as! SubCategoryListViewController
             vc.categoryID = "\(id)"
+            vc.strTtitle = self.arrCategory[indexPath.row].strCategoryName
             self.navigationController?.pushViewController(vc, animated: true)
         case 5:
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "SubCategoryListViewController")as! SubCategoryListViewController
             vc.categoryID = "\(id)"
+            vc.strTtitle = self.arrCategory[indexPath.row].strCategoryName
             self.navigationController?.pushViewController(vc, animated: true)
         case 6:
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "SubCategoryListViewController")as! SubCategoryListViewController
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "JobsViewController")as! JobsViewController
             vc.categoryID = "\(id)"
-            vc.isComingfrom = "3"
+//            vc.isComingfrom = "3"
             self.navigationController?.pushViewController(vc, animated: true)
         case 7:
-            pushVc(viewConterlerId: "GiveReviesViewController")
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ContactListViewController")as! ContactListViewController
+            vc.strCategoryID = "\(id)"
+            vc.strType = self.arrCategory[indexPath.row].strCategoryName
+            self.navigationController?.pushViewController(vc, animated: true)
         case 8:
             pushVc(viewConterlerId: "BidsViewController")
         default:

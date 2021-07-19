@@ -24,8 +24,13 @@ class LoginViewController: UIViewController {
     
 
     @IBAction func btnOnContinue(_ sender: Any) {
-        self.tfEmail.text = "one@gmail.com"
+//        self.tfEmail.text = "a@yopmail.com"
+//        self.tfPassword.text = "qwerty"
+        
+        self.tfEmail.text = "Scomp@gmail.com"
         self.tfPassword.text = "123456"
+        
+        
         self.call_WsLogin()
        
        // self.pushVc(viewConterlerId: "Reveal")
@@ -37,24 +42,14 @@ class LoginViewController: UIViewController {
     @IBAction func btnOnRegisterNow(_ sender: Any) {
         self.pushVc(viewConterlerId: "SignUpViewController")
     }
-    @IBAction func btnFacebookLogin(_ sender: Any) {
+    
+    
+    @IBAction func btnOnGuest(_ sender: Any) {
         
     }
-    @IBAction func btnGoogleLogin(_ sender: Any) {
-        
-    }
-    @IBOutlet weak var btnOnAppleLogin: UILabel!
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
+    
 
 extension LoginViewController{
     // TextField delegate method

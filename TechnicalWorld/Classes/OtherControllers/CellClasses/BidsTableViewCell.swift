@@ -9,6 +9,14 @@ import UIKit
 
 class BidsTableViewCell: UITableViewCell {
 
+    @IBOutlet var imgVwBid: UIImageView!
+    @IBOutlet var lbltitle: UILabel!
+    @IBOutlet var lblDate: UILabel!
+    @IBOutlet var lblTime: UILabel!
+    @IBOutlet var lblBidCount: UILabel!
+    @IBOutlet var lblBidBy: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

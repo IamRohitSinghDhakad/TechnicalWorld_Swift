@@ -9,8 +9,9 @@ import Foundation
 import UIKit
 
 
+let BASE_URL = "https://technicalworld.ae/admin/index.php/api/"
 
-let BASE_URL = "http://ambitious.in.net/Shubham/tech/index.php/api/"
+//let BASE_URL = "http://ambitious.in.net/Shubham/tech/index.php/api/"
 
 struct WsUrl{
     
@@ -22,6 +23,7 @@ struct WsUrl{
     static let url_GetPost = BASE_URL + "get_post?"
     static let url_forgotPassword = BASE_URL + "forgot_password"
     static let url_GetUserList = BASE_URL + "get_user?"
+    static let url_GetBids = BASE_URL + "get_bids"
     static let url_GetUserImage = BASE_URL + "get_user_image"
     static let url_getUserProfile  = BASE_URL + "get_profile"
     static let url_ChangePassword  = BASE_URL + "change_password"

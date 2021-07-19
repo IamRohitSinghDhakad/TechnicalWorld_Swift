@@ -16,6 +16,8 @@ class ContactListViewController: UIViewController {
     var arrUserList = [UserModel]()
     var strCategoryID = ""
     var strSubCategoryID = ""
+    var strType = ""
+    var strPostFor = ""
     
     
     override func viewDidLoad() {
@@ -24,7 +26,13 @@ class ContactListViewController: UIViewController {
         self.tblVwContacts.delegate = self
         self.tblVwContacts.dataSource = self
         
+        self.lblTitle.text = self.strType
+        
         self.subVwSort.isHidden = true
+        
+        if self.strType == "All"{
+            self.strSubCategoryID = ""
+        }
         
         let userID = objAppShareData.UserDetail.strUserId
         if userID != ""{
@@ -122,6 +130,8 @@ extension ContactListViewController{
                      "user_id":strUserID,
                      "sub_category_id":strSubCategoryID]as [String:Any]
         
+        print(param)
+        
         objWebServiceManager.requestGet(strURL: WsUrl.url_GetUserList, params: param, queryParams: [:], strCustomValidation: "") { (response) in
             objWebServiceManager.hideIndicator()
             let status = (response["status"] as? Int)
@@ -141,7 +151,12 @@ extension ContactListViewController{
                 }
             }else{
                 objWebServiceManager.hideIndicator()
-                objAlert.showAlert(message: message ?? "", title: "Alert", controller: self)
+                
+                if response["result"] as! String == "User not Exist"{
+                    self.tblVwContacts.displayBackgroundText(text: "User not Exist")
+                }else{
+                    objAlert.showAlert(message: message ?? "", title: "Alert", controller: self)
+                }
                 
             }
            
