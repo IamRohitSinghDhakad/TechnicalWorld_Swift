@@ -18,6 +18,98 @@
             endingLineNumber = "15"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9B7E387E-1BEF-4D69-A839-8D0D2A912F8B - b186061cb9cd29d4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TechnicalWorld.GeneralAccountantViewController.lblCareerLevel.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "TechnicalWorld"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paras/TechnicalWorld_Swift/TechnicalWorld/Classes/OtherControllers/GeneralAccountantViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "126">
+               </Location>
+               <Location
+                  uuid = "9B7E387E-1BEF-4D69-A839-8D0D2A912F8B - daf48f1bb5492190"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TechnicalWorld.GeneralAccountantViewController.lblCareerLevel.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "TechnicalWorld"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paras/TechnicalWorld_Swift/TechnicalWorld/Classes/OtherControllers/GeneralAccountantViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  uuid = "9B7E387E-1BEF-4D69-A839-8D0D2A912F8B - 8af64d04875c0c9d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TechnicalWorld.GeneralAccountantViewController.lblCareerLevel.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "TechnicalWorld"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paras/TechnicalWorld_Swift/TechnicalWorld/Classes/OtherControllers/GeneralAccountantViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "9B7E387E-1BEF-4D69-A839-8D0D2A912F8B - 817827089f646952"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TechnicalWorld.GeneralAccountantViewController.lblCareerLevel.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "TechnicalWorld"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paras/TechnicalWorld_Swift/TechnicalWorld/Classes/OtherControllers/GeneralAccountantViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "8">
+               </Location>
+               <Location
+                  uuid = "9B7E387E-1BEF-4D69-A839-8D0D2A912F8B - 74581076e363fabb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TechnicalWorld.GeneralAccountantViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; TechnicalWorld.GeneralAccountantViewController"
+                  moduleName = "TechnicalWorld"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paras/TechnicalWorld_Swift/TechnicalWorld/Classes/OtherControllers/GeneralAccountantViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "457">
+               </Location>
+               <Location
+                  uuid = "9B7E387E-1BEF-4D69-A839-8D0D2A912F8B - 8fccbaa638a184a2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TechnicalWorld.GeneralAccountantViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;TechnicalWorld.GeneralAccountantViewController&gt;"
+                  moduleName = "TechnicalWorld"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/paras/TechnicalWorld_Swift/TechnicalWorld/Classes/OtherControllers/GeneralAccountantViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "401">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

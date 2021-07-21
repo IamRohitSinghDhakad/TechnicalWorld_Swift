@@ -10,12 +10,18 @@ import UIKit
 class BidsViewController: UIViewController {
 
     @IBOutlet weak var tblVw: UITableView!
+    @IBOutlet weak var vwContainAddBid: UIView!
     
     var arrBidList = [BidsListModel]()
+    var arrMyBidList = [BidsListModel]()
+    
+    var myBidClicked:Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.vwContainAddBid.isHidden = true
+        
         self.tblVw.delegate = self
         self.tblVw.dataSource = self
         
@@ -23,11 +29,9 @@ class BidsViewController: UIViewController {
         if userID != ""{
             self.call_getBids(strUserID: userID, strMyID: userID)
         }
-        
-        
-        
         // Do any additional setup after loading the view.
     }
+    
     
     @IBAction func btnBackOnHeader(_ sender: Any) {
         onBackPressed()
@@ -37,40 +41,61 @@ class BidsViewController: UIViewController {
         
     }
     @IBAction func btnAllBids(_ sender: Any) {
+        self.vwContainAddBid.isHidden = true
+        self.myBidClicked = false
+        self.tblVw.reloadData()
         
     }
     @IBAction func btnMyBids(_ sender: Any) {
-        
+        self.vwContainAddBid.isHidden = false
+        self.myBidClicked = true
+        self.tblVw.reloadData()
     }
+    
+    @IBAction func btnAddBid(_ sender: Any) {
+        pushVc(viewConterlerId: "AddBidViewController")
+    }
+    
    
 }
 
 extension BidsViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.arrBidList.count
+        if self.myBidClicked == true{
+            return self.arrMyBidList.count
+        }else{
+            return self.arrBidList.count
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BidsTableViewCell")as! BidsTableViewCell
         
-        let obj = self.arrBidList[indexPath.row]
+        let obj:BidsListModel?
+        if self.myBidClicked == true{
+             obj = self.arrMyBidList[indexPath.row]
+            cell.vwThreeDots.isHidden = false
+        }else{
+             obj = self.arrBidList[indexPath.row]
+            cell.vwThreeDots.isHidden = true
+        }
         
-        
-        let profilePic = obj.strImageUrl
+        let profilePic = obj?.strImageUrl
         if profilePic != "" {
-            let url = URL(string: profilePic)
+            let url = URL(string: profilePic!)
             cell.imgVwBid.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "logo"))
         }
         
-        cell.lbltitle.text = obj.strTitle
-        let date = obj.strDate.split(separator: " ")
-        if date.count > 0{
-            cell.lblDate.text = "Date: \(date[0])"
-            cell.lblTime.text = "Time: \(date[1])"
+        cell.lbltitle.text = obj?.strTitle
+        let date = obj?.strDate.split(separator: " ")
+        if date!.count > 0{
+            cell.lblDate.text = "Date: \(date?[0] ?? "")"
+            cell.lblTime.text = "Time: \(date?[1] ?? "")"
         }
         
-        cell.lblBidBy.text = "By:- \(obj.strName)"
-        cell.lblBidCount.text = "Bid : \(obj.strBidsCount)"
+        cell.lblBidBy.text = "By:- \(obj?.strName ?? "")"
+        cell.lblBidCount.text = "Bid : \(obj?.strBidsCount ?? "")"
         
         return cell
     }
@@ -115,7 +140,12 @@ extension BidsViewController{
                     for dictdata in arrData{
                         
                         let obj = BidsListModel.init(dict: dictdata)
-                        self.arrBidList.append(obj)
+                        if obj.strBid_id == strUserID{
+                            self.arrMyBidList.append(obj)
+                        }else{
+                            self.arrBidList.append(obj)
+                        }
+                        
                     }
                     self.tblVw.reloadData()
                 }

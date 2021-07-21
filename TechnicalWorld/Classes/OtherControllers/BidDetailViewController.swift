@@ -32,11 +32,12 @@ class BidDetailViewController: UIViewController {
             let url = URL(string: profilePic!)
             self.imgVwBid.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "logo"))
         }
-        
-        self.timeRemaning.text = objData?.strDuration
+        self.timeRemaning.text = "Days remaning - \(objData?.strDuration ?? "")"
         self.lblDescription.text = objData?.strTitle
         self.lblSubmittedOffer.text = objData?.strSubmittedOffered
         self.lblBidBy.text = objData?.strName
+     
+        
         
     }
 

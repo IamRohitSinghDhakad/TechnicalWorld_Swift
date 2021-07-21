@@ -45,6 +45,13 @@ class BidsListModel: NSObject {
         }
         
         
+        if let user_id = dict["user_id"] as? String{
+            self.strBid_id = user_id
+        }else if let user_id = dict["user_id"] as? Int{
+            self.strBid_id = "\(user_id)"
+        }
+        
+        
         if let duration = dict["duration"] as? String{
             self.strDuration = duration
         }else if let duration = dict["duration"] as? Int{

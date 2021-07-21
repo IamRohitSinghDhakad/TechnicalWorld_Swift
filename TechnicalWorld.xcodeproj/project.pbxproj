@@ -781,7 +781,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.TechnicalWorld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/rohit/Rohit's WorkSpace/Freelance/TechnicalWorld/TechnicalWorld/BridgingHeader/BridgingHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/paras/TechnicalWorld_Swift/TechnicalWorld/BridgingHeader/BridgingHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -803,7 +803,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.TechnicalWorld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/rohit/Rohit's WorkSpace/Freelance/TechnicalWorld/TechnicalWorld/BridgingHeader/BridgingHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/paras/TechnicalWorld_Swift/TechnicalWorld/BridgingHeader/BridgingHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

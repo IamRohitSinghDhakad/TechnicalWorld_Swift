@@ -27,8 +27,8 @@ class LoginViewController: UIViewController {
 //        self.tfEmail.text = "a@yopmail.com"
 //        self.tfPassword.text = "qwerty"
         
-        self.tfEmail.text = "Scomp@gmail.com"
-        self.tfPassword.text = "123456"
+        self.tfEmail.text = "a@yopmail.com"
+        self.tfPassword.text = "qwerty"
         
         
         self.call_WsLogin()
