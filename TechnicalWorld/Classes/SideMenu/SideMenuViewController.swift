@@ -18,7 +18,7 @@ class SideMenuViewController: UIViewController {
         super.viewDidLoad()
         self.tblSideMenuOptions.delegate = self
         self.tblSideMenuOptions.dataSource = self
-        titleName = ["Home","Add Post","Profile","Settings","Contact Us","About Us", "LogOut"]
+        titleName = ["Home","Add Post","Profile","Contact Us","About Us", "LogOut"]
         // Do any additional setup after loading the view.
     }
     
@@ -64,20 +64,22 @@ extension SideMenuViewController: UITableViewDelegate,UITableViewDataSource{
            // pushVc(viewConterlerId: "ProfileViewController")
             //break
         case 3:
-            pushVc(viewConterlerId: "HomeViewController")
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AboutUsViewController")as! AboutUsViewController
+            vc.strIsComingFrom = "ContactUs"
+            vc.strTitle = "Terms"
+            self.navigationController?.pushViewController(vc, animated: true)
             break
         case 4:
-            pushVc(viewConterlerId: "HomeViewController")
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AboutUsViewController")as! AboutUsViewController
+            vc.strIsComingFrom = "AboutUs"
+            vc.strTitle = "AboutUs"
+            self.navigationController?.pushViewController(vc, animated: true)
             break
             
         case 5:
-            pushVc(viewConterlerId: "HomeViewController")
-            break
-        case 6:
             ObjAppdelegate.LoginNavigation()
           //  self.LogoutDataAPI()
             break
-            
         default: break
             
         }

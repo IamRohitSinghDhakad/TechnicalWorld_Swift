@@ -27,6 +27,8 @@ class OfferJobViewController: UIViewController {
     var arrTypesOfCategoryID = [Int]()
     
     var strType = "FullTime"
+    var isPartTime = Bool()
+    var postFor = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,6 +128,7 @@ extension OfferJobViewController{
         else{
             let userID = objAppShareData.UserDetail.strUserId
             if userID != ""{
+                self.call_OfferJob(strUserID: userID)
                // self.callWebserviceForAddPostWithImage(strUserID: userID)
             }
         }
@@ -180,8 +183,65 @@ extension OfferJobViewController{
             print(Error)
             objWebServiceManager.hideIndicator()
         }
-
+   }
     
+    
+    func call_OfferJob(strUserID:String){
+        
+        if !objWebServiceManager.isNetworkAvailable(){
+            objWebServiceManager.hideIndicator()
+            objAlert.showAlert(message: "No Internet Connection", title: "Alert", controller: self)
+            return
+        }
+    
+       objWebServiceManager.showIndicator()
+       
+        var dicrParam = [String:Any]()
+        
+     
+            dicrParam = ["post_for":self.postFor,
+                         "type":"Offer",
+                         "offer_desc":self.tfOfferDesc.text!,
+                       //  "degree":self.tfDegree.text!,
+                         "qualification":self.tfMinimumQualification.text!,
+                         "experience":self.tfMinimumYear.text!,
+                         "category_id":"7",
+                         "category_name":"Jobs",
+                       //  "sub_category_id":self.strSubCatID,
+                         "sub_category_name":self.tfField.text!,
+                       //  "last_job":self.tfLastCurrentJob.text!,
+                         "looking_for":self.tfOfferRole.text!,
+                     //    "min_amount":self.tfExpectedMonthlySalery.text!,
+                       //  "max_amount":self.tfExpectedMonthlySaleryTo.text!,
+                        // "remark":"self.tfListedBy.text!",
+                         "user_id":strUserID]as [String:Any]
+        
+        objWebServiceManager.requestPost(strURL: WsUrl.url_AddPost, queryParams: [:], params: dicrParam, strCustomValidation: "", showIndicator: false) { (response) in
+            
+            objWebServiceManager.hideIndicator()
+            
+            let status = (response["status"] as? Int)
+            let message = (response["message"] as? String)
+            
+            if status == MessageConstant.k_StatusCode{
+                
+                print(response)
+               
+                objAlert.showAlertCallBack(alertLeftBtn: "", alertRightBtn: "OK", title: "Success", message: "Offer Job Posted Succesfully", controller: self) {
+                    self.onBackPressed()
+                }
+                
+            }else{
+                objWebServiceManager.hideIndicator()
+                objAlert.showAlert(message: message ?? "", title: "Alert", controller: self)
+                
+            }
+           
+            
+        } failure: { (Error) in
+            print(Error)
+            objWebServiceManager.hideIndicator()
+        }
    }
     
 }

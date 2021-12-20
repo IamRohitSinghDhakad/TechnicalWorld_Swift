@@ -28,6 +28,14 @@ struct WsUrl{
     static let url_getUserProfile  = BASE_URL + "get_profile"
     static let url_ChangePassword  = BASE_URL + "change_password"
     static let url_ForgotPassword  = BASE_URL + "forgot_password"
+    static let url_GetBanner = BASE_URL + "get_banner"
+    static let url_GetOffer = BASE_URL + "get_offer"
+    static let url_GetNotification = BASE_URL + "get_notification?"
+    static let url_GetSetting = BASE_URL + "get_setting"
+    static let url_PostEditBid = BASE_URL + "get_bids"
+    static let url_PostDeleteBid = BASE_URL + "delete_bid"
+    static let url_AddBid = BASE_URL + "place_a_bid"
+
 }
 
 //Api Header

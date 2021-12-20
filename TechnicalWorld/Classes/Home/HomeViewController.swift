@@ -13,13 +13,24 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var cvCategories: UICollectionView!
     @IBOutlet weak var imgVwBanner: UIImageView!
     @IBOutlet weak var btnOpenMenu: UIButton!
+    @IBOutlet var lblTitileOfferOne: UILabel!
+    @IBOutlet var lblPriceOfferOne: UILabel!
+    @IBOutlet var lblDescOfferOne: UILabel!
+    @IBOutlet var lblOfferTwo: UILabel!
+    @IBOutlet var lblPriceOfferTwo: UILabel!
+    @IBOutlet var lblDescOffertwo: UILabel!
+    @IBOutlet var lblOfferthree: UILabel!
+    @IBOutlet var lblPriceOfferThree: UILabel!
+    @IBOutlet var lblDescOfferThree: UILabel!
     
     var arrCategory = [CategoryModel]()
+    var arrOffer = [OfferModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.call_GetCategory()
+       
 //        let userID = objAppShareData.UserDetail.strUserId
 //       if userID != ""{
 //        self.call_GetProfile(strUserID: userID)
@@ -41,6 +52,17 @@ class HomeViewController: UIViewController {
         }
     }
 
+    
+    @IBAction func btnNotification(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "NotificationViewController")as! NotificationViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func btnOnProfile(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController")as! ProfileViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 
@@ -134,7 +156,11 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
             vc.strType = self.arrCategory[indexPath.row].strCategoryName
             self.navigationController?.pushViewController(vc, animated: true)
         case 8:
-            pushVc(viewConterlerId: "BidsViewController")
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "BidsViewController")as! BidsViewController
+            vc.strCategoryID = "\(id)"
+           // vc.strType = self.arrCategory[indexPath.row].strCategoryName
+            self.navigationController?.pushViewController(vc, animated: true)
+           // pushVc(viewConterlerId: "BidsViewController")
         default:
             pushVc(viewConterlerId: "DetailViewController")
         }
@@ -178,7 +204,8 @@ extension HomeViewController{
             print(response)
             
             if status == MessageConstant.k_StatusCode{
-               
+                self.call_GetOffer()
+                self.call_GetBanner()
               //  self.call_SubCategory()
                 
                 if let arrData  = response["result"] as? [[String:Any]]{
@@ -247,4 +274,124 @@ extension HomeViewController{
     
    }
     
+    
+    
+    //MARK:- Get Banner
+    func call_GetOffer(){
+        
+        if !objWebServiceManager.isNetworkAvailable(){
+            objWebServiceManager.hideIndicator()
+            objAlert.showAlert(message: "No Internet Connection", title: "Alert", controller: self)
+            return
+        }
+    
+        objWebServiceManager.showIndicator()
+        
+        
+        objWebServiceManager.requestGet(strURL: WsUrl.url_GetOffer, params: [:], queryParams: [:], strCustomValidation: "") { (response) in
+            objWebServiceManager.hideIndicator()
+            let status = (response["status"] as? Int)
+            let message = (response["message"] as? String)
+            
+            print(response)
+            
+            if status == MessageConstant.k_StatusCode{
+               
+              //  self.call_SubCategory()
+                
+                if let arrData  = response["result"] as? [[String:Any]]{
+
+                    for data in arrData{
+                        
+                        let obj = OfferModel.init(dict: data)
+                        self.arrOffer.append(obj)
+                        
+                    }
+                    
+                    if self.arrOffer.count > 1{
+                        
+                        self.lblTitileOfferOne.text = self.arrOffer[0].strOfferTitle
+                        self.lblPriceOfferOne.text = "Price: " + self.arrOffer[0].strPrice + " AED"
+                        self.lblDescOfferOne.text = "By: " + self.arrOffer[0].strPostedBy
+                        
+                  
+                        self.lblOfferTwo.text = self.arrOffer[1].strOfferTitle
+                        self.lblPriceOfferTwo.text = "Price: " + self.arrOffer[1].strPrice + " AED"
+                        self.lblDescOffertwo.text = "By: " + self.arrOffer[1].strPostedBy
+                        
+                    
+                        self.lblOfferthree.text = self.arrOffer[2].strOfferTitle
+                        self.lblPriceOfferThree.text = "Price: " + self.arrOffer[2].strPrice + " AED"
+                        self.lblDescOfferThree.text = "By: " + self.arrOffer[2].strPostedBy
+                    }
+                    
+                   
+                    
+                }
+            }else{
+                objWebServiceManager.hideIndicator()
+                objAlert.showAlert(message: message ?? "", title: "Alert", controller: self)
+                
+            }
+           
+            
+        } failure: { (Error) in
+            print(Error)
+            objWebServiceManager.hideIndicator()
+        }
+   }
+    
+    
+    //Banner add ===================== XXXXX
+    
+    func call_GetBanner(){
+        
+        if !objWebServiceManager.isNetworkAvailable(){
+            objWebServiceManager.hideIndicator()
+            objAlert.showAlert(message: "No Internet Connection", title: "Alert", controller: self)
+            return
+        }
+    
+        objWebServiceManager.showIndicator()
+        
+        
+        objWebServiceManager.requestGet(strURL: WsUrl.url_GetSetting, params: [:], queryParams: [:], strCustomValidation: "") { (response) in
+            objWebServiceManager.hideIndicator()
+            let status = (response["status"] as? Int)
+            let message = (response["message"] as? String)
+            
+            print(response)
+            
+            if status == MessageConstant.k_StatusCode{
+               
+              //  self.call_SubCategory()
+                
+                if let imgUrl  = response["result"] as? [String:Any]{
+
+         
+                    
+                    if let profilePic = imgUrl["home_page_ads"]as? String{
+                        if profilePic != "" {
+                            let url = URL(string: profilePic.trim())
+                            print(url)
+                            self.imgVwBanner.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "logo"))
+                        }
+                    }
+                    
+                  
+                   
+                    
+                }
+            }else{
+                objWebServiceManager.hideIndicator()
+                objAlert.showAlert(message: message ?? "", title: "Alert", controller: self)
+                
+            }
+           
+            
+        } failure: { (Error) in
+            print(Error)
+            objWebServiceManager.hideIndicator()
+        }
+   }
 }

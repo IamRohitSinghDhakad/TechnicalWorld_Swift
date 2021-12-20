@@ -40,6 +40,9 @@ class CategoryModel: NSObject {
 }
 
 
+
+
+
 class SubCategoryModel: NSObject {
 
     //Currency Conversion
@@ -72,6 +75,37 @@ class SubCategoryModel: NSObject {
         if let name = dict["sub_category_name"] as? String{
             self.strSubCategoryName = name
         }
+        
+    }
+}
+
+
+//=================== Offer model ===========//
+
+class OfferModel: NSObject {
+
+    //Currency Conversion
+    var strOfferTitle :String = ""
+    var strPostedBy  :String = ""
+    var strPrice :String = ""
+
+    
+    
+    
+    init(dict : [String:Any]) {
+        
+     
+        
+        if let offer_title = dict["offer_title"] as? String{
+            self.strOfferTitle = offer_title
+        }
+        if let posted_by = dict["posted_by"] as? String{
+            self.strPostedBy = posted_by
+        }
+        if let price = dict["price"] as? String{
+            self.strPrice = price
+        }
+        
         
     }
 }

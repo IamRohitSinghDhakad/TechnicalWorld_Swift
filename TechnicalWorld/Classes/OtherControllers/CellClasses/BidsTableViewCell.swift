@@ -16,6 +16,7 @@ class BidsTableViewCell: UITableViewCell {
     @IBOutlet var lblBidCount: UILabel!
     @IBOutlet var lblBidBy: UILabel!
     @IBOutlet weak var vwThreeDots: UIView!
+    @IBOutlet var btnThreeDot: UIButton!
     
     
     override func awakeFromNib() {

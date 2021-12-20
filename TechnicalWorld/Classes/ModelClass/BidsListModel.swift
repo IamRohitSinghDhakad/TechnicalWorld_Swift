@@ -17,12 +17,18 @@ class BidsListModel: NSObject {
     var strBidsCount : String = ""
     var strDuration : String = ""
     var strSubmittedOffered : String = ""
+    var strCategoryName : String = ""
+    var strUserImage : String = ""
     
     
     init(dict : [String:Any]) {
         
         if let image = dict["image"] as? String{
             self.strImageUrl = image
+        }
+        
+        if let category_name = dict["category_name"] as? String{
+            self.strCategoryName = category_name
         }
         
         if let description = dict["description"] as? String{

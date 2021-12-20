@@ -71,22 +71,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "04C47321-7616-40D6-92E3-29226E0F1583"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TechnicalWorld/Classes/Home/HomeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "230"
-            endingLineNumber = "230"
-            landmarkName = "call_GetProfile(strUserID:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "1013A27C-0BDC-4F13-B342-E3DA9CAC6FDB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -146,38 +130,6 @@
             endingLineNumber = "115"
             landmarkName = "btnOpenLocation(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "1ADD3824-CF5A-4004-8E40-8E8859AEE06E - ef586b86a88e07e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TechnicalWorld.ProfileViewController.btnOpenLocation(Any) -&gt; ()"
-                  moduleName = "TechnicalWorld"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rohit/Rohit&apos;s%20WorkSpace/Freelance/TechnicalWorld/TechnicalWorld/Classes/Home/ProfileViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "115"
-                  endingLineNumber = "115"
-                  offsetFromSymbolStart = "106">
-               </Location>
-               <Location
-                  uuid = "1ADD3824-CF5A-4004-8E40-8E8859AEE06E - ef586b86a88e07e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TechnicalWorld.ProfileViewController.btnOpenLocation(Any) -&gt; ()"
-                  moduleName = "TechnicalWorld"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rohit/Rohit&apos;s%20WorkSpace/Freelance/TechnicalWorld/TechnicalWorld/Classes/Home/ProfileViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "115"
-                  endingLineNumber = "115"
-                  offsetFromSymbolStart = "725">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -193,38 +145,6 @@
             startingLineNumber = "32"
             endingLineNumber = "32"
             landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "46034EB3-72C5-4DF8-887F-A1F54BC483DB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TechnicalWorld/Classes/OtherControllers/WantJobViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
-            landmarkName = "call_WantJob(strUserID:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "936FF835-CF71-4BCC-9E9A-A3A4AC947BF9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TechnicalWorld/Classes/OtherControllers/WantJobViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
-            landmarkName = "call_WantJob(strUserID:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -263,65 +183,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "08143899-FA73-4FB2-96D1-A47D14B8E0BF"
+            uuid = "7C2A34CF-97D9-485A-9990-8392341E4D6E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TechnicalWorld/Classes/OtherControllers/BidsViewController.swift"
+            filePath = "TechnicalWorld/Classes/Home/NotificationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "call_getBids(strUserID:strMyID:)"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "call_GetNotification()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FD57B617-630E-4FE8-9AF1-38ED4EA22C4F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TechnicalWorld/Classes/OtherControllers/BidsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "call_getBids(strUserID:strMyID:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "FD57B617-630E-4FE8-9AF1-38ED4EA22C4F - 57989158dc667463"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TechnicalWorld.BidsViewController.call_getBids(strUserID: Swift.String, strMyID: Swift.String) -&gt; ()"
-                  moduleName = "TechnicalWorld"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rohit/Rohit&apos;s%20WorkSpace/Freelance/TechnicalWorld/TechnicalWorld/Classes/OtherControllers/BidsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "103"
-                  endingLineNumber = "103"
-                  offsetFromSymbolStart = "1273">
-               </Location>
-               <Location
-                  uuid = "FD57B617-630E-4FE8-9AF1-38ED4EA22C4F - 356726acce981c39"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; () in TechnicalWorld.BidsViewController.call_getBids(strUserID: Swift.String, strMyID: Swift.String) -&gt; ()"
-                  moduleName = "TechnicalWorld"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rohit/Rohit&apos;s%20WorkSpace/Freelance/TechnicalWorld/TechnicalWorld/Classes/OtherControllers/BidsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "104"
-                  endingLineNumber = "104"
-                  offsetFromSymbolStart = "282">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

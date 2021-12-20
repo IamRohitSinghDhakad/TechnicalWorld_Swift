@@ -16,25 +16,45 @@ class AddBidViewController: UIViewController,UINavigationControllerDelegate {
     @IBOutlet weak var imgVw: UIImageView!
     @IBOutlet weak var txtVwDescriptioon: RDTextView!
     @IBOutlet weak var tfSelecteCategory: DropDown!
+    @IBOutlet var tfSubCategory: DropDown!
     @IBOutlet weak var tfSelectDays: DropDown!
+    @IBOutlet var vwSubCategory: UIView!
     
     var arrCategory = [CategoryModel]()
     var arrSubCategory = [SubCategoryModel]()
-    
+    var arrBidDetails = [BidsListModel]()
     var imagePicker = UIImagePickerController()
     var pickedImage:UIImage?
+    var arrTypesOfCategory = [String]()
+    var arrTypesOfCategoryID = [Int]()
+    var arrTypesOfSubCategory = [String]()
+    var arrTypesOfSubCategoryID = [Int]()
+    var strBidID = ""
+    var strSubCategoryID = ""
+    
+    var strSelectedCategoryID = ""
+    var strSelectedSubCategoryID = ""
+    
+    var isComingFromEdit:Bool = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.vwSubCategory.isHidden = true
         self.tfSelectDays.delegate = self
         self.tfSelecteCategory.delegate = self
         self.imagePicker.delegate = self
+        self.call_GetCategory()
+      //  self.call_SubCategory(strCategoryID: self.strSubCategoryID)
         hideKeyboardWhenTappedAround()
-        setDropDown()
-        self.setData()
-
+        if isComingFromEdit{
+            self.call_EditBid(strBidID: strBidID)
+        }
+    //
+        self.setData()        
         // Do any additional setup after loading the view.
     }
+    
     
     func setData(){
         
@@ -60,23 +80,26 @@ class AddBidViewController: UIViewController,UINavigationControllerDelegate {
         
         self.tfSelecteCategory.didSelect{(selectedText , index ,id) in
             self.view.endEditing(true)
-        self.tfSelecteCategory.text = selectedText
+            self.vwSubCategory.isHidden = false
+            self.call_SubCategory(strCategoryID: "\(id)")
+            self.strSelectedCategoryID = "\(id)"
+            self.tfSelecteCategory.text = selectedText
         }
         
+        self.tfSubCategory.didSelect{(selectedText , index ,id) in
+            self.view.endEditing(true)
+            self.strSelectedSubCategoryID = "\(id)"
+            self.tfSubCategory.text = selectedText
+        }
     }
     
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        
         if textField == tfSelectDays{
             self.view.endEditing(true)
         }
-        
         return true
     }
-    
-    
-    
     
     @IBAction func btnOpenGallery(_ sender: Any) {
         self.setImage()
@@ -87,7 +110,8 @@ class AddBidViewController: UIViewController,UINavigationControllerDelegate {
     }
     
     @IBAction func btnOnContinue(_ sender: Any) {
-        onBackPressed()
+        
+        self.call_AddBid(strBidId: self.strBidID, strCategoryId: self.strSelectedCategoryID, strSubCategoryId: strSelectedSubCategoryID, strDescription: self.txtVwDescriptioon.text!, strDuration: self.tfSelectDays.text!)
     }
     /*
     // MARK: - Navigation
@@ -98,7 +122,6 @@ class AddBidViewController: UIViewController,UINavigationControllerDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
 
 extension AddBidViewController: UIImagePickerControllerDelegate{
@@ -202,4 +225,234 @@ extension AddBidViewController: UIImagePickerControllerDelegate{
         self.imgVwUser.clipsToBounds = true
     }
     
+    //================= Edit Bid ==============//
+    
+    func call_EditBid(strBidID:String){
+        
+        if !objWebServiceManager.isNetworkAvailable(){
+            objWebServiceManager.hideIndicator()
+            objAlert.showAlert(message: "No Internet Connection", title: "Alert", controller: self)
+            return
+        }
+    
+       objWebServiceManager.showIndicator()
+       
+        var dicrParam = [String:Any]()
+     
+        dicrParam = ["user_id":objAppShareData.UserDetail.strUserId,
+                     "my_id":strBidID]as [String:Any]
+        
+        objWebServiceManager.requestPost(strURL: WsUrl.url_PostEditBid, queryParams: [:], params: dicrParam, strCustomValidation: "", showIndicator: false) { (response) in
+            
+            objWebServiceManager.hideIndicator()
+            
+            let status = (response["status"] as? Int)
+            let message = (response["message"] as? String)
+            
+            if status == MessageConstant.k_StatusCode{
+                
+                if let arrData  = response["result"] as? [[String:Any]]{
+                    for dictdata in arrData{
+                        let obj = BidsListModel.init(dict: dictdata)
+                        
+                        self.txtVwDescriptioon.text = obj.strTitle
+                        self.tfSelectDays.text = obj.strDuration + " days"
+                        self.tfSelecteCategory.text = obj.strCategoryName
+                        
+                        let profilePic = obj.strImageUrl
+                        if profilePic != "" {
+                            let url = URL(string: profilePic)
+                            self.imgVw.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "logo"))
+                        }
+                        
+                        let profilePic1 = obj.strUserImage
+                        if profilePic1 != "" {
+                            let url = URL(string: profilePic1)
+                            self.imgVwUser.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "logo"))
+                        }
+                        
+                      //  self.arrBidDetails.append(obj)
+                    }
+                }
+                
+                print(response)
+               
+                
+            }else{
+                objWebServiceManager.hideIndicator()
+                objAlert.showAlert(message: message ?? "", title: "Alert", controller: self)
+                
+            }
+           
+            
+        } failure: { (Error) in
+            print(Error)
+            objWebServiceManager.hideIndicator()
+        }
+   }
+    
+    
+    //=================XXXX====================//
+//https://technicalworld.ae/admin/index.php/api/get_category
+    
+    
+    
+    func call_AddBid(strBidId:String, strCategoryId:String, strSubCategoryId: String, strDescription: String, strDuration:String){
+        
+        if !objWebServiceManager.isNetworkAvailable(){
+            objWebServiceManager.hideIndicator()
+            objAlert.showAlert(message: "No Internet Connection", title: "Alert", controller: self)
+            return
+        }
+    
+        objWebServiceManager.showIndicator()
+        
+        let dicrParam = ["bid_id":strBidId,
+                         "user_id":objAppShareData.UserDetail.strUserId,
+                         "category_id":strCategoryId,
+                         "sub_category_id":strSubCategoryId,
+                         "description":strDescription,
+                         "duration":strDuration] as [String:Any]
+        
+        print(dicrParam)
+        
+        var imageData = [Data]()
+        var imgData = Data()
+        if self.pickedImage != nil{
+            imgData = (self.pickedImage?.jpegData(compressionQuality: 1.0))!
+        }
+        imageData.append(imgData)
+        
+        let imageParam = ["image"]
+        
+        
+        objWebServiceManager.uploadMultipartWithImagesData(strURL: WsUrl.url_AddBid, params: dicrParam, showIndicator: true, customValidation: "", imageData: imgData, imageToUpload: imageData, imagesParam: imageParam, fileName: "image", mimeType: "image/jpeg") {
+            
+            (response) in
+            
+            objWebServiceManager.hideIndicator()
+            
+            let status = (response["status"] as? Int)
+            let message = (response["message"] as? String)
+            
+            print(response)
+            
+            if status == MessageConstant.k_StatusCode{
+      
+                print(response)
+                
+                objAlert.showAlertCallBack(alertLeftBtn: "", alertRightBtn: "OK", title: "Success", message: "Bid Placed Succsfully", controller: self) {
+                    self.onBackPressed()
+                }
+                
+            }else{
+                objWebServiceManager.hideIndicator()
+                objAlert.showAlert(message: message ?? "", title: "Alert", controller: self)
+                
+            }
+           
+            
+        } failure: { (Error) in
+            print(Error)
+            objWebServiceManager.hideIndicator()
+        }
+   }
+    
+    func call_GetCategory(){
+        
+        if !objWebServiceManager.isNetworkAvailable(){
+            objWebServiceManager.hideIndicator()
+            objAlert.showAlert(message: "No Internet Connection", title: "Alert", controller: self)
+            return
+        }
+    
+        objWebServiceManager.showIndicator()
+        
+        
+        objWebServiceManager.requestGet(strURL: WsUrl.url_getCategory, params: [:], queryParams: [:], strCustomValidation: "") { (response) in
+            objWebServiceManager.hideIndicator()
+            let status = (response["status"] as? Int)
+            let message = (response["message"] as? String)
+            
+            print(response)
+            
+            if status == MessageConstant.k_StatusCode{
+               // self.call_GetOffer()
+               // self.call_GetBanner()
+              //  self.call_SubCategory()
+                
+                if let arrData  = response["result"] as? [[String:Any]]{
+                    for dictdata in arrData{
+                        let obj = CategoryModel.init(dict: dictdata)
+                        self.arrTypesOfCategory.append(obj.strCategoryName)
+                        self.arrTypesOfCategoryID.append(obj.strCategoryID)
+                      //  self.arrCategory.append(obj)
+                    }
+                    self.tfSelecteCategory.optionArray = self.arrTypesOfCategory
+                    self.tfSelecteCategory.optionIds = self.arrTypesOfCategoryID
+                    
+                    self.setDropDown()
+                  //  self.cvCategories.reloadData()
+                    
+                }
+            }else{
+                objWebServiceManager.hideIndicator()
+                objAlert.showAlert(message: message ?? "", title: "Alert", controller: self)
+                
+            }
+           
+            
+        } failure: { (Error) in
+            print(Error)
+            objWebServiceManager.hideIndicator()
+        }
+   }
+    
+    func call_SubCategory(strCategoryID:String){
+        
+        if !objWebServiceManager.isNetworkAvailable(){
+            objWebServiceManager.hideIndicator()
+            objAlert.showAlert(message: "No Internet Connection", title: "Alert", controller: self)
+            return
+        }
+    
+       objWebServiceManager.showIndicator()
+        let param = ["category_id":strCategoryID]as [String:Any]
+        print(param)
+        objWebServiceManager.requestGet(strURL: WsUrl.url_getSubCategory, params: param, queryParams: [:], strCustomValidation: "") { (response) in
+            objWebServiceManager.hideIndicator()
+            let status = (response["status"] as? Int)
+            let message = (response["message"] as? String)
+            
+            if status == MessageConstant.k_StatusCode{
+                
+                print(response)
+               
+                if let arrData  = response["result"] as? [[String:Any]]{
+                    for dictdata in arrData{
+                        
+                        let obj = SubCategoryModel.init(dict: dictdata)
+                        self.arrTypesOfSubCategory.append(obj.strSubCategoryName)
+                        self.arrTypesOfSubCategoryID.append(obj.strSubCategoryID)
+                    }
+                    
+                    self.tfSubCategory.optionArray = self.arrTypesOfSubCategory
+                    self.tfSubCategory.optionIds = self.arrTypesOfSubCategoryID
+                    
+                    self.setDropDown()
+                }
+            }else{
+                objWebServiceManager.hideIndicator()
+                objAlert.showAlert(message: message ?? "", title: "Alert", controller: self)
+                
+            }
+           
+            
+        } failure: { (Error) in
+            print(Error)
+            objWebServiceManager.hideIndicator()
+        }
+
+    
+   }
 }

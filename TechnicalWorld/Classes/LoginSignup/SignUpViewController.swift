@@ -32,7 +32,6 @@ class SignUpViewController: UIViewController,UINavigationControllerDelegate,GetL
     @IBOutlet weak var tfSelectGender: DropDown!
     @IBOutlet weak var tfSelectCategory: DropDown!
     
-    
     var imagePicker = UIImagePickerController()
     var pickedImage:UIImage?
     var datePicker = UIDatePicker()

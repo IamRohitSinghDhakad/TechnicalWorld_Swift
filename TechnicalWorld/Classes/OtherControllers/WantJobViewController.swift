@@ -244,6 +244,9 @@ extension WantJobViewController{
                 
                 print(response)
                
+                objAlert.showAlertCallBack(alertLeftBtn: "", alertRightBtn: "OK", title: "Success", message: "Job Posted Succesfully", controller: self) {
+                    self.onBackPressed()
+                }
                 
             }else{
                 objWebServiceManager.hideIndicator()

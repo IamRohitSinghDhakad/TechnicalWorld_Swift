@@ -53,6 +53,9 @@
 		6AFAF6F72622161200580F96 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFAF6F62622161200580F96 /* ForgotPasswordViewController.swift */; };
 		6AFAF6FA262217A200580F96 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFAF6F9262217A200580F96 /* WelcomeViewController.swift */; };
 		F900169826A435220088E46E /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F900169726A435210088E46E /* TableViewExtension.swift */; };
+		F910C08C273FC364001F897A /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F910C08B273FC364001F897A /* NotificationViewController.swift */; };
+		F910C08E273FC45E001F897A /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F910C08D273FC45E001F897A /* NotificationTableViewCell.swift */; };
+		F910C090273FE71D001F897A /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F910C08F273FE71D001F897A /* NotificationModel.swift */; };
 		F91E470A26342E9100E058F8 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91E470926342E9100E058F8 /* CategoryModel.swift */; };
 		F92488FF2650DD850052D457 /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92488FE2650DD850052D457 /* JobsViewController.swift */; };
 		F926A126263547B400F3EC52 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F926A125263547B400F3EC52 /* ProfileViewController.swift */; };
@@ -66,7 +69,9 @@
 		F94A08542647BB1200461D19 /* LocationPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F94A08522647BB1200461D19 /* LocationPicker.storyboard */; };
 		F94A088B2647C8B000461D19 /* RDTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A088A2647C8B000461D19 /* RDTextView.swift */; };
 		F98D015226A45B0C00F4F744 /* BidsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D015126A45B0C00F4F744 /* BidsListModel.swift */; };
+		F9BD5434274034EA00E7A811 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BD5433274034EA00E7A811 /* AboutUsViewController.swift */; };
 		F9D450AC263EB92B00B7AE88 /* AddJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D450AB263EB92B00B7AE88 /* AddJobViewController.swift */; };
+		F9E7567027611CF4004DF239 /* WelcomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7566F27611CF4004DF239 /* WelcomeModel.swift */; };
 		F9EF23C426485C1000E4D45B /* DetailsSubCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EF23C326485C1000E4D45B /* DetailsSubCategoryModel.swift */; };
 		F9FB30B626255DF2003BA51C /* OfferJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FB30B526255DF2003BA51C /* OfferJobViewController.swift */; };
 		F9FB30BA26255E79003BA51C /* RentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FB30B926255E79003BA51C /* RentViewController.swift */; };
@@ -95,7 +100,6 @@
 		6A5CACD32623406400C66434 /* SWRevealViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SWRevealViewController+Extensions.swift"; sourceTree = "<group>"; };
 		6A5CACD42623406400C66434 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		6A5CACD52623406400C66434 /* FillNow-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FillNow-Bridging-Header.h"; sourceTree = "<group>"; };
-		6A5CACDB2623409100C66434 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		6A5CACDE2623411500C66434 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6A5CACF42623524E00C66434 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		6A5CACF82623530200C66434 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -130,6 +134,9 @@
 		9D0FCA3B15E4FD932A06200D /* Pods-TechnicalWorld.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechnicalWorld.debug.xcconfig"; path = "Target Support Files/Pods-TechnicalWorld/Pods-TechnicalWorld.debug.xcconfig"; sourceTree = "<group>"; };
 		B66831B965DC84346887165F /* Pods-TechnicalWorld.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechnicalWorld.release.xcconfig"; path = "Target Support Files/Pods-TechnicalWorld/Pods-TechnicalWorld.release.xcconfig"; sourceTree = "<group>"; };
 		F900169726A435210088E46E /* TableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewExtension.swift; sourceTree = "<group>"; };
+		F910C08B273FC364001F897A /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		F910C08D273FC45E001F897A /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		F910C08F273FE71D001F897A /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		F91E470926342E9100E058F8 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		F92488FE2650DD850052D457 /* JobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsViewController.swift; sourceTree = "<group>"; };
 		F926A125263547B400F3EC52 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -143,7 +150,10 @@
 		F94A08532647BB1200461D19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LocationPicker.storyboard; sourceTree = "<group>"; };
 		F94A088A2647C8B000461D19 /* RDTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDTextView.swift; sourceTree = "<group>"; };
 		F98D015126A45B0C00F4F744 /* BidsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidsListModel.swift; sourceTree = "<group>"; };
+		F9BD5433274034EA00E7A811 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		F9D450AB263EB92B00B7AE88 /* AddJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJobViewController.swift; sourceTree = "<group>"; };
+		F9DE0766273FF4740083C4D2 /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		F9E7566F27611CF4004DF239 /* WelcomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeModel.swift; sourceTree = "<group>"; };
 		F9EF23C326485C1000E4D45B /* DetailsSubCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsSubCategoryModel.swift; sourceTree = "<group>"; };
 		F9FB30B526255DF2003BA51C /* OfferJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferJobViewController.swift; sourceTree = "<group>"; };
 		F9FB30B926255E79003BA51C /* RentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentViewController.swift; sourceTree = "<group>"; };
@@ -201,6 +211,8 @@
 				F926A175263597A100F3EC52 /* ServiceImagesModel.swift */,
 				F9EF23C326485C1000E4D45B /* DetailsSubCategoryModel.swift */,
 				F98D015126A45B0C00F4F744 /* BidsListModel.swift */,
+				F910C08F273FE71D001F897A /* NotificationModel.swift */,
+				F9E7566F27611CF4004DF239 /* WelcomeModel.swift */,
 			);
 			path = ModelClass;
 			sourceTree = "<group>";
@@ -269,7 +281,7 @@
 		6A5CACDA2623407000C66434 /* BridgingHeader */ = {
 			isa = PBXGroup;
 			children = (
-				6A5CACDB2623409100C66434 /* BridgingHeader.h */,
+				F9DE0766273FF4740083C4D2 /* BridgingHeader.h */,
 			);
 			path = BridgingHeader;
 			sourceTree = "<group>";
@@ -286,6 +298,7 @@
 				F926A125263547B400F3EC52 /* ProfileViewController.swift */,
 				F926A17826359C4200F3EC52 /* ShowImageViewController.swift */,
 				F9D450AB263EB92B00B7AE88 /* AddJobViewController.swift */,
+				F910C08B273FC364001F897A /* NotificationViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -297,6 +310,7 @@
 				6A7C6252262459BE00C82894 /* DetailCollectionViewCell.swift */,
 				6A832D04262490120070FA90 /* ContactListTableViewCell.swift */,
 				6A832D0D26249E500070FA90 /* SubCategoryTableViewCell.swift */,
+				F910C08D273FC45E001F897A /* NotificationTableViewCell.swift */,
 			);
 			path = CellClasses;
 			sourceTree = "<group>";
@@ -407,6 +421,7 @@
 				6AF56508262C5A3E00F30263 /* AddJobPostViewController.swift */,
 				6AF5650B262C65EA00F30263 /* WantJobViewController.swift */,
 				F92488FE2650DD850052D457 /* JobsViewController.swift */,
+				F9BD5433274034EA00E7A811 /* AboutUsViewController.swift */,
 			);
 			path = OtherControllers;
 			sourceTree = "<group>";
@@ -581,6 +596,7 @@
 				6A7C6250262459AB00C82894 /* DetailViewController.swift in Sources */,
 				6AFAF6FA262217A200580F96 /* WelcomeViewController.swift in Sources */,
 				6A2A2739262B40B800CF7418 /* SignUpModel.swift in Sources */,
+				F9E7567027611CF4004DF239 /* WelcomeModel.swift in Sources */,
 				F9EF23C426485C1000E4D45B /* DetailsSubCategoryModel.swift in Sources */,
 				6A2A272E262B3E2B00CF7418 /* WebServiceManager.swift in Sources */,
 				F9FB30C826255F98003BA51C /* GeneralAccountantViewController.swift in Sources */,
@@ -590,6 +606,7 @@
 				6A3D280B2622DFD800DF3105 /* Extensions.swift in Sources */,
 				6AFAF6BB2621E87300580F96 /* AppDelegate.swift in Sources */,
 				6A7FCAA926274AD000939BF0 /* BidDetailViewController.swift in Sources */,
+				F910C08E273FC45E001F897A /* NotificationTableViewCell.swift in Sources */,
 				F94A084D2647B7CE00461D19 /* LocationSearchResultsViewController.swift in Sources */,
 				6A71CD062629F8C2007F6200 /* BidsTableViewCell.swift in Sources */,
 				F900169826A435220088E46E /* TableViewExtension.swift in Sources */,
@@ -601,6 +618,7 @@
 				6A7C6253262459BE00C82894 /* DetailCollectionViewCell.swift in Sources */,
 				6A5CACD82623406400C66434 /* SWRevealViewController.m in Sources */,
 				F9FB30C226255EFF003BA51C /* RentDetailViewController.swift in Sources */,
+				F910C090273FE71D001F897A /* NotificationModel.swift in Sources */,
 				6A71CD002629F0F6007F6200 /* SubmitOfferViewController.swift in Sources */,
 				6AFAF6BD2621E87300580F96 /* SceneDelegate.swift in Sources */,
 				6A2A2734262B3FF200CF7418 /* UserDefaultExtension.swift in Sources */,
@@ -613,8 +631,10 @@
 				6A3D28092622DFD800DF3105 /* MessageConstant.swift in Sources */,
 				F94A08502647B7CE00461D19 /* SearchHistoryManager.swift in Sources */,
 				6A5CACD62623406400C66434 /* RevealViewController.swift in Sources */,
+				F910C08C273FC364001F897A /* NotificationViewController.swift in Sources */,
 				6A832D0226248FF60070FA90 /* ContactListViewController.swift in Sources */,
 				6A832D05262490120070FA90 /* ContactListTableViewCell.swift in Sources */,
+				F9BD5434274034EA00E7A811 /* AboutUsViewController.swift in Sources */,
 				F926A17926359C4200F3EC52 /* ShowImageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -771,8 +791,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7E7WKW772Q;
+				DEVELOPMENT_TEAM = C4F68K28HP;
 				INFOPLIST_FILE = TechnicalWorld/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -781,7 +802,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.TechnicalWorld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/paras/TechnicalWorld_Swift/TechnicalWorld/BridgingHeader/BridgingHeader.h;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = TechnicalWorld/BridgingHeader/BridgingHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -793,8 +815,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7E7WKW772Q;
+				DEVELOPMENT_TEAM = C4F68K28HP;
 				INFOPLIST_FILE = TechnicalWorld/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -803,7 +826,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.TechnicalWorld;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/paras/TechnicalWorld_Swift/TechnicalWorld/BridgingHeader/BridgingHeader.h;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = TechnicalWorld/BridgingHeader/BridgingHeader.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
