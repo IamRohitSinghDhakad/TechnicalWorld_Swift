@@ -57,13 +57,11 @@ class AddBidViewController: UIViewController,UINavigationControllerDelegate {
     
     
     func setData(){
-        
         let profilePic = objAppShareData.UserDetail.strProfilePicture
         if profilePic != "" {
             let url = URL(string: profilePic)
             self.imgVwUser.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "logo"))
         }
-      
         self.lblUserName.text = objAppShareData.UserDetail.strName
         self.lblEmail.text = objAppShareData.UserDetail.strEmail
     }
@@ -84,6 +82,7 @@ class AddBidViewController: UIViewController,UINavigationControllerDelegate {
             self.call_SubCategory(strCategoryID: "\(id)")
             self.strSelectedCategoryID = "\(id)"
             self.tfSelecteCategory.text = selectedText
+            self.tfSubCategory.text = ""
         }
         
         self.tfSubCategory.didSelect{(selectedText , index ,id) in
@@ -428,7 +427,15 @@ extension AddBidViewController: UIImagePickerControllerDelegate{
                 
                 print(response)
                
+                self.arrTypesOfSubCategory.removeAll()
+                self.arrTypesOfSubCategoryID.removeAll()
+                self.tfSubCategory.optionArray.removeAll()
+                self.tfSubCategory.optionIds?.removeAll()
+                self.tfSubCategory.selectedRowColor = UIColor.clear
+                self.tfSubCategory.checkMarkEnabled = false
+                
                 if let arrData  = response["result"] as? [[String:Any]]{
+                    
                     for dictdata in arrData{
                         
                         let obj = SubCategoryModel.init(dict: dictdata)
