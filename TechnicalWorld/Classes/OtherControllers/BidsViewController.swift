@@ -134,7 +134,9 @@ extension BidsViewController: UITableViewDelegate,UITableViewDataSource{
         cell.lblBidBy.text = "By:- \(obj?.strName ?? "")"
         cell.lblBidCount.text = "Bid : \(obj?.strBidsCount ?? "")"
                 
+        cell.btnThreeDot.tag = indexPath.row
         cell.btnThreeDot.addTarget(self, action: #selector(openActionSheet), for: .touchUpInside)
+        
         return cell
     }
     
@@ -143,11 +145,12 @@ extension BidsViewController: UITableViewDelegate,UITableViewDataSource{
         let alert = UIAlertController(title: "", message: "Please Select an Option", preferredStyle: .actionSheet)
             
             alert.addAction(UIAlertAction(title: "Edit", style: .default , handler:{ (UIAlertAction)in
-                
+                print(sender.tag)
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddBidViewController")as! AddBidViewController
                 vc.strBidID = self.arrMyBidList[sender.tag].strBid_id
                 vc.strSubCategoryID = self.strCategoryID
                 vc.isComingFromEdit = true
+                vc.objEditBidData = self.arrMyBidList[sender.tag]
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             }))
@@ -209,12 +212,15 @@ extension BidsViewController{
             if status == MessageConstant.k_StatusCode{
                 
                 print(response)
+                
+                self.arrBidList.removeAll()
+                self.arrMyBidList.removeAll()
                
                 if let arrData  = response["result"] as? [[String:Any]]{
                     for dictdata in arrData{
                         
                         let obj = BidsListModel.init(dict: dictdata)
-                        if obj.strBid_id == strUserID{
+                        if obj.strUserIDBidPost == strUserID{
                             self.arrMyBidList.append(obj)
                         }else{
                             self.arrBidList.append(obj)

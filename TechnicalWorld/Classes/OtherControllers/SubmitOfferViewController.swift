@@ -17,6 +17,9 @@ class SubmitOfferViewController: UIViewController {
     @IBOutlet weak var txtVw: RDTextView!
     @IBOutlet weak var tfPrice: UITextField!
     
+    var strBidID:String = ""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,8 +47,60 @@ class SubmitOfferViewController: UIViewController {
         onBackPressed()
     }
     @IBAction func btnOnContinue(_ sender: Any) {
-        pushVc(viewConterlerId: "AddBidViewController")
+        self.call_SubmitBid(strBidID: self.strBidID, strPrice: self.tfPrice.text!, strDescription: self.txtVw.text!)
     }
-  
+}
 
+
+extension SubmitOfferViewController{
+    
+    func call_SubmitBid(strBidID:String,strPrice:String,strDescription:String){
+        
+        if !objWebServiceManager.isNetworkAvailable(){
+            objWebServiceManager.hideIndicator()
+            objAlert.showAlert(message: "No Internet Connection", title: "Alert", controller: self)
+            return
+        }
+    
+       objWebServiceManager.showIndicator()
+        
+        let param = ["bid_id":strBidID,
+                     "user_id":objAppShareData.UserDetail.strUserId,
+                     "price":strPrice,
+                     "description":strDescription] as [String:Any]
+        
+     print(param)
+        
+        objWebServiceManager.requestPost(strURL: WsUrl.url_OfferBid, queryParams: [:], params: param, strCustomValidation: "", showIndicator: false) { response in
+
+            objWebServiceManager.hideIndicator()
+            let status = (response["status"] as? Int)
+            let message = (response["message"] as? String)
+            
+            if status == MessageConstant.k_StatusCode{
+                
+                print(response)
+               
+                if let dictData  = response["result"] as? [String:Any]{
+                   
+      
+                    objAlert.showAlertCallBack(alertLeftBtn: "", alertRightBtn: "OK", title: "Success", message: "Your bid offer submit succesfully.", controller: self) {
+                        self.onBackPressed()
+                    }
+                    
+                }
+            }else{
+                objWebServiceManager.hideIndicator()
+                objAlert.showAlert(message: message ?? "", title: "Alert", controller: self)
+                
+            }
+           
+            
+        } failure: { (Error) in
+            print(Error)
+            objWebServiceManager.hideIndicator()
+        }
+
+    
+   }
 }

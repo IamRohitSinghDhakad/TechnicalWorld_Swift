@@ -10,6 +10,7 @@ import UIKit
 class BidDetailViewController: UIViewController {
 
     var objData : BidsListModel?
+    
     @IBOutlet var imgVwBid: UIImageView!
     @IBOutlet var timeRemaning: UILabel!
     @IBOutlet var lblSubmittedOffer: UILabel!
@@ -32,20 +33,21 @@ class BidDetailViewController: UIViewController {
             let url = URL(string: profilePic!)
             self.imgVwBid.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "logo"))
         }
+        
         self.timeRemaning.text = "Days remaning - \(objData?.strDuration ?? "")"
         self.lblDescription.text = objData?.strTitle
         self.lblSubmittedOffer.text = objData?.strSubmittedOffered
         self.lblBidBy.text = objData?.strName
-     
-        
-        
     }
 
     @IBAction func btnBackOnHeader(_ sender: Any) {
         onBackPressed()
     }
+    
     @IBAction func btnOnSubmittedOffer(_ sender: Any) {
-        pushVc(viewConterlerId: "SubmitOfferViewController")
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SubmitOfferViewController")as! SubmitOfferViewController
+        vc.strBidID = objData!.strBid_id 
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     

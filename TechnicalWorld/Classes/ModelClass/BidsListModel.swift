@@ -19,6 +19,9 @@ class BidsListModel: NSObject {
     var strSubmittedOffered : String = ""
     var strCategoryName : String = ""
     var strUserImage : String = ""
+    var strSubCategoryID : String = ""
+    var strSubCategoryName : String = ""
+    var strUserIDBidPost:String = ""
     
     
     init(dict : [String:Any]) {
@@ -39,6 +42,20 @@ class BidsListModel: NSObject {
             self.strDate = entrydt
         }
         
+        //=========== XX =============//
+        if let sub_category_id = dict["sub_category_id"] as? String{
+            self.strSubCategoryID = sub_category_id
+        }else  if let sub_category_id = dict["sub_category_id"] as? Int{
+            self.strSubCategoryID = "\(sub_category_id)"
+        }
+        
+        if let sub_category_name = dict["sub_category_name"] as? String{
+            self.strSubCategoryName = sub_category_name
+        }else  if let sub_category_name = dict["sub_category_name"] as? Int{
+            self.strSubCategoryName = "\(sub_category_name)"
+        }
+        //=========== XX =============//
+        
         
         if let name = dict["name"] as? String{
             self.strName = name
@@ -51,10 +68,17 @@ class BidsListModel: NSObject {
         }
         
         
-        if let user_id = dict["user_id"] as? String{
+        if let user_id = dict["bid_id"] as? String{
             self.strBid_id = user_id
-        }else if let user_id = dict["user_id"] as? Int{
+        }else if let user_id = dict["bid_id"] as? Int{
             self.strBid_id = "\(user_id)"
+        }
+        
+        
+        if let user_id = dict["user_id"] as? String{
+            self.strUserIDBidPost = user_id
+        }else if let user_id = dict["user_id"] as? Int{
+            self.strUserIDBidPost = "\(user_id)"
         }
         
         

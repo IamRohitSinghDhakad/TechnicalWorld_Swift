@@ -31,12 +31,11 @@ class AddBidViewController: UIViewController,UINavigationControllerDelegate {
     var arrTypesOfSubCategoryID = [Int]()
     var strBidID = ""
     var strSubCategoryID = ""
-    
     var strSelectedCategoryID = ""
     var strSelectedSubCategoryID = ""
-    
     var isComingFromEdit:Bool = false
     
+    var objEditBidData:BidsListModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,12 +46,32 @@ class AddBidViewController: UIViewController,UINavigationControllerDelegate {
         self.call_GetCategory()
       //  self.call_SubCategory(strCategoryID: self.strSubCategoryID)
         hideKeyboardWhenTappedAround()
+        
         if isComingFromEdit{
-            self.call_EditBid(strBidID: strBidID)
+            self.setEditData()
+            //self.call_EditBid(strBidID: strBidID)
         }
-    //
         self.setData()        
         // Do any additional setup after loading the view.
+    }
+    
+    func setEditData(){
+        let profilePic = objEditBidData?.strImageUrl
+        if profilePic != "" {
+            let url = URL(string: profilePic!)
+            self.imgVw.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "logo"))
+        }
+        self.txtVwDescriptioon.text = objEditBidData?.strTitle
+        self.tfSelecteCategory.text = objEditBidData?.strCategoryName
+        self.tfSelectDays.text = objEditBidData!.strDuration + " days"
+        
+        if objEditBidData?.strSubCategoryID == "0"{
+            self.vwSubCategory.isHidden = true
+        }else{
+            self.vwSubCategory.isHidden = false
+            self.strSelectedSubCategoryID = objEditBidData?.strSubCategoryID ?? "0"
+            self.tfSubCategory.text = objEditBidData?.strSubCategoryName
+        }
     }
     
     
@@ -212,11 +231,9 @@ extension AddBidViewController: UIImagePickerControllerDelegate{
         image.layer.masksToBounds = false
         image.layer.borderColor = color.cgColor
         image.layer.borderWidth = width
-        
     }
     
     func makeRounded() {
-        
         self.imgVwUser.layer.borderWidth = 0
         self.imgVwUser.layer.masksToBounds = false
         //self.imgUpload.layer.borderColor = UIColor.blackColor().CGColor
@@ -226,69 +243,80 @@ extension AddBidViewController: UIImagePickerControllerDelegate{
     
     //================= Edit Bid ==============//
     
-    func call_EditBid(strBidID:String){
-        
-        if !objWebServiceManager.isNetworkAvailable(){
-            objWebServiceManager.hideIndicator()
-            objAlert.showAlert(message: "No Internet Connection", title: "Alert", controller: self)
-            return
-        }
-    
-       objWebServiceManager.showIndicator()
-       
-        var dicrParam = [String:Any]()
-     
-        dicrParam = ["user_id":objAppShareData.UserDetail.strUserId,
-                     "my_id":strBidID]as [String:Any]
-        
-        objWebServiceManager.requestPost(strURL: WsUrl.url_PostEditBid, queryParams: [:], params: dicrParam, strCustomValidation: "", showIndicator: false) { (response) in
-            
-            objWebServiceManager.hideIndicator()
-            
-            let status = (response["status"] as? Int)
-            let message = (response["message"] as? String)
-            
-            if status == MessageConstant.k_StatusCode{
-                
-                if let arrData  = response["result"] as? [[String:Any]]{
-                    for dictdata in arrData{
-                        let obj = BidsListModel.init(dict: dictdata)
-                        
-                        self.txtVwDescriptioon.text = obj.strTitle
-                        self.tfSelectDays.text = obj.strDuration + " days"
-                        self.tfSelecteCategory.text = obj.strCategoryName
-                        
-                        let profilePic = obj.strImageUrl
-                        if profilePic != "" {
-                            let url = URL(string: profilePic)
-                            self.imgVw.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "logo"))
-                        }
-                        
-                        let profilePic1 = obj.strUserImage
-                        if profilePic1 != "" {
-                            let url = URL(string: profilePic1)
-                            self.imgVwUser.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "logo"))
-                        }
-                        
-                      //  self.arrBidDetails.append(obj)
-                    }
-                }
-                
-                print(response)
-               
-                
-            }else{
-                objWebServiceManager.hideIndicator()
-                objAlert.showAlert(message: message ?? "", title: "Alert", controller: self)
-                
-            }
-           
-            
-        } failure: { (Error) in
-            print(Error)
-            objWebServiceManager.hideIndicator()
-        }
-   }
+//    func call_EditBid(strBidID:String){
+//
+//        if !objWebServiceManager.isNetworkAvailable(){
+//            objWebServiceManager.hideIndicator()
+//            objAlert.showAlert(message: "No Internet Connection", title: "Alert", controller: self)
+//            return
+//        }
+//
+//       objWebServiceManager.showIndicator()
+//
+//        var dicrParam = [String:Any]()
+//
+//        dicrParam = ["user_id":objAppShareData.UserDetail.strUserId,
+//                     "my_id":strBidID]as [String:Any]
+//        print(dicrParam)
+//
+//        objWebServiceManager.requestPost(strURL: WsUrl.url_PostEditBid, queryParams: [:], params: dicrParam, strCustomValidation: "", showIndicator: false) { (response) in
+//
+//            objWebServiceManager.hideIndicator()
+//
+//            let status = (response["status"] as? Int)
+//            let message = (response["message"] as? String)
+//
+//            if status == MessageConstant.k_StatusCode{
+//
+//                if let arrData  = response["result"] as? [[String:Any]]{
+//                    for dictdata in arrData{
+//                        let obj = BidsListModel.init(dict: dictdata)
+//
+//                        self.txtVwDescriptioon.text = obj.strTitle
+//                        self.tfSelectDays.text = obj.strDuration + " days"
+//                        self.tfSelecteCategory.text = obj.strCategoryName
+//
+//
+//                        if obj.strSubCategoryID == "0"{
+//                            self.vwSubCategory.isHidden = true
+//                            self.strSelectedCategoryID = obj.strSubCategoryID
+//                            self.tfSubCategory.text = obj.strSubCategoryName
+//                        }else{
+//                            self.vwSubCategory.isHidden = false
+//                        }
+//
+//
+//                        let profilePic = obj.strImageUrl
+//                        if profilePic != "" {
+//                            let url = URL(string: profilePic)
+//                            self.imgVw.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "logo"))
+//                        }
+//
+//                        let profilePic1 = obj.strUserImage
+//                        if profilePic1 != "" {
+//                            let url = URL(string: profilePic1)
+//                            self.imgVwUser.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "logo"))
+//                        }
+//
+//                      //  self.arrBidDetails.append(obj)
+//                    }
+//                }
+//
+//                print(response)
+//
+//
+//            }else{
+//                objWebServiceManager.hideIndicator()
+//                objAlert.showAlert(message: message ?? "", title: "Alert", controller: self)
+//
+//            }
+//
+//
+//        } failure: { (Error) in
+//            print(Error)
+//            objWebServiceManager.hideIndicator()
+//        }
+//   }
     
     
     //=================XXXX====================//
@@ -306,12 +334,17 @@ extension AddBidViewController: UIImagePickerControllerDelegate{
     
         objWebServiceManager.showIndicator()
         
+        let fullName: String = strDuration
+        let fullNameArr = fullName.components(separatedBy: " ")
+        let finalString = fullNameArr[0]
+        print(finalString)
+        
         let dicrParam = ["bid_id":strBidId,
                          "user_id":objAppShareData.UserDetail.strUserId,
                          "category_id":strCategoryId,
                          "sub_category_id":strSubCategoryId,
                          "description":strDescription,
-                         "duration":strDuration] as [String:Any]
+                         "duration":finalString] as [String:Any]
         
         print(dicrParam)
         
