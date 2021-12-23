@@ -231,38 +231,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "31B9259F-6E6E-48EE-8217-C5789EFDA00B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TechnicalWorld/Classes/OtherControllers/BidDetailViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7880933F-C292-40C0-891E-2E84A6E47E4E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TechnicalWorld/Classes/OtherControllers/BidDetailViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "setData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "B4E1CD97-1E73-4555-9181-EFD091C9D0EC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -270,8 +238,8 @@
             filePath = "TechnicalWorld/Classes/OtherControllers/AddBidViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "285"
-            endingLineNumber = "285"
+            startingLineNumber = "291"
+            endingLineNumber = "291"
             landmarkName = "AddBidViewController"
             landmarkType = "21">
          </BreakpointContent>
@@ -286,8 +254,8 @@
             filePath = "TechnicalWorld/Classes/OtherControllers/AddBidViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "282"
-            endingLineNumber = "282"
+            startingLineNumber = "288"
+            endingLineNumber = "288"
             landmarkName = "AddBidViewController"
             landmarkType = "21">
          </BreakpointContent>
@@ -302,8 +270,8 @@
             filePath = "TechnicalWorld/Classes/OtherControllers/AddBidViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "260"
-            endingLineNumber = "260"
+            startingLineNumber = "266"
+            endingLineNumber = "266"
             landmarkName = "AddBidViewController"
             landmarkType = "21">
          </BreakpointContent>
@@ -311,23 +279,23 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3D06BC42-6AC9-4333-9418-547C17F4063B"
+            uuid = "CD422E60-0E70-41F5-AF25-732E6ADA1C85"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TechnicalWorld/Classes/OtherControllers/BidsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "openActionSheet(sender:)"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
+            landmarkName = "call_DeleteBid(strBidID:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CD422E60-0E70-41F5-AF25-732E6ADA1C85"
+            uuid = "42102FA2-CF09-4C52-ADBD-D4B81D6D9A23"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -343,16 +311,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "42102FA2-CF09-4C52-ADBD-D4B81D6D9A23"
+            uuid = "FCA3A472-2A10-4A73-93A6-A6808C1D420D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TechnicalWorld/Classes/OtherControllers/BidsViewController.swift"
+            filePath = "TechnicalWorld/Classes/OtherControllers/AddBidViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "266"
-            endingLineNumber = "266"
-            landmarkName = "call_DeleteBid(strBidID:)"
+            startingLineNumber = "345"
+            endingLineNumber = "345"
+            landmarkName = "call_AddBidWithoutImage(strBidId:strCategoryId:strSubCategoryId:strDescription:strDuration:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4127E454-7085-4174-AB40-9891C577C6C2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TechnicalWorld/Classes/OtherControllers/AddBidViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "354"
+            endingLineNumber = "354"
+            landmarkName = "call_AddBidWithoutImage(strBidId:strCategoryId:strSubCategoryId:strDescription:strDuration:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E5A1DDC8-9D67-44BF-82AA-B21DE2BBAC20"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TechnicalWorld/Classes/OtherControllers/AddBidViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "363"
+            endingLineNumber = "363"
+            landmarkName = "call_AddBidWithoutImage(strBidId:strCategoryId:strSubCategoryId:strDescription:strDuration:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

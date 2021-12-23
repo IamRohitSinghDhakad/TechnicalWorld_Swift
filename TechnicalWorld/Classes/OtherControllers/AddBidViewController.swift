@@ -39,6 +39,7 @@ class AddBidViewController: UIViewController,UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.vwSubCategory.isHidden = true
         self.tfSelectDays.delegate = self
         self.tfSelecteCategory.delegate = self
@@ -64,6 +65,7 @@ class AddBidViewController: UIViewController,UINavigationControllerDelegate {
         self.txtVwDescriptioon.text = objEditBidData?.strTitle
         self.tfSelecteCategory.text = objEditBidData?.strCategoryName
         self.tfSelectDays.text = objEditBidData!.strDuration + " days"
+        self.strSelectedCategoryID = objEditBidData?.strCategoryID ?? "0"
         
         if objEditBidData?.strSubCategoryID == "0"{
             self.vwSubCategory.isHidden = true
@@ -128,9 +130,13 @@ class AddBidViewController: UIViewController,UINavigationControllerDelegate {
     }
     
     @IBAction func btnOnContinue(_ sender: Any) {
-        
-        self.call_AddBid(strBidId: self.strBidID, strCategoryId: self.strSelectedCategoryID, strSubCategoryId: strSelectedSubCategoryID, strDescription: self.txtVwDescriptioon.text!, strDuration: self.tfSelectDays.text!)
+        if self.pickedImage == nil{
+            self.call_AddBidWithoutImage(strBidId: self.strBidID, strCategoryId: self.strSelectedCategoryID, strSubCategoryId: strSelectedSubCategoryID, strDescription: self.txtVwDescriptioon.text!, strDuration: self.tfSelectDays.text!)
+        }else{
+            self.call_AddBid(strBidId: self.strBidID, strCategoryId: self.strSelectedCategoryID, strSubCategoryId: strSelectedSubCategoryID, strDescription: self.txtVwDescriptioon.text!, strDuration: self.tfSelectDays.text!)
+        }
     }
+    
     /*
     // MARK: - Navigation
 
@@ -322,6 +328,60 @@ extension AddBidViewController: UIImagePickerControllerDelegate{
     //=================XXXX====================//
 //https://technicalworld.ae/admin/index.php/api/get_category
     
+    
+    func call_AddBidWithoutImage(strBidId:String, strCategoryId:String, strSubCategoryId: String, strDescription: String, strDuration:String){
+        
+        if !objWebServiceManager.isNetworkAvailable(){
+            objWebServiceManager.hideIndicator()
+            objAlert.showAlert(message: "No Internet Connection", title: "Alert", controller: self)
+            return
+        }
+    
+        objWebServiceManager.showIndicator()
+        
+        let fullName: String = strDuration
+        let fullNameArr = fullName.components(separatedBy: " ")
+        let finalString = fullNameArr[0]
+        print(finalString)
+        
+        let dicrParam = ["bid_id":strBidId,
+                         "user_id":objAppShareData.UserDetail.strUserId,
+                         "category_id":strCategoryId,
+                         "sub_category_id":strSubCategoryId,
+                         "description":strDescription,
+                         "duration":finalString] as [String:Any]
+        
+        print(dicrParam)
+        
+        objWebServiceManager.requestPost(strURL: WsUrl.url_AddBid, queryParams: [:], params: dicrParam, strCustomValidation: "", showIndicator: true) { response in
+
+            objWebServiceManager.hideIndicator()
+            
+            let status = (response["status"] as? Int)
+            let message = (response["message"] as? String)
+            
+            print(response)
+            
+            if status == MessageConstant.k_StatusCode{
+      
+                print(response)
+                
+                objAlert.showAlertCallBack(alertLeftBtn: "", alertRightBtn: "OK", title: "Success", message: "Bid Placed Succsfully", controller: self) {
+                    self.onBackPressed()
+                }
+                
+            }else{
+                objWebServiceManager.hideIndicator()
+                objAlert.showAlert(message: message ?? "", title: "Alert", controller: self)
+                
+            }
+           
+            
+        } failure: { (Error) in
+            print(Error)
+            objWebServiceManager.hideIndicator()
+        }
+   }
     
     
     func call_AddBid(strBidId:String, strCategoryId:String, strSubCategoryId: String, strDescription: String, strDuration:String){

@@ -46,7 +46,7 @@ class BidDetailViewController: UIViewController {
     
     @IBAction func btnOnSubmittedOffer(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "SubmitOfferViewController")as! SubmitOfferViewController
-        vc.strBidID = objData!.strBid_id 
+        vc.strBidID = objData!.strBid_id
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

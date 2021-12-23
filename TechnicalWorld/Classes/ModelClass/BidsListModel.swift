@@ -22,6 +22,7 @@ class BidsListModel: NSObject {
     var strSubCategoryID : String = ""
     var strSubCategoryName : String = ""
     var strUserIDBidPost:String = ""
+    var strCategoryID:String = ""
     
     
     init(dict : [String:Any]) {
@@ -43,6 +44,13 @@ class BidsListModel: NSObject {
         }
         
         //=========== XX =============//
+        if let strCategoryID = dict["category_id"] as? String{
+            self.strCategoryID = strCategoryID
+        }else  if let strCategoryID = dict["category_id"] as? Int{
+            self.strCategoryID = "\(strCategoryID)"
+        }
+        
+        
         if let sub_category_id = dict["sub_category_id"] as? String{
             self.strSubCategoryID = sub_category_id
         }else  if let sub_category_id = dict["sub_category_id"] as? Int{

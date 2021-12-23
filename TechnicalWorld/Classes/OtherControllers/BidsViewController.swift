@@ -25,17 +25,19 @@ class BidsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.vwContainAddBid.isHidden = true
-        
         self.tblVw.delegate = self
         self.tblVw.dataSource = self
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         let userID = objAppShareData.UserDetail.strUserId
         if userID != ""{
             self.call_getBids(strUserID: userID, strMyID: userID)
         }
-        // Do any additional setup after loading the view.
     }
     
     
@@ -145,7 +147,7 @@ extension BidsViewController: UITableViewDelegate,UITableViewDataSource{
         let alert = UIAlertController(title: "", message: "Please Select an Option", preferredStyle: .actionSheet)
             
             alert.addAction(UIAlertAction(title: "Edit", style: .default , handler:{ (UIAlertAction)in
-                print(sender.tag)
+        
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddBidViewController")as! AddBidViewController
                 vc.strBidID = self.arrMyBidList[sender.tag].strBid_id
                 vc.strSubCategoryID = self.strCategoryID
@@ -175,15 +177,19 @@ extension BidsViewController: UITableViewDelegate,UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "BidDetailViewController")as! BidDetailViewController
+        
+    
+        
         
         if self.myBidClicked == true{
-            vc.objData = self.arrMyBidList[indexPath.row]
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "SubmittedBidsViewController")as! SubmittedBidsViewController
+            self.navigationController?.pushViewController(vc, animated: true)
         }else{
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "BidDetailViewController")as! BidDetailViewController
             vc.objData = self.arrBidList[indexPath.row]
+            self.navigationController?.pushViewController(vc, animated: true)
         }
-      
-        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
 }
 
