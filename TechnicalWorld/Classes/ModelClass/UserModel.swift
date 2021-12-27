@@ -18,6 +18,10 @@ class UserModel: NSObject {
     var strPhoneNumber :String = ""
     var strLatitude :String = ""
     var strLongitude :String = ""
+    var strDescription :String = ""
+    var strPrice : String = ""
+    var strRatingCompany : String = ""
+    var strRatingIndividual : String = ""
     
     
     init(dict : [String:Any]) {
@@ -36,6 +40,12 @@ class UserModel: NSObject {
             self.strPhoneNumber = phoneNumber
         }else if let phoneNumber = dict["mobile"] as? Int{
             self.strPhoneNumber = "\(phoneNumber)"
+        }
+        
+        if let price = dict["price"] as? String{
+            self.strPrice = price + "AED"
+        }else if let price = dict["price"] as? Int{
+            self.strPrice = "\(price)" + "AED"
         }
         
         if let userImage = dict["user_image"] as? String{
@@ -57,5 +67,21 @@ class UserModel: NSObject {
         if let longitude = dict["lon"] as? String{
             self.strLongitude = longitude
         }
+        
+        if let description = dict["description"] as? String{
+            self.strDescription = description
+        }
+        
+        if let rating_company = dict["rating_company"] as? String{
+            self.strRatingCompany = rating_company
+        }
+        
+        if let rating_individual = dict["rating_individual"] as? String{
+            self.strRatingIndividual = rating_individual
+        }
+        
+        
+        
+        
     }
 }

@@ -7,11 +7,29 @@
 
 import UIKit
 
-class GiveReviesViewController: UIViewController {
+class GiveReviesViewController: UIViewController,FloatRatingViewDelegate {
 
+    
+    var objUser:UserModel?
+    @IBOutlet var imgVwUser: UIImageView!
+    @IBOutlet var lblUserName: UILabel!
+    @IBOutlet var lblHowWas: UILabel!
+    @IBOutlet var ratingView: FloatRatingView!
+    @IBOutlet var txtVwReview: RDTextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+      //  self.ratingView.emptyImage = ima
+        
+        let profilePic = objUser?.strUserImage
+        if profilePic != "" {
+            let url = URL(string: profilePic!)
+            self.imgVwUser.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "logo"))
+        }
+        self.lblUserName.text = objUser?.strUserName
+        self.lblHowWas.text = "How was the experience with \(objUser?.strUserName ?? "")"
+        
         // Do any additional setup after loading the view.
     }
     
@@ -24,4 +42,10 @@ class GiveReviesViewController: UIViewController {
         pushVc(viewConterlerId: "AddJobPostViewController")
     }
     
+    
+    func floatRatingView(_ ratingView: FloatRatingView, didUpdate rating: Double) {
+        print(rating)
+        
+        
+    }
 }

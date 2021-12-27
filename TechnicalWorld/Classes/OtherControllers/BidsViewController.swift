@@ -183,6 +183,7 @@ extension BidsViewController: UITableViewDelegate,UITableViewDataSource{
         
         if self.myBidClicked == true{
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "SubmittedBidsViewController")as! SubmittedBidsViewController
+            vc.strBidId = self.arrMyBidList[indexPath.row].strBid_id
             self.navigationController?.pushViewController(vc, animated: true)
         }else{
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "BidDetailViewController")as! BidDetailViewController

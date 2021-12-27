@@ -64,6 +64,7 @@
 		F926A17326358BD900F3EC52 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F926A17226358BD900F3EC52 /* UserModel.swift */; };
 		F926A176263597A100F3EC52 /* ServiceImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F926A175263597A100F3EC52 /* ServiceImagesModel.swift */; };
 		F926A17926359C4200F3EC52 /* ShowImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F926A17826359C4200F3EC52 /* ShowImageViewController.swift */; };
+		F92C4E252776F6290067D97B /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92C4E242776F6290067D97B /* FloatRatingView.swift */; };
 		F94A084D2647B7CE00461D19 /* LocationSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A08492647B7CE00461D19 /* LocationSearchResultsViewController.swift */; };
 		F94A084E2647B7CE00461D19 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A084A2647B7CE00461D19 /* Location.swift */; };
 		F94A084F2647B7CE00461D19 /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A084B2647B7CE00461D19 /* LocationPickerViewController.swift */; };
@@ -71,7 +72,11 @@
 		F94A08542647BB1200461D19 /* LocationPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F94A08522647BB1200461D19 /* LocationPicker.storyboard */; };
 		F94A088B2647C8B000461D19 /* RDTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A088A2647C8B000461D19 /* RDTextView.swift */; };
 		F98D015226A45B0C00F4F744 /* BidsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D015126A45B0C00F4F744 /* BidsListModel.swift */; };
+		F99952DD2778DC4E0057F13E /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99952DC2778DC4E0057F13E /* ReviewTableViewCell.swift */; };
+		F99952DF2778DE670057F13E /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99952DE2778DE670057F13E /* ReviewModel.swift */; };
 		F9BD5434274034EA00E7A811 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BD5433274034EA00E7A811 /* AboutUsViewController.swift */; };
+		F9CACAF5277602680052F4D8 /* SubmittedBidsUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CACAF4277602680052F4D8 /* SubmittedBidsUsersViewController.swift */; };
+		F9CACAF7277620680052F4D8 /* ReviewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CACAF6277620680052F4D8 /* ReviewListViewController.swift */; };
 		F9D450AC263EB92B00B7AE88 /* AddJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D450AB263EB92B00B7AE88 /* AddJobViewController.swift */; };
 		F9E7567027611CF4004DF239 /* WelcomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7566F27611CF4004DF239 /* WelcomeModel.swift */; };
 		F9EF23C426485C1000E4D45B /* DetailsSubCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EF23C326485C1000E4D45B /* DetailsSubCategoryModel.swift */; };
@@ -147,6 +152,7 @@
 		F926A17226358BD900F3EC52 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		F926A175263597A100F3EC52 /* ServiceImagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceImagesModel.swift; sourceTree = "<group>"; };
 		F926A17826359C4200F3EC52 /* ShowImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImageViewController.swift; sourceTree = "<group>"; };
+		F92C4E242776F6290067D97B /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
 		F94A08492647B7CE00461D19 /* LocationSearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchResultsViewController.swift; sourceTree = "<group>"; };
 		F94A084A2647B7CE00461D19 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		F94A084B2647B7CE00461D19 /* LocationPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationPickerViewController.swift; sourceTree = "<group>"; };
@@ -154,7 +160,11 @@
 		F94A08532647BB1200461D19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LocationPicker.storyboard; sourceTree = "<group>"; };
 		F94A088A2647C8B000461D19 /* RDTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDTextView.swift; sourceTree = "<group>"; };
 		F98D015126A45B0C00F4F744 /* BidsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidsListModel.swift; sourceTree = "<group>"; };
+		F99952DC2778DC4E0057F13E /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		F99952DE2778DE670057F13E /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
 		F9BD5433274034EA00E7A811 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		F9CACAF4277602680052F4D8 /* SubmittedBidsUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmittedBidsUsersViewController.swift; sourceTree = "<group>"; };
+		F9CACAF6277620680052F4D8 /* ReviewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListViewController.swift; sourceTree = "<group>"; };
 		F9D450AB263EB92B00B7AE88 /* AddJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJobViewController.swift; sourceTree = "<group>"; };
 		F9DE0766273FF4740083C4D2 /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		F9E7566F27611CF4004DF239 /* WelcomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeModel.swift; sourceTree = "<group>"; };
@@ -217,6 +227,7 @@
 				F98D015126A45B0C00F4F744 /* BidsListModel.swift */,
 				F910C08F273FE71D001F897A /* NotificationModel.swift */,
 				F9E7566F27611CF4004DF239 /* WelcomeModel.swift */,
+				F99952DE2778DE670057F13E /* ReviewModel.swift */,
 			);
 			path = ModelClass;
 			sourceTree = "<group>";
@@ -263,6 +274,7 @@
 		6A5CACCF2623403900C66434 /* Resorces */ = {
 			isa = PBXGroup;
 			children = (
+				F92C4E232776F6290067D97B /* FloatingRatingView */,
 				F94A08892647C89E00461D19 /* RDTextView */,
 				6A2A272B262B3E2B00CF7418 /* WebServiceManager */,
 				6A5CACD02623406400C66434 /* SWRevealController */,
@@ -388,6 +400,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F92C4E232776F6290067D97B /* FloatingRatingView */ = {
+			isa = PBXGroup;
+			children = (
+				F92C4E242776F6290067D97B /* FloatRatingView.swift */,
+			);
+			path = FloatingRatingView;
+			sourceTree = "<group>";
+		};
 		F94A08482647B7CE00461D19 /* LocationPicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -427,6 +447,8 @@
 				F92488FE2650DD850052D457 /* JobsViewController.swift */,
 				F9BD5433274034EA00E7A811 /* AboutUsViewController.swift */,
 				F91E0B0A277495DC00C9ECCD /* SubmittedBidsViewController.swift */,
+				F9CACAF4277602680052F4D8 /* SubmittedBidsUsersViewController.swift */,
+				F9CACAF6277620680052F4D8 /* ReviewListViewController.swift */,
 			);
 			path = OtherControllers;
 			sourceTree = "<group>";
@@ -438,6 +460,7 @@
 				F9FB30C426255F19003BA51C /* RentDetailCollectionViewCell.swift */,
 				6A71CD052629F8C2007F6200 /* BidsTableViewCell.swift */,
 				F91E0B0C277496F400C9ECCD /* SubmittedTableViewCell.swift */,
+				F99952DC2778DC4E0057F13E /* ReviewTableViewCell.swift */,
 			);
 			path = CellClasses;
 			sourceTree = "<group>";
@@ -581,8 +604,10 @@
 				6AF564EF262C52CE00F30263 /* AddPostViewController.swift in Sources */,
 				6A3D28262622E97B00DF3105 /* CustomUIView.swift in Sources */,
 				6A3D28082622DFD800DF3105 /* AlertViewController.swift in Sources */,
+				F92C4E252776F6290067D97B /* FloatRatingView.swift in Sources */,
 				F9D450AC263EB92B00B7AE88 /* AddJobViewController.swift in Sources */,
 				F98D015226A45B0C00F4F744 /* BidsListModel.swift in Sources */,
+				F99952DF2778DE670057F13E /* ReviewModel.swift in Sources */,
 				6A5CACDF2623411500C66434 /* HomeViewController.swift in Sources */,
 				F92488FF2650DD850052D457 /* JobsViewController.swift in Sources */,
 				6A5CACA02623174300C66434 /* SideMenuViewController.swift in Sources */,
@@ -616,6 +641,7 @@
 				F910C08E273FC45E001F897A /* NotificationTableViewCell.swift in Sources */,
 				F94A084D2647B7CE00461D19 /* LocationSearchResultsViewController.swift in Sources */,
 				6A71CD062629F8C2007F6200 /* BidsTableViewCell.swift in Sources */,
+				F9CACAF7277620680052F4D8 /* ReviewListViewController.swift in Sources */,
 				F900169826A435220088E46E /* TableViewExtension.swift in Sources */,
 				F91E0B0D277496F400C9ECCD /* SubmittedTableViewCell.swift in Sources */,
 				6A71CD032629F124007F6200 /* AddBidViewController.swift in Sources */,
@@ -630,11 +656,13 @@
 				6A71CD002629F0F6007F6200 /* SubmitOfferViewController.swift in Sources */,
 				6AFAF6BD2621E87300580F96 /* SceneDelegate.swift in Sources */,
 				6A2A2734262B3FF200CF7418 /* UserDefaultExtension.swift in Sources */,
+				F9CACAF5277602680052F4D8 /* SubmittedBidsUsersViewController.swift in Sources */,
 				6A832D0E26249E500070FA90 /* SubCategoryTableViewCell.swift in Sources */,
 				6AF564E9262C3E8C00F30263 /* GiveReviesViewController.swift in Sources */,
 				6A5CACF92623530200C66434 /* SideMenuTableViewCell.swift in Sources */,
 				6A832D0B26249E340070FA90 /* SubCategoryListViewController.swift in Sources */,
 				6AFAF6F72622161200580F96 /* ForgotPasswordViewController.swift in Sources */,
+				F99952DD2778DC4E0057F13E /* ReviewTableViewCell.swift in Sources */,
 				6A2A272F262B3E2B00CF7418 /* WebServiceHelper.swift in Sources */,
 				6A3D28092622DFD800DF3105 /* MessageConstant.swift in Sources */,
 				F94A08502647B7CE00461D19 /* SearchHistoryManager.swift in Sources */,
