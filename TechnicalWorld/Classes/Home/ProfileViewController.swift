@@ -41,6 +41,8 @@ class ProfileViewController: UIViewController,UINavigationControllerDelegate,Get
     var arrSubCategoryID = [Int]()
     var lat = ""
     var long = ""
+    var strType = ""
+    var datePicker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +60,18 @@ class ProfileViewController: UIViewController,UINavigationControllerDelegate,Get
         }
         
         self.setDropDown()
+        self.showDatePicker()
+        
+        self.strType = objAppShareData.UserDetail.strSignUp_As
+        if  self.strType == "individual"{
+            self.vwLocation.isHidden = true
+            self.vwCategory.isHidden = true
+            self.vwSubCategory.isHidden = true
+        }else{
+            self.vwLocation.isHidden = false
+            self.vwCategory.isHidden = false
+            self.vwSubCategory.isHidden = false
+        }
     }
     
     func setDropDown(){
@@ -122,6 +136,60 @@ class ProfileViewController: UIViewController,UINavigationControllerDelegate,Get
         self.lat = dictLocation["latitude"]as? String ?? ""
         self.long = dictLocation["longitude"]as? String ?? ""
     }
+    
+    
+    @IBAction func btnOnContinue(_ sender: Any) {
+        if self.pickedImage == nil{
+            self.callWebserviceForUpdateProfileWithoutImage()
+        }else{
+            self.callWebserviceForUpdateProfile()
+        }
+    }
+}
+
+//Cuastom Date Picker
+extension ProfileViewController{
+    
+    func showDatePicker(){
+        let screenWidth = UIScreen.main.bounds.width
+        datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 216))//1
+        datePicker.datePickerMode = .date //2
+        datePicker.maximumDate = Date()
+
+        // iOS 14 and above
+        if #available(iOS 14, *) {// Added condition for iOS 14
+            datePicker.preferredDatePickerStyle = .wheels
+            datePicker.sizeToFit()
+        }
+        
+        //ToolBar
+        let toolBar = UIToolbar(frame: CGRect(x: 0.0, y: 0.0, width: screenWidth, height: 44.0)) //4
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+        
+        toolBar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        
+        self.tfDOB.inputAccessoryView = toolBar
+        self.tfDOB.inputView = datePicker
+        
+    }
+
+      @objc func donedatePicker(){
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYY-MM-dd"
+        self.tfDOB.text = formatter.string(from: datePicker.date)
+      //  let age  = getAgeFromDOF(date: self.tfDOB.text!)
+      //  self.intYear = (age.0)
+      //  self.intMonth = (age.1)
+      //  self.intDay = (age.2)
+        self.view.endEditing(true)
+       
+     }
+
+     @objc func cancelDatePicker(){
+        self.view.endEditing(true)
+      }
     
 }
 
@@ -239,8 +307,6 @@ extension ProfileViewController{
         }
     
       //  objWebServiceManager.showIndicator()
-        
-       
         
         let dicrParam = ["user_id":strUserID]as [String:Any]
         
@@ -367,4 +433,163 @@ extension ProfileViewController{
 
     
    }
+}
+
+
+extension ProfileViewController{
+    
+    
+    
+    func callWebserviceForUpdateProfile(){
+        
+        if !objWebServiceManager.isNetworkAvailable(){
+            objWebServiceManager.hideIndicator()
+            
+            objAlert.showAlert(message: "No Internet Connection", title: "Alert", controller: self)
+            return
+        }
+        objWebServiceManager.showIndicator()
+        self.view.endEditing(true)
+        var imageData = [Data]()
+        var imgData : Data?
+        if self.pickedImage != nil{
+            imgData = (self.pickedImage?.jpegData(compressionQuality: 1.0))!
+        }
+        imageData.append(imgData!)
+        
+        let imageParam = ["user_image"]
+        
+        var dicrParam = [String:Any]()
+        
+        if strType == "individual"{
+            
+            dicrParam = ["name":self.tfFullName.text!,
+                         "user_id":objAppShareData.UserDetail.strUserId,
+                         "email":self.tfEmail.text!,
+                         "password":self.tfPassword.text!,
+                         "dob":self.tfDOB.text!,
+                         "sex":self.tfSelectGender.text!,
+                         "mobile":self.tfPhoneNumber.text!,
+                         "signup_as":self.strType]as [String:Any]
+        }else{
+            dicrParam = ["name":self.tfFullName.text!,
+                         "user_id":objAppShareData.UserDetail.strUserId,
+                         "email":self.tfEmail.text!,
+                         "password":self.tfPassword.text!,
+                         "dob":self.tfDOB.text!,
+                         "sex":self.tfSelectGender.text!,
+                         "mobile":self.tfPhoneNumber.text!,
+                         "category_id":"",
+                         "category_name":"",
+                         "sub_category_id":"",
+                         "sub_category_name":"",
+                         "address":"",
+                         "lat":"",
+                         "lon":"",
+                         "signup_as":self.strType]as [String:Any]
+        }
+        
+        print(dicrParam)
+        
+        objWebServiceManager.uploadMultipartWithImagesData(strURL: WsUrl.url_UpdateProfile, params: dicrParam, showIndicator: true, customValidation: "", imageData: imgData, imageToUpload: imageData, imagesParam: imageParam, fileName: "user_image", mimeType: "image/jpeg") { (response) in
+            objWebServiceManager.hideIndicator()
+            print(response)
+            let status = (response["status"] as? Int)
+            let message = (response["message"] as? String)
+            
+            if status == MessageConstant.k_StatusCode{
+            
+                let user_details  = response["result"] as? [String:Any]
+
+                print(user_details ?? "")
+                
+                objAppShareData.SaveUpdateUserInfoFromAppshareData(userDetail: user_details ?? [:])
+                objAppShareData.fetchUserInfoFromAppshareData()
+                
+                self.pushVc(viewConterlerId: "Reveal")
+
+
+            }else{
+                objWebServiceManager.hideIndicator()
+                objAlert.showAlert(message: message ?? "", title: "Alert", controller: self)
+            }
+        } failure: { (Error) in
+            print(Error)
+        }
+    }
+    
+    
+    
+    //========================= Update Profile without Image ===========================//
+    func callWebserviceForUpdateProfileWithoutImage(){
+        
+        if !objWebServiceManager.isNetworkAvailable(){
+            objWebServiceManager.hideIndicator()
+            
+            objAlert.showAlert(message: "No Internet Connection", title: "Alert", controller: self)
+            return
+        }
+        objWebServiceManager.showIndicator()
+        self.view.endEditing(true)
+        
+        var dicrParam = [String:Any]()
+        
+        if strType == "individual"{
+            
+            dicrParam = ["name":self.tfFullName.text!,
+                         "user_id":objAppShareData.UserDetail.strUserId,
+                         "email":self.tfEmail.text!,
+                         "password":self.tfPassword.text!,
+                         "dob":self.tfDOB.text!,
+                         "sex":self.tfSelectGender.text!,
+                         "mobile":self.tfPhoneNumber.text!,
+                         "signup_as":self.strType]as [String:Any]
+        }else{
+            dicrParam = ["name":self.tfFullName.text!,
+                         "user_id":objAppShareData.UserDetail.strUserId,
+                         "email":self.tfEmail.text!,
+                         "password":self.tfPassword.text!,
+                         "dob":self.tfDOB.text!,
+                         "sex":self.tfSelectGender.text!,
+                         "mobile":self.tfPhoneNumber.text!,
+                         "category_id":"",
+                         "category_name":"",
+                         "sub_category_id":"",
+                         "sub_category_name":"",
+                         "address":"",
+                         "lat":"",
+                         "lon":"",
+                         "signup_as":self.strType]as [String:Any]
+        }
+        
+        print(dicrParam)
+        
+        objWebServiceManager.requestPost(strURL: WsUrl.url_UpdateProfile, queryParams: [:], params: dicrParam, strCustomValidation: "", showIndicator: false) { response
+            in
+
+            objWebServiceManager.hideIndicator()
+            print(response)
+            let status = (response["status"] as? Int)
+            let message = (response["message"] as? String)
+            
+            if status == MessageConstant.k_StatusCode{
+            
+                let user_details  = response["result"] as? [String:Any]
+
+                print(user_details ?? "")
+                
+                objAppShareData.SaveUpdateUserInfoFromAppshareData(userDetail: user_details ?? [:])
+                objAppShareData.fetchUserInfoFromAppshareData()
+                
+                self.pushVc(viewConterlerId: "Reveal")
+
+
+            }else{
+                objWebServiceManager.hideIndicator()
+                objAlert.showAlert(message: message ?? "", title: "Alert", controller: self)
+            }
+        } failure: { (Error) in
+            print(Error)
+        }
+    }
 }

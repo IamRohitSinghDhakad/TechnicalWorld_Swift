@@ -113,7 +113,7 @@ extension LoginViewController{
                 
                 let user_details  = response["result"] as? [String:Any]
 
-                print(user_details)
+                //print(user_details)
                 objAppShareData.SaveUpdateUserInfoFromAppshareData(userDetail: user_details ?? [:])
                 objAppShareData.fetchUserInfoFromAppshareData()
                 

@@ -672,8 +672,8 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xEW-5H-FkZ">
                                                                         <rect key="frame" x="0.0" y="0.0" width="157.5" height="40"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indivisual" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1J-hY-UO6">
-                                                                                <rect key="frame" x="55" y="10" width="64" height="20"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Individual" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1J-hY-UO6">
+                                                                                <rect key="frame" x="54" y="10" width="65.5" height="20"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="20" id="MZw-kr-gkL"/>
                                                                                 </constraints>
@@ -682,7 +682,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radio" translatesAutoresizingMaskIntoConstraints="NO" id="RdH-P2-y0I">
-                                                                                <rect key="frame" x="33" y="10" width="20" height="20"/>
+                                                                                <rect key="frame" x="32" y="10" width="20" height="20"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="20" id="KxB-vH-5DN"/>
                                                                                     <constraint firstAttribute="width" secondItem="RdH-P2-y0I" secondAttribute="height" multiplier="1:1" id="VJb-MC-CCB"/>
@@ -2914,7 +2914,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NFT-M1-T6a">
                                                 <rect key="frame" x="40" y="0.0" width="40" height="52.5"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="Rtd-AK-e4w">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-user" translatesAutoresizingMaskIntoConstraints="NO" id="Rtd-AK-e4w">
                                                         <rect key="frame" x="5" y="11.5" width="30" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="30" id="142-9L-FMA"/>
@@ -11378,9 +11378,6 @@
                                                                     </imageView>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQ0-Oq-73a">
                                                                         <rect key="frame" x="0.0" y="0.0" width="313" height="48"/>
-                                                                        <connections>
-                                                                            <action selector="btnOnOpenDatePicker:" destination="KgU-IR-GwB" eventType="touchUpInside" id="RaF-bP-Cap"/>
-                                                                        </connections>
                                                                     </button>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date Of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="90m-kI-gth">
                                                                         <rect key="frame" x="10" y="5" width="248" height="38"/>
@@ -11671,7 +11668,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="btnOnContinue:" destination="KgU-IR-GwB" eventType="touchUpInside" id="cJs-R0-MJi"/>
+                                                            <action selector="btnOnContinue:" destination="KgU-IR-GwB" eventType="touchUpInside" id="ua5-vG-MBm"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -13014,6 +13011,7 @@
     <resources>
         <image name="accident" width="64" height="60"/>
         <image name="add" width="123" height="114"/>
+        <image name="add-user" width="256" height="256"/>
         <image name="arrow" width="16.5" height="10"/>
         <image name="back" width="17.5" height="14"/>
         <image name="back_white" width="17.5" height="14"/>

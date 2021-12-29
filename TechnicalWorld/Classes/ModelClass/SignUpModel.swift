@@ -51,6 +51,7 @@ class userDetailModel: NSObject {
     var strSubCategory :String = ""
     var strCategoryID :String = ""
     var strSubCategoryID :String = ""
+    var strSignUp_As :String = ""
     
     var strlatitude :String = ""
     var strlongitude :String = ""
@@ -86,6 +87,10 @@ class userDetailModel: NSObject {
             self.strAddress = address
         }
         
+        if let signUpAs = dict["signup_as"] as? String{
+            self.strSignUp_As = signUpAs
+        }
+            
         if let country_code = dict["country_code"] as? String{
             self.strCountyCode = country_code
         }
