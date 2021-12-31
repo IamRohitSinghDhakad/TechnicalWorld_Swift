@@ -26,12 +26,12 @@ class LoginViewController: UIViewController {
     @IBAction func btnOnContinue(_ sender: Any) {
 //        self.tfEmail.text = "a@yopmail.com"
 //        self.tfPassword.text = "qwerty"
+        self.validateForSignUp()
+      //  self.tfEmail.text = "a@yopmail.com"
+    //    self.tfPassword.text = "qwerty"
         
-        self.tfEmail.text = "a@yopmail.com"
-        self.tfPassword.text = "qwerty"
         
-        
-        self.call_WsLogin()
+      //  self.call_WsLogin()
        
        // self.pushVc(viewConterlerId: "Reveal")
         

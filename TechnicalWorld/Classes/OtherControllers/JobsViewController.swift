@@ -26,10 +26,9 @@ class JobsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.strType = "Full Time"
         self.tblVw.delegate = self
         self.tblVw.dataSource = self
-        
     }
 
     @IBAction func btnBackOnHeader(_ sender: Any) {
@@ -69,16 +68,26 @@ extension JobsViewController: UITableViewDelegate,UITableViewDataSource{
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "SubCategoryListViewController")as! SubCategoryListViewController
         
         if self.strType == "Full Time" {
+            vc.strPostFor = "Full Time"
             if self.arrJobs[indexPath.row] == "Vacancies"{
                 vc.strTtitle = "Full Time Vacancies"
+                vc.isComingfrom = self.categoryID
+                vc.isType = "Offer"
             }else{
                 vc.strTtitle = "Full Time Jobs"
+                vc.isComingfrom = self.categoryID
+                vc.isType = "Want"
             }
         }else{
+            vc.strPostFor = "Part Time"
             if self.arrJobs[indexPath.row] == "Vacancies"{
                 vc.strTtitle = "Part Time Vacancies"
+                vc.isComingfrom = self.categoryID
+                vc.isType = "Offer"
             }else{
                 vc.strTtitle = "Part Time Jobs"
+                vc.isComingfrom = self.categoryID
+                vc.isType = "Want"
             }
         }
         vc.categoryID = self.categoryID

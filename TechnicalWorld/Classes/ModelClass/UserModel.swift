@@ -23,6 +23,17 @@ class UserModel: NSObject {
     var strRatingCompany : String = ""
     var strRatingIndividual : String = ""
     
+    var strOfferDesc : String = ""
+    var strDegree : String = ""
+    var strPostFor : String = ""
+    var strExperience : String = ""
+    var strFees : String = ""
+    var strFeesUnit : String = ""
+    var strWorkingHour : String = ""
+    var strWorkingHourUnit : String = ""
+    var strReviewCompany : String = ""
+    var strReviewIndividual : String = ""
+    
     
     init(dict : [String:Any]) {
         
@@ -79,6 +90,54 @@ class UserModel: NSObject {
         if let rating_individual = dict["rating_individual"] as? String{
             self.strRatingIndividual = rating_individual
         }
+        
+        if let review_company = dict["review_company"] as? String{
+            self.strReviewCompany = review_company
+        }else  if let review_company = dict["review_company"] as? Int{
+            self.strReviewCompany = "\(review_company)"
+        }
+        
+        if let review_individual = dict["review_individual"] as? String{
+            self.strReviewIndividual = review_individual
+        }else if let review_individual = dict["review_individual"] as? Int{
+            self.strReviewIndividual = "\(review_individual)"
+        }
+        
+        if let offer_desc = dict["offer_desc"] as? String{
+            self.strOfferDesc = offer_desc
+        }
+        
+        if let degree = dict["degree"] as? String{
+            self.strDegree = degree
+        }
+        
+        if let post_for = dict["post_for"] as? String{
+            self.strPostFor = post_for
+        }
+        
+        if let experience = dict["experience"] as? String{
+            self.strExperience = experience
+        }
+        
+        
+        if let fees = dict["fees"] as? String{
+            self.strFees = fees
+        }
+        
+        if let fees_unit = dict["fees_unit"] as? String{
+            self.strFeesUnit = fees_unit
+        }
+        
+        if let working_hour = dict["working_hour"] as? String{
+            self.strWorkingHour = working_hour
+        }
+        
+        if let working_hour_unit = dict["working_hour_unit"] as? String{
+            self.strWorkingHourUnit = working_hour_unit
+        }
+        
+        
+        
         
         
         

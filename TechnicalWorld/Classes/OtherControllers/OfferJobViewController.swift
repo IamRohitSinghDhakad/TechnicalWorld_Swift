@@ -26,9 +26,10 @@ class OfferJobViewController: UIViewController {
     var arrTypesOfCategory = [String]()
     var arrTypesOfCategoryID = [Int]()
     
-    var strType = "FullTime"
+    var strType = "Offer"
     var isPartTime = Bool()
     var postFor = ""
+    var strSubCategoryID:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,8 @@ class OfferJobViewController: UIViewController {
         
         self.call_SubCategory(strCategoryID: "7")
         self.setDropDown()
+        
+        self.postFor = "Full Time"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,7 +58,8 @@ class OfferJobViewController: UIViewController {
     
         self.tfField.optionArray = self.arrTypesOfCategory
         self.tfField.didSelect{(selectedText , index ,id) in
-        self.tfField.text = selectedText
+            self.tfField.text = selectedText
+            self.strSubCategoryID = "\(id)"
         }
         
     }
@@ -72,7 +76,7 @@ class OfferJobViewController: UIViewController {
         self.lblOfferedText.text = "Offered Package"
         self.vwOtherBenifits.isHidden = true
         
-        self.strType = "FullTime"
+        self.postFor = "Full Time"
     }
     
     @IBAction func btnOnpartTime(_ sender: Any) {
@@ -82,11 +86,12 @@ class OfferJobViewController: UIViewController {
         self.lblOfferedText.text = "Offered Salary"
         self.vwOtherBenifits.isHidden = false
         
-        self.strType = "PartTime"
+        self.postFor = "Part Time"
     }
     
     @IBAction func btnOnPost(_ sender: Any) {
-        
+        validateForAddPost()
+       // self.call_OfferJob(strUserID: objAppShareData.UserDetail.strUserId)
     }
 
 }
@@ -120,16 +125,20 @@ extension OfferJobViewController{
         else if (tfPackage.text?.isEmpty)! {
             objAlert.showAlert(message: "Please Enter Salery", title:MessageConstant.k_AlertTitle, controller: self)
         }
-        else if strType == "PartTime"{
+        else if strType == "Part Time"{
             if (txtVwWriteHere.text?.isEmpty)! {
                 objAlert.showAlert(message: "Please Enter Other Benifits", title:MessageConstant.k_AlertTitle, controller: self)
+            }else{
+                let userID = objAppShareData.UserDetail.strUserId
+                if userID != ""{
+                    self.call_OfferJob(strUserID: userID)
+                }
             }
         }
         else{
             let userID = objAppShareData.UserDetail.strUserId
             if userID != ""{
                 self.call_OfferJob(strUserID: userID)
-               // self.callWebserviceForAddPostWithImage(strUserID: userID)
             }
         }
     }
@@ -199,22 +208,25 @@ extension OfferJobViewController{
         var dicrParam = [String:Any]()
         
      
-            dicrParam = ["post_for":self.postFor,
-                         "type":"Offer",
-                         "offer_desc":self.tfOfferDesc.text!,
-                       //  "degree":self.tfDegree.text!,
-                         "qualification":self.tfMinimumQualification.text!,
-                         "experience":self.tfMinimumYear.text!,
-                         "category_id":"7",
-                         "category_name":"Jobs",
-                       //  "sub_category_id":self.strSubCatID,
-                         "sub_category_name":self.tfField.text!,
-                       //  "last_job":self.tfLastCurrentJob.text!,
-                         "looking_for":self.tfOfferRole.text!,
-                     //    "min_amount":self.tfExpectedMonthlySalery.text!,
-                       //  "max_amount":self.tfExpectedMonthlySaleryTo.text!,
-                        // "remark":"self.tfListedBy.text!",
-                         "user_id":strUserID]as [String:Any]
+        dicrParam = [ "user_id":strUserID,
+                      "post_for":self.postFor,
+                      "type":self.strType,
+                      "offer_desc":self.tfOfferDesc.text!,
+                      "degree":self.tfMinimumQualification.text!,
+                      "experience":self.tfMinimumYear.text!,
+                      "category_id":"7",
+                      "category_name":"Jobs",
+                      "sub_category_name":self.tfField.text!,
+                      "sub_category_id":self.strSubCategoryID,
+                      "looking_for":self.tfOfferRole.text!,
+                      "fees":self.tfPackage.text!,
+                      "remark":self.txtVwWriteHere.text!
+                      
+            ]as [String:Any]
+        
+         
+        print(dicrParam)
+        
         
         objWebServiceManager.requestPost(strURL: WsUrl.url_AddPost, queryParams: [:], params: dicrParam, strCustomValidation: "", showIndicator: false) { (response) in
             

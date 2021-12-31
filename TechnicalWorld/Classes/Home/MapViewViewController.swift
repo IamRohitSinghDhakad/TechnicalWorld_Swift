@@ -81,11 +81,11 @@ extension MapViewViewController: CLLocationManagerDelegate{
             let placemark = placemarks! as [CLPlacemark]
             if placemark.count>0{
                 let placemark = placemarks![0]
-                print(placemark.locality!)
-                print(placemark.administrativeArea!)
-                print(placemark.country!)
+                print(placemark.locality ?? "")
+                print(placemark.administrativeArea ?? "")
+                print(placemark.country ?? "")
 
-                self.lblLocation.text = "\(placemark.locality!), \(placemark.administrativeArea!), \(placemark.country!)"
+                self.lblLocation.text = "\(placemark.locality ?? ""), \(placemark.administrativeArea ?? ""), \(placemark.country ?? "")"
                
                 
             }

@@ -7,6 +7,7 @@
 
 import UIKit
 import iOSDropDown
+import CoreLocation
 
 class SignUpViewController: UIViewController,UINavigationControllerDelegate,GetLocationDelegate {
    
@@ -31,6 +32,8 @@ class SignUpViewController: UIViewController,UINavigationControllerDelegate,GetL
     @IBOutlet weak var lblLocation: UILabel!
     @IBOutlet weak var tfSelectGender: DropDown!
     @IBOutlet weak var tfSelectCategory: DropDown!
+    @IBOutlet var tfSubCategory: DropDown!
+    @IBOutlet var vwSubCategory: UIView!
     
     var imagePicker = UIImagePickerController()
     var pickedImage:UIImage?
@@ -40,11 +43,57 @@ class SignUpViewController: UIViewController,UINavigationControllerDelegate,GetL
     var arrSubCategory = [SubCategoryModel]()
     var arrCatName = [String]()
     var arrCatID = [Int]()
-    var lat = ""
-    var long = ""
+    var arrSubCatName = [String]()
+    var arrSubCatID = [Int]()
+    var strSubCategoryID = ""
+    var strSubCategoryName = ""
+    var strCategoryID = ""
+    var strCategoryName = ""
+    var destinationLatitude = Double()
+    var destinationLongitude = Double()
+    
+    var location: Location? {
+        didSet {
+            self.lblLocation.text = location.flatMap({ $0.title }) ?? "No location selected"
+            let cordinates = location.flatMap({ $0.coordinate })
+            if (cordinates != nil){
+              
+                
+                destinationLatitude = cordinates?.latitude ?? 0.0
+                destinationLongitude = cordinates?.longitude ?? 0.0
+                
+                
+                var xCordinate = ""
+                var yCordinate = ""
+                
+                if let latitude = cordinates?.latitude {
+                    xCordinate = "\(latitude)"
+                }
+                if let longitude = cordinates?.longitude{
+                    yCordinate = "\(longitude)"
+                }
+                
+                self.getAddressFromLatLong(plLatitude: xCordinate, plLongitude: yCordinate, completion: { (dictAddress) in
+
+                    
+                    if let fullAddress = dictAddress["fullAddress"]as? String{
+                        self.lblLocation.text = fullAddress
+                    }else{
+                        self.lblLocation.text = dictAddress["country"]as? String ?? ""
+                    }
+                    
+                    
+                }) { (Error) in
+                    print(Error)
+                }
+            }
+           
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.vwSubCategory.isHidden = true
         
         self.imgVwCompany.image = #imageLiteral(resourceName: "circle")
         self.imgVwCheckUnCheck.image = #imageLiteral(resourceName: "unc")
@@ -67,6 +116,11 @@ class SignUpViewController: UIViewController,UINavigationControllerDelegate,GetL
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     func setDropDown(){
         
         self.tfSelectGender.optionArray = ["Male", "Female", "Other"]
@@ -76,7 +130,21 @@ class SignUpViewController: UIViewController,UINavigationControllerDelegate,GetL
         }
         
         self.tfSelectCategory.didSelect{(selectedText , index ,id) in
-        self.tfSelectCategory.text = selectedText
+            self.call_SubCategory(strCategoryID: "\(id)")
+            self.strCategoryName = selectedText
+            self.strCategoryID = "\(id)"
+            self.tfSelectCategory.text = selectedText
+            
+        }
+        
+    }
+    
+    func setSubCategory(){
+        self.tfSubCategory.didSelect{(selectedText , index ,id) in
+            self.strSubCategoryName = selectedText
+            self.strSubCategoryID = "\(id)"
+        self.tfSubCategory.text = selectedText
+            
         }
         
     }
@@ -119,25 +187,41 @@ class SignUpViewController: UIViewController,UINavigationControllerDelegate,GetL
     @IBAction func btnOnPrivacyPolicy(_ sender: Any) {
         
     }
-    @IBAction func btnOnContinue(_ sender: Any) {
-        validateForSignUp()
+    
+    @IBAction func btnContinue(_ sender: Any) {
+        self.validateForSignUp()
     }
+    
     
     @IBAction func btnOnExistingUser(_ sender: Any) {
         onBackPressed()
     }
     
     @IBAction func btnOnOpenLocation(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MapViewViewController")as! MapViewViewController
-        vc.delegateOfLocation = self
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.navigationBar.isHidden = false
+        let sb = UIStoryboard.init(name: "LocationPicker", bundle: Bundle.main)
+        let locationPicker = sb.instantiateViewController(withIdentifier: "LocationPickerViewController")as! LocationPickerViewController//segue.destination as! LocationPickerViewController
+        locationPicker.location = location
+        locationPicker.showCurrentLocationButton = true
+        locationPicker.useCurrentLocationAsHint = true
+        locationPicker.selectCurrentLocationInitially = true
+        
+        locationPicker.completion = { self.location = $0 }
+        
+        self.navigationController?.pushViewController(locationPicker, animated: true)
+        
+//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MapViewViewController")as! MapViewViewController
+//        vc.delegateOfLocation = self
+//        self.navigationController?.pushViewController(vc, animated: true)
+        
+      
     }
     
     
     func getSelectedLocation(dictLocation: [String : Any]) {
-        self.lblLocation.text = ""
-        self.lat = ""
-        self.long = ""
+//        self.lblLocation.text = ""
+//        self.lat = ""
+//        self.long = ""
     }
     
     @IBAction func btnOnOpenDatePicker(_ sender: Any) {
@@ -227,24 +311,31 @@ extension SignUpViewController{
         self.tfPassword.text = self.tfPassword.text!.trim()
         self.tfSelectGender.text = self.tfSelectGender.text?.trim()
         
-        if (tfFullName.text?.isEmpty)! {
+        if self.pickedImage == nil{
+            objAlert.showAlert(message: "Please select profile pic", title:MessageConstant.k_AlertTitle, controller: self)
+        }
+        else if (tfFullName.text?.isEmpty)! {
             objAlert.showAlert(message: MessageConstant.BlankUserName, title:MessageConstant.k_AlertTitle, controller: self)
         }
         else if (tfEmail.text?.isEmpty)! {
             objAlert.showAlert(message: MessageConstant.BlankEmail, title:MessageConstant.k_AlertTitle, controller: self)
         }else if !objValidationManager.validateEmail(with: tfEmail.text!){
             objAlert.showAlert(message: MessageConstant.ValidEmail, title:MessageConstant.k_AlertTitle, controller: self)
+        }else if (tfPassword.text?.isEmpty)! {
+            objAlert.showAlert(message: MessageConstant.BlankPassword, title:MessageConstant.k_AlertTitle, controller: self)
         }
         else if self.strType == "company"{
             if (tfPhoneNumber.text?.isEmpty)! {
                 objAlert.showAlert(message: MessageConstant.BlankPhoneNo, title:MessageConstant.k_AlertTitle, controller: self)
+            } else if self.strCategoryName == ""{
+                objAlert.showAlert(message: "Please select category", title:MessageConstant.k_AlertTitle, controller: self)
+            }else{
+                if self.imgVwCheckUnCheck.image == #imageLiteral(resourceName: "check"){
+                    self.callWebserviceForUploadUserImage()
+                }else{
+                    objAlert.showAlert(message: "Please check terms and condition first", title:MessageConstant.k_AlertTitle, controller: self)
+                }
             }
-        }
-//        else  if (tfPhoneNumber.text?.isEmpty)! {
-//            objAlert.showAlert(message: MessageConstant.BlankPhoneNo, title:MessageConstant.k_AlertTitle, controller: self)
-//        }
-        else if (tfPassword.text?.isEmpty)! {
-            objAlert.showAlert(message: MessageConstant.BlankPassword, title:MessageConstant.k_AlertTitle, controller: self)
         }
         else{
             
@@ -401,20 +492,18 @@ extension SignUpViewController{
             dicrParam = ["name":self.tfFullName.text!,
                          "email":self.tfEmail.text!,
                          "password":self.tfPassword.text!,
-                         "dob":self.tfDOB.text!,
-                         "sex":self.tfSelectGender.text!,
                          "mobile":self.tfPhoneNumber.text!,
-                         "category_id":"",
-                         "category_name":"",
-                         "sub_category_id":"",
-                         "sub_category_name":"",
-                         "address":"",
-                         "lat":"",
-                         "lon":"",
+                         "category_id":self.strCategoryID,
+                         "category_name":self.strCategoryName,
+                         "sub_category_id":self.strSubCategoryID,
+                         "sub_category_name":self.strSubCategoryName,
+                         "address":self.lblLocation.text!,
+                         "lat":"\(self.destinationLatitude)",
+                         "lon":"\(self.destinationLongitude)",
                          "signup_as":self.strType]as [String:Any]
         }
         
-        
+        print(dicrParam)
         
         objWebServiceManager.uploadMultipartWithImagesData(strURL: WsUrl.url_SignUp, params: dicrParam, showIndicator: true, customValidation: "", imageData: imgData, imageToUpload: imageData, imagesParam: imageParam, fileName: "user_image", mimeType: "image/jpeg") { (response) in
             objWebServiceManager.hideIndicator()
@@ -491,4 +580,128 @@ extension SignUpViewController{
     
 
     
+    func call_SubCategory(strCategoryID:String){
+        
+        if !objWebServiceManager.isNetworkAvailable(){
+            objWebServiceManager.hideIndicator()
+            objAlert.showAlert(message: "No Internet Connection", title: "Alert", controller: self)
+            return
+        }
+    
+       objWebServiceManager.showIndicator()
+        let param = ["category_id":strCategoryID]as [String:Any]
+        
+        objWebServiceManager.requestGet(strURL: WsUrl.url_getSubCategory, params: param, queryParams: [:], strCustomValidation: "") { (response) in
+            objWebServiceManager.hideIndicator()
+            let status = (response["status"] as? Int)
+            let message = (response["message"] as? String)
+            
+            if status == MessageConstant.k_StatusCode{
+               
+                print(response)
+               
+                if let arrData  = response["result"] as? [[String:Any]]{
+                    self.arrSubCategory.removeAll()
+                    self.arrSubCatID.removeAll()
+                    self.arrSubCatName.removeAll()
+                    for dictdata in arrData{
+                        let obj = SubCategoryModel.init(dict: dictdata)
+                        self.arrSubCatName.append(obj.strSubCategoryName)
+                        self.arrSubCatID.append(obj.strSubCategoryID)
+                        self.arrSubCategory.append(obj)
+                    }
+                    
+                    self.tfSubCategory.optionArray = self.arrSubCatName
+                    self.tfSubCategory.optionIds = self.arrSubCatID
+
+                    self.setSubCategory()
+                    self.vwSubCategory.isHidden = false
+                }
+            }else{
+                self.vwSubCategory.isHidden = true
+                objWebServiceManager.hideIndicator()
+                objAlert.showAlert(message: "No Subcategory Found!", title: "Alert", controller: self)
+                
+            }
+           
+            
+        } failure: { (Error) in
+            print(Error)
+            objWebServiceManager.hideIndicator()
+        }
+   }
+    
+}
+
+
+extension SignUpViewController{
+    func getAddressFromLatLong(plLatitude: String, plLongitude: String, completion:@escaping(Dictionary<String,Any>) ->Void, failure:@escaping (Error) ->Void){
+        
+        var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
+        let lat: Double = Double("\(plLatitude)")!
+    
+        let lon: Double = Double("\(plLongitude)")!
+    
+        let ceo: CLGeocoder = CLGeocoder()
+        center.latitude = lat
+        center.longitude = lon
+        
+        let loc: CLLocation = CLLocation(latitude:center.latitude, longitude: center.longitude)
+        
+        
+        ceo.reverseGeocodeLocation(loc, completionHandler:
+            {(placemarks, error) in
+                if (error != nil)
+                {
+                    print("reverse geodcode fail: \(error!.localizedDescription)")
+                }
+                
+                
+                let pm = (placemarks ?? []) as [CLPlacemark]
+                
+                if pm.count > 0 {
+                    let pm = placemarks?[0]
+                    print(pm?.country ?? "")
+                    print(pm?.locality ?? "")
+                    print(pm?.subLocality ?? "")
+                    print(pm?.thoroughfare ?? "")
+                    print(pm?.postalCode ?? "")
+                    print(pm?.subThoroughfare ?? "")
+                    
+                    var dictAddress = [String:Any]()
+                    var addressString : String = ""
+                    
+                    if pm?.subLocality != nil {
+                        addressString = addressString + (pm?.subLocality!)! + ", "
+                        dictAddress["subLocality"] = pm?.subLocality
+                    }
+                    if pm?.thoroughfare != nil {
+                        addressString = addressString + (pm?.thoroughfare!)! + ", "
+                        dictAddress["thoroughfare"] = pm?.thoroughfare
+                    }
+                    if pm?.locality != nil {
+                        addressString = addressString + (pm?.locality!)! + ", "
+                        dictAddress["locality"] = pm?.locality
+                    }
+                    if pm?.country != nil {
+                        addressString = addressString + (pm?.country!)! + ", "
+                        dictAddress["country"] = pm?.country
+                    }
+                    if pm?.postalCode != nil {
+                        addressString = addressString + (pm?.postalCode!)! + " "
+                        dictAddress["fullAddress"] = addressString
+                    }
+                    
+                    
+                    if dictAddress.count != 0{
+                        completion(dictAddress)
+                    }else{
+                        
+                        //failure("Something Wrong Happend! please dubug code :)" as? Error)
+                    }
+                    
+                }
+        })
+        
+    }
 }

@@ -86,6 +86,8 @@
 		F9FB30C226255EFF003BA51C /* RentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FB30C126255EFF003BA51C /* RentDetailViewController.swift */; };
 		F9FB30C526255F19003BA51C /* RentDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FB30C426255F19003BA51C /* RentDetailCollectionViewCell.swift */; };
 		F9FB30C826255F98003BA51C /* GeneralAccountantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FB30C726255F98003BA51C /* GeneralAccountantViewController.swift */; };
+		F9FC4C5C277F187E0073DB3C /* JobsPostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FC4C5B277F187E0073DB3C /* JobsPostListViewController.swift */; };
+		F9FC4C5E277F18AF0073DB3C /* JobsPostListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FC4C5D277F18AF0073DB3C /* JobsPostListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -175,6 +177,8 @@
 		F9FB30C126255EFF003BA51C /* RentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentDetailViewController.swift; sourceTree = "<group>"; };
 		F9FB30C426255F19003BA51C /* RentDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		F9FB30C726255F98003BA51C /* GeneralAccountantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralAccountantViewController.swift; sourceTree = "<group>"; };
+		F9FC4C5B277F187E0073DB3C /* JobsPostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsPostListViewController.swift; sourceTree = "<group>"; };
+		F9FC4C5D277F18AF0073DB3C /* JobsPostListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsPostListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -449,6 +453,7 @@
 				F91E0B0A277495DC00C9ECCD /* SubmittedBidsViewController.swift */,
 				F9CACAF4277602680052F4D8 /* SubmittedBidsUsersViewController.swift */,
 				F9CACAF6277620680052F4D8 /* ReviewListViewController.swift */,
+				F9FC4C5B277F187E0073DB3C /* JobsPostListViewController.swift */,
 			);
 			path = OtherControllers;
 			sourceTree = "<group>";
@@ -461,6 +466,7 @@
 				6A71CD052629F8C2007F6200 /* BidsTableViewCell.swift */,
 				F91E0B0C277496F400C9ECCD /* SubmittedTableViewCell.swift */,
 				F99952DC2778DC4E0057F13E /* ReviewTableViewCell.swift */,
+				F9FC4C5D277F18AF0073DB3C /* JobsPostListTableViewCell.swift */,
 			);
 			path = CellClasses;
 			sourceTree = "<group>";
@@ -603,6 +609,7 @@
 				6AFAF6F0262215EC00580F96 /* LoginViewController.swift in Sources */,
 				6AF564EF262C52CE00F30263 /* AddPostViewController.swift in Sources */,
 				6A3D28262622E97B00DF3105 /* CustomUIView.swift in Sources */,
+				F9FC4C5E277F18AF0073DB3C /* JobsPostListTableViewCell.swift in Sources */,
 				6A3D28082622DFD800DF3105 /* AlertViewController.swift in Sources */,
 				F92C4E252776F6290067D97B /* FloatRatingView.swift in Sources */,
 				F9D450AC263EB92B00B7AE88 /* AddJobViewController.swift in Sources */,
@@ -664,6 +671,7 @@
 				6AFAF6F72622161200580F96 /* ForgotPasswordViewController.swift in Sources */,
 				F99952DD2778DC4E0057F13E /* ReviewTableViewCell.swift in Sources */,
 				6A2A272F262B3E2B00CF7418 /* WebServiceHelper.swift in Sources */,
+				F9FC4C5C277F187E0073DB3C /* JobsPostListViewController.swift in Sources */,
 				6A3D28092622DFD800DF3105 /* MessageConstant.swift in Sources */,
 				F94A08502647B7CE00461D19 /* SearchHistoryManager.swift in Sources */,
 				6A5CACD62623406400C66434 /* RevealViewController.swift in Sources */,

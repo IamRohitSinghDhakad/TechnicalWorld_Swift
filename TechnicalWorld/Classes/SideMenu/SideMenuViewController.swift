@@ -25,6 +25,9 @@ class SideMenuViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        
+        self.lblUserName.text = objAppShareData.UserDetail.strName
+        
         let profilePic = objAppShareData.UserDetail.strProfilePicture
         if profilePic != "" {
             let url = URL(string: profilePic)

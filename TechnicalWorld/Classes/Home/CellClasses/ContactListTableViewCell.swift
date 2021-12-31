@@ -13,6 +13,16 @@ class ContactListTableViewCell: UITableViewCell {
     @IBOutlet weak var lblUserName: UILabel!
     @IBOutlet weak var lblCategoryName: UILabel!
     @IBOutlet weak var vwBoxShadow: UIView!
+    @IBOutlet var ratingVwCompany: FloatRatingView!
+    @IBOutlet var ratingVwindividual: FloatRatingView!
+    @IBOutlet var lblCountRatingCompany: UILabel!
+    @IBOutlet var lblCountRatingIndividual: UILabel!
+    @IBOutlet var btnWhatsApp: UIButton!
+    @IBOutlet var btnCall: UIButton!
+    @IBOutlet var lblCompanies: UILabel!
+    @IBOutlet var lblIndividuals: UILabel!
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

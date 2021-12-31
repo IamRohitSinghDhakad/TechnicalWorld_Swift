@@ -23,18 +23,19 @@ class SubCategoryListViewController: UIViewController {
     var arrSubCategoryFiltered = [SubCategoryModel]()
     var isType = ""
     var strTtitle = ""
+    var strPostFor = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.tblVw.delegate = self
         self.tblVw.dataSource = self
-        
         self.lblTitle.text = self.strTtitle
-        self.isType = "Rent"
+       
         self.tfSearchBar.addTarget(self, action: #selector(searchContactAsPerText(_ :)), for: .editingChanged)
         
         if isComingfrom == "3"{
+            self.isType = "Rent"
             self.vwSearchBar.isHidden = true
             self.vwRentBuy.isHidden = false
         }else{
@@ -94,14 +95,38 @@ extension SubCategoryListViewController: UITableViewDelegate,UITableViewDataSour
             vc.strType = self.arrSubCategoryFiltered[indexPath.row].strSubCategoryName
             vc.strPostFor = self.isType
             self.navigationController?.pushViewController(vc, animated: true)
+        }else if self.isComingfrom == "7"{
+            let strCategoryID = self.arrSubCategoryFiltered[indexPath.row].strCategoryID
+            var strSubCategoryID = ""
+            if self.arrSubCategoryFiltered[indexPath.row].strSubCategoryName == "All"{
+                print("set sub category id to  blank ")
+            }else{
+                strSubCategoryID = "\(self.arrSubCategoryFiltered[indexPath.row].strSubCategoryID)"
+            }
+           
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "JobsPostListViewController")as! JobsPostListViewController
+            vc.strCategoryID = strCategoryID
+            vc.strSubCategoryID = strSubCategoryID
+            vc.strType = self.isType
+            vc.strPostFor = self.strPostFor
+            vc.strTitle = "\(self.lblTitle.text!) " + self.arrSubCategoryFiltered[indexPath.row].strSubCategoryName
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+            
         }else{
             let strCategoryID = self.arrSubCategoryFiltered[indexPath.row].strCategoryID
-            let strSubCategoryID = self.arrSubCategoryFiltered[indexPath.row].strSubCategoryID
+            var strSubCategoryID = ""
+            if self.arrSubCategoryFiltered[indexPath.row].strSubCategoryName == "All"{
+                print("set sub category id to  blank ")
+            }else{
+                strSubCategoryID = "\(self.arrSubCategoryFiltered[indexPath.row].strSubCategoryID)"
+            }
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "ContactListViewController")as! ContactListViewController
             vc.strCategoryID = strCategoryID
-            vc.strSubCategoryID = "\(strSubCategoryID)"
-            vc.strType = self.arrSubCategoryFiltered[indexPath.row].strSubCategoryName
-            vc.strPostFor = self.isType
+            vc.strSubCategoryID = strSubCategoryID
+            vc.strType = self.isType
+            vc.strPostFor = self.strPostFor
+            vc.strTitle = self.arrSubCategoryFiltered[indexPath.row].strSubCategoryName
             self.navigationController?.pushViewController(vc, animated: true)
         }
         

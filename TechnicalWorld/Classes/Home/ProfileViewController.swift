@@ -67,10 +67,14 @@ class ProfileViewController: UIViewController,UINavigationControllerDelegate,Get
             self.vwLocation.isHidden = true
             self.vwCategory.isHidden = true
             self.vwSubCategory.isHidden = true
+            self.vwDOB.isHidden = false
+            self.vwGender.isHidden = false
         }else{
             self.vwLocation.isHidden = false
             self.vwCategory.isHidden = false
             self.vwSubCategory.isHidden = false
+            self.vwDOB.isHidden = true
+            self.vwGender.isHidden = true
         }
     }
     
@@ -437,9 +441,6 @@ extension ProfileViewController{
 
 
 extension ProfileViewController{
-    
-    
-    
     func callWebserviceForUpdateProfile(){
         
         if !objWebServiceManager.isNetworkAvailable(){

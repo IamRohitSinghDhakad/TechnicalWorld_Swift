@@ -1,18 +1,18 @@
 //
-//  ContactListViewController.swift
+//  JobsPostListViewController.swift
 //  TechnicalWorld
 //
-//  Created by Paras on 12/04/21.
+//  Created by Rohit Singh Dhakad on 31/12/21.
 //
 
 import UIKit
 
-class ContactListViewController: UIViewController {
-
-    @IBOutlet weak var subVwSort: UIView!
-    @IBOutlet weak var tblVwContacts: UITableView!
-    @IBOutlet weak var lblTitle: UILabel!
-  
+class JobsPostListViewController: UIViewController {
+    
+    @IBOutlet var lbltitle: UILabel!
+    @IBOutlet var tblPostList: UITableView!
+ 
+    
     var arrUserList = [UserModel]()
     var strCategoryID = ""
     var strSubCategoryID = ""
@@ -23,93 +23,75 @@ class ContactListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.tblVwContacts.delegate = self
-        self.tblVwContacts.dataSource = self
+        self.tblPostList.delegate = self
+        self.tblPostList.dataSource = self
         
-        self.lblTitle.text = self.strTitle
-        
-        self.subVwSort.isHidden = true
-        print(strCategoryID, strType, strPostFor)
-        if self.strType == "All"{
-            self.strSubCategoryID = ""
-        }
+        self.lbltitle.text = self.strTitle
         
         let userID = objAppShareData.UserDetail.strUserId
         if userID != ""{
             self.call_UserList(strCategoryID: self.strCategoryID, strSubCategoryID: self.strSubCategoryID, strUserID: userID)
         }
-    
     }
-    
     
     @IBAction func btnBackOnHeader(_ sender: Any) {
         onBackPressed()
-        
     }
-    @IBAction func btnOnCamcelSubVw(_ sender: Any) {
-        self.subVwSort.isHidden = true
-    }
-    
-    @IBAction func btnOnLocation(_ sender: Any) {
-        
-    }
-    @IBAction func btnOnSort(_ sender: Any) {
-        self.subVwSort.isHidden = false
-        
-    }
-    
-    @IBAction func btnActionSortData(_ sender: UIButton) {
-        
-        switch sender.tag {
-        case 0:
-            print("high to low")
-        case 1:
-            print("low to high")
-        case 2:
-            print("high to low Individual")
-        case 3:
-            print("low to High Individual")
-        default:
-            break
-        }
-    }
-    
 }
 
 
-extension ContactListViewController: UITableViewDelegate,UITableViewDataSource{
+extension JobsPostListViewController: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrUserList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactListTableViewCell")as! ContactListTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "JobsPostListTableViewCell")as! JobsPostListTableViewCell
         
         let obj = self.arrUserList[indexPath.row]
         
-        cell.lblUserName.text = obj.strUserName
-        cell.lblCategoryName.text = obj.strUserSubCategory + " \(obj.strUserCategory)"
-        
-        cell.ratingVwCompany.rating = Double(obj.strRatingCompany) ?? 0.0
-        cell.ratingVwindividual.rating = Double(obj.strRatingIndividual) ?? 0.0
-        cell.lblCountRatingCompany.text = "(\(obj.strReviewCompany))"
-        cell.lblCountRatingIndividual.text = "(\(obj.strReviewIndividual))"
-        cell.lblCompanies.text = "Companies : \(obj.strRatingCompany)"
-        cell.lblIndividuals.text = "Individual : \(obj.strRatingIndividual)"
-        
-        let profilePic = obj.strUserImage
-        if profilePic != "" {
-            let url = URL(string: profilePic)
-            cell.imgVwUser.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "logo"))
+        if self.strType == "Offer"{
+            cell.vwUserImage.isHidden = true
+            cell.vwCallingButtons.isHidden = true
+            
+            cell.lblTitle.text = obj.strOfferDesc
+            cell.lblField.text = "Field : " + obj.strUserSubCategory
+            cell.lblDegree.text = "Required Degree : " + obj.strDegree
+            cell.lblJobtype.text = "Job Type : " + obj.strPostFor
+            cell.lblExperience.text = "Min. Experience Required : " + obj.strExperience + " Years"
+            if obj.strFeesUnit == ""{
+                cell.lblAED.text =  obj.strFees + " AED per Month"
+            }else{
+                cell.lblAED.text =  obj.strFees + " AED per " + obj.strFeesUnit
+            }
+           
+            
+        }else{
+            cell.vwUserImage.isHidden = false
+            cell.vwCallingButtons.isHidden = false
+            
+            cell.lblTitle.text = obj.strUserName
+            cell.lblField.text = "Field : " + obj.strUserSubCategory
+            cell.lblDegree.text = "Degree : " + obj.strDegree
+            cell.lblJobtype.text = "Job Type : " + obj.strPostFor
+            cell.lblExperience.text = obj.strFees + " AED per month"
+            cell.lblAED.text =  obj.strWorkingHour + " Hours per " + obj.strWorkingHourUnit
+            
+            let profilePic = obj.strUserImage
+            if profilePic != "" {
+                let url = URL(string: profilePic)
+                cell.imgVwUser.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "logo"))
+            }
+            
+            cell.btnWhatsapp.tag = indexPath.row
+            cell.btnWhatsapp.addTarget(self, action: #selector(openCallWhatsApp), for: .touchUpInside)
+            
+            cell.btnCall.tag = indexPath.row
+            cell.btnCall.addTarget(self, action: #selector(openCallDialer), for: .touchUpInside)
         }
         
-        
-        cell.btnWhatsApp.tag = indexPath.row
-        cell.btnWhatsApp.addTarget(self, action: #selector(openCallWhatsApp), for: .touchUpInside)
-        
-        cell.btnCall.tag = indexPath.row
-        cell.btnCall.addTarget(self, action: #selector(openCallDialer), for: .touchUpInside)
+     
         
         return cell
     }
@@ -121,6 +103,7 @@ extension ContactListViewController: UITableViewDelegate,UITableViewDataSource{
             self.openWhatsApp(strPhoneNumber: number)
         }
         
+      // openWhatsApp(strPhoneNumber: number)
     }
     
     @objc func openCallDialer(sender: UIButton){
@@ -130,6 +113,7 @@ extension ContactListViewController: UITableViewDelegate,UITableViewDataSource{
             self.callNumber(phoneNumber: number)
         }
     }
+    
     
     private func callNumber(phoneNumber: String) {
         guard let url = URL(string: "telprompt://\(phoneNumber)"),
@@ -161,6 +145,7 @@ extension ContactListViewController: UITableViewDelegate,UITableViewDataSource{
     }
     
     
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let obj = self.arrUserList[indexPath.row]
@@ -171,9 +156,8 @@ extension ContactListViewController: UITableViewDelegate,UITableViewDataSource{
     }
 }
 
-
-extension ContactListViewController{
-    
+extension JobsPostListViewController{
+ 
     func call_UserList(strCategoryID:String,strSubCategoryID:String,strUserID:String){
         
         if !objWebServiceManager.isNetworkAvailable(){
@@ -191,8 +175,7 @@ extension ContactListViewController{
 
         print(param)
         
-        objWebServiceManager.requestGet(strURL: WsUrl.url_GetUserList, params: param, queryParams: [:], strCustomValidation: "") { (response) in
-     //   objWebServiceManager.requestGet(strURL: WsUrl.url_GetUserList, params: param, queryParams: [:], strCustomValidation: "") { (response) in
+        objWebServiceManager.requestGet(strURL: WsUrl.url_GetPost, params: param, queryParams: [:], strCustomValidation: "") { (response) in
             objWebServiceManager.hideIndicator()
             let status = (response["status"] as? Int)
             let message = (response["message"] as? String)
@@ -207,13 +190,13 @@ extension ContactListViewController{
                         let obj = UserModel.init(dict: dictdata)
                         self.arrUserList.append(obj)
                     }
-                    self.tblVwContacts.reloadData()
+                    self.tblPostList.reloadData()
                 }
             }else{
                 objWebServiceManager.hideIndicator()
                 
                 if response["result"] as! String == "User not Exist"{
-                    self.tblVwContacts.displayBackgroundText(text: "User not Exist")
+                    self.tblPostList.displayBackgroundText(text: "User not Exist")
                 }else{
                     objAlert.showAlert(message: message ?? "", title: "Alert", controller: self)
                 }
@@ -226,5 +209,4 @@ extension ContactListViewController{
             objWebServiceManager.hideIndicator()
         }
    }
-    
 }

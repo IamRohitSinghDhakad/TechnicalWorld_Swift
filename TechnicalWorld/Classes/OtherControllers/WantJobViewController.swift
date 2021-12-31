@@ -19,7 +19,6 @@ class WantJobViewController: UIViewController {
     @IBOutlet var vwExpectedFees: UIView!
     @IBOutlet var vwTotalHours: UIView!
     @IBOutlet var vwExpectedMonthlySalery: UIView!
-    
     @IBOutlet var imgVwFullTime: UIImageView!
     @IBOutlet var imgVwPartTime: UIImageView!
     @IBOutlet var tfDescription: UITextField!
@@ -50,7 +49,7 @@ class WantJobViewController: UIViewController {
         super.viewDidLoad()
 
         self.call_SubCategory(strCategoryID: "7")
-        
+        self.postFor = "Full Time"
         self.vwWhatCanIDo.isHidden = true
         self.vwExpectedFees.isHidden = true
         self.vwTotalHours.isHidden = true
@@ -230,8 +229,9 @@ extension WantJobViewController{
                          "looking_for":self.tfLookingForeRole.text!,
                          "min_amount":self.tfExpectedMonthlySalery.text!,
                          "max_amount":self.tfExpectedMonthlySaleryTo.text!,
-                         "remark":"self.tfListedBy.text!",
+                         "remark":"",
                          "user_id":strUserID]as [String:Any]
+        print(dicrParam)
         
         objWebServiceManager.requestPost(strURL: WsUrl.url_AddPost, queryParams: [:], params: dicrParam, strCustomValidation: "", showIndicator: false) { (response) in
             

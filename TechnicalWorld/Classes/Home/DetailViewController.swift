@@ -14,6 +14,10 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var cvPictures: UICollectionView!
     @IBOutlet weak var btnHome: UIButton!
     @IBOutlet weak var lblService: UILabel!
+    @IBOutlet var lblCompanyReview: UILabel!
+    @IBOutlet var lblReviewIndividual: UILabel!
+    @IBOutlet var lblRevieCountCopmpany: UILabel!
+    @IBOutlet var lblReviewCountIndividual: UILabel!
     
     var arrImages = [ServiceImagesModel]()
     var objUser = UserModel(dict: [:])
@@ -28,6 +32,7 @@ class DetailViewController: UIViewController {
         if userID != ""{
             self.call_UserImage(strUserID: userID, strLoginID: objUser.strUserID)
         }
+        
         self.setUserData()
     }
     
@@ -39,6 +44,13 @@ class DetailViewController: UIViewController {
             let url = URL(string: profilePic)
             self.imgVwCategory.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "logo"))
         }
+        
+        self.lblCompanyReview.text = "Companies : \(objUser.strRatingCompany)"
+        self.lblReviewIndividual.text = "Individual : \(objUser.strRatingIndividual)"
+        
+        self.lblRevieCountCopmpany.text = "(\(objUser.strReviewCompany))"
+        self.lblReviewCountIndividual.text = "(\(objUser.strReviewIndividual))"
+        
     }
     
     @IBAction func btnOnHome(_ sender: Any) {
@@ -168,20 +180,6 @@ extension DetailViewController: UICollectionViewDelegate,UICollectionViewDataSou
 
         return CGSize(width: size, height: size + 10)
     }
-    /*
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets.zero
-    }
- 
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-     */
 }
 
 

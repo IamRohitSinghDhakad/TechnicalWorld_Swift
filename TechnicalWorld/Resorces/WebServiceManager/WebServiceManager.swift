@@ -546,6 +546,7 @@ extension WebServiceManager {
             
             for (key, value) in params ?? [:]{
                 multipartFormData.append((value as AnyObject).data(using: String.Encoding.utf8.rawValue)!, withName: key)
+                print(multipartFormData)
             }
             
         }, to: strURL,usingThreshold: UInt64.init(), method: .post,headers: header).response{ response in
