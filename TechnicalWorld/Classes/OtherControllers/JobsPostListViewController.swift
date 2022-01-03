@@ -150,7 +150,11 @@ extension JobsPostListViewController: UITableViewDelegate,UITableViewDataSource{
         
         let obj = self.arrUserList[indexPath.row]
         
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController")as! DetailViewController
+//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController")as! DetailViewController
+//        vc.objUser = obj
+//        self.navigationController?.pushViewController(vc, animated: true)
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "GeneralAccountantViewController")as! GeneralAccountantViewController
         vc.objUser = obj
         self.navigationController?.pushViewController(vc, animated: true)
     }

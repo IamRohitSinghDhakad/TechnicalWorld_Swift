@@ -38,6 +38,8 @@ class BidDetailViewController: UIViewController {
         self.lblDescription.text = objData?.strTitle
         self.lblSubmittedOffer.text = objData?.strSubmittedOffered
         self.lblBidBy.text = objData?.strName
+        
+        
     }
 
     @IBAction func btnBackOnHeader(_ sender: Any) {

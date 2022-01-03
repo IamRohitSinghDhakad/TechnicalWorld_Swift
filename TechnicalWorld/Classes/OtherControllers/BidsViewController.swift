@@ -66,6 +66,7 @@ class BidsViewController: UIViewController {
 //        self.btnAllBids.backgroundColor = UIColor.black
 //        self.vwMyBids.backgroundColor = UIColor.white
 //        self.btnMyBids.backgroundColor = UIColor.black
+        
         self.vwAllBids.backgroundColor = UIColor.init(named: "lightGreen")
         self.vwMyBids.backgroundColor = UIColor.white
         self.btnMyBids.setTitleColor(UIColor.black, for: .normal)
@@ -178,17 +179,22 @@ extension BidsViewController: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-    
-        
-        
         if self.myBidClicked == true{
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "SubmittedBidsViewController")as! SubmittedBidsViewController
             vc.strBidId = self.arrMyBidList[indexPath.row].strBid_id
             self.navigationController?.pushViewController(vc, animated: true)
+            
         }else{
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "BidDetailViewController")as! BidDetailViewController
-            vc.objData = self.arrBidList[indexPath.row]
-            self.navigationController?.pushViewController(vc, animated: true)
+           
+            if self.arrBidList[indexPath.row].strOffered != "0"{
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "SubmittedOfferViewController")as! SubmittedOfferViewController
+                vc.strBidId = self.arrBidList[indexPath.row].strBid_id
+                self.navigationController?.pushViewController(vc, animated: true)
+            }else{
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "BidDetailViewController")as! BidDetailViewController
+                vc.objData = self.arrBidList[indexPath.row]
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         }
         
     }

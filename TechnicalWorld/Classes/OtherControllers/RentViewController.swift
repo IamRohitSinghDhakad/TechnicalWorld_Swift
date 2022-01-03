@@ -60,16 +60,14 @@ extension RentViewController: UITableViewDelegate,UITableViewDataSource{
         
         let obj = self.arrDetailsSubcategory[indexPath.row]
         
-        print(obj)
-        
         cell.lblPrice.text = obj.strPrice + " AED  \(obj.strValidity)"
         cell.lblDetail.text = obj.strHeading
         cell.lblName.text = obj.strName
         cell.lblAddress.text = obj.strLocation
         cell.lblCompaniesRatingCount.text = obj.strRating
         
-        
-        let profilePic = obj.strImageUrl
+    
+        let profilePic = obj.strBaseUrl + obj.strImageURL1.trim()//obj.strImageUrl
         
         if profilePic != "" {
             let url = URL(string: profilePic)

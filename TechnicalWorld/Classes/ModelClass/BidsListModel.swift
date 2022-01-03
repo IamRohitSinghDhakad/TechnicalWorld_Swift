@@ -23,12 +23,19 @@ class BidsListModel: NSObject {
     var strSubCategoryName : String = ""
     var strUserIDBidPost:String = ""
     var strCategoryID:String = ""
+    var strOffered:String = ""
     
     
     init(dict : [String:Any]) {
         
         if let image = dict["image"] as? String{
             self.strImageUrl = image
+        }
+        
+        if let offered = dict["offered"] as? String{
+            self.strOffered = offered
+        }else  if let offered = dict["offered"] as? Int{
+            self.strOffered = "\(offered)"
         }
         
         if let category_name = dict["category_name"] as? String{

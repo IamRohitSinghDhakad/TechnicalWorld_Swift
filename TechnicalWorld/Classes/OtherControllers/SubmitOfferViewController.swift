@@ -16,6 +16,7 @@ class SubmitOfferViewController: UIViewController {
     @IBOutlet weak var lblCategory: UILabel!
     @IBOutlet weak var txtVw: RDTextView!
     @IBOutlet weak var tfPrice: UITextField!
+    @IBOutlet var btnContinue: UIButton!
     
     var strBidID:String = ""
     

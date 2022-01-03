@@ -33,12 +33,18 @@ class UserModel: NSObject {
     var strWorkingHourUnit : String = ""
     var strReviewCompany : String = ""
     var strReviewIndividual : String = ""
+    var strDate : String = ""
+    var strRemark : String = ""
     
     
     init(dict : [String:Any]) {
         
         if let username = dict["name"] as? String{
             self.strUserName = username
+        }
+        
+        if let remark = dict["remark"] as? String{
+            self.strRemark = remark
         }
         
         if let userID = dict["user_id"] as? String{
@@ -54,9 +60,9 @@ class UserModel: NSObject {
         }
         
         if let price = dict["price"] as? String{
-            self.strPrice = price + "AED"
+            self.strPrice = price + " AED"
         }else if let price = dict["price"] as? Int{
-            self.strPrice = "\(price)" + "AED"
+            self.strPrice = "\(price)" + " AED"
         }
         
         if let userImage = dict["user_image"] as? String{
@@ -77,6 +83,10 @@ class UserModel: NSObject {
         
         if let longitude = dict["lon"] as? String{
             self.strLongitude = longitude
+        }
+        
+        if let date = dict["date"] as? String{
+            self.strDate = date
         }
         
         if let description = dict["description"] as? String{
