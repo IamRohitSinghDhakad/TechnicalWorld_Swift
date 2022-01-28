@@ -19,6 +19,7 @@ class RentViewController: UIViewController {
     var strType = ""
     var strPostFor = ""
     var arrDetailsSubcategory = [DetailsSubCategoryModel]()
+    var strTitle = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,8 @@ class RentViewController: UIViewController {
         
         self.vwSearchBar.isHidden = true
         
+        self.lblTitle.text = self.strTitle
+        
         if self.strType == "All"{
             self.strSubCategoryID = ""
         }
@@ -36,13 +39,10 @@ class RentViewController: UIViewController {
         if userID != ""{
             self.call_getList(strUserID: userID)
         }
-        
-        
-        
     }
     
     @IBAction func btnHomeAction(_ sender: Any) {
-        
+        self.pushVc(viewConterlerId: "Reveal")
     }
     @IBAction func btnBackOnHeader(_ sender: Any) {
         onBackPressed()

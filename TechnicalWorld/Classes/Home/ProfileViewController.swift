@@ -99,10 +99,26 @@ class ProfileViewController: UIViewController,UINavigationControllerDelegate,Get
         
     }
     
+    @IBAction func btnOnNotification(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "NotificationViewController")as! NotificationViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    @IBAction func btnOnProfile(_ sender: Any) {
+        if objAppShareData.UserDetail.strSignUp_As == "company"{
+            if objAppShareData.UserDetail.strCategory == "Consultants" || objAppShareData.UserDetail.strCategory == "Contractors" || objAppShareData.UserDetail.strCategory == "Suppliers" || objAppShareData.UserDetail.strCategory == "Services" || objAppShareData.UserDetail.strCategory == "Maintenance" || objAppShareData.UserDetail.strCategory == "Lawyers and Arbitrations"{
+                
+                self.pushVc(viewConterlerId: "MyImagesViewController")
+                
+            }else{
+                
+            }
+        }
+    }
     
     
     func setUserData(){
-        
         self.tfFullName.text = objAppShareData.UserDetail.strUserName
         self.tfEmail.text = objAppShareData.UserDetail.strEmail
         self.tfPhoneNumber.text = objAppShareData.UserDetail.strPhoneNumber

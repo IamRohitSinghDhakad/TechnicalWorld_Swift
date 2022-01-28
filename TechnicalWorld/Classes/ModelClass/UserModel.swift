@@ -35,6 +35,10 @@ class UserModel: NSObject {
     var strReviewIndividual : String = ""
     var strDate : String = ""
     var strRemark : String = ""
+    var strMinAmount : String = ""
+    var strMaxAmount : String = ""
+    var strBidId : String = ""
+    var strReviewwed : String = ""
     
     
     init(dict : [String:Any]) {
@@ -53,10 +57,34 @@ class UserModel: NSObject {
             self.strUserID = "\(userID)"
         }
         
+        if let bid_id = dict["bid_id"] as? String{
+            self.strBidId = bid_id
+        }else if let bid_id = dict["bid_id"] as? Int{
+            self.strBidId = "\(bid_id)"
+        }
+        
+        if let reviewed = dict["reviewed"] as? String{
+            self.strReviewwed = reviewed
+        }else if let reviewed = dict["reviewed"] as? Int{
+            self.strReviewwed = "\(reviewed)"
+        }
+        
         if let phoneNumber = dict["mobile"] as? String{
             self.strPhoneNumber = phoneNumber
         }else if let phoneNumber = dict["mobile"] as? Int{
             self.strPhoneNumber = "\(phoneNumber)"
+        }
+        
+        if let max_amount = dict["max_amount"] as? String{
+            self.strMaxAmount = max_amount
+        }else if let max_amount = dict["max_amount"] as? Int{
+            self.strMaxAmount = "\(max_amount)"
+        }
+        
+        if let min_amount = dict["min_amount"] as? String{
+            self.strMinAmount = min_amount
+        }else if let min_amount = dict["min_amount"] as? Int{
+            self.strMinAmount = "\(min_amount)"
         }
         
         if let price = dict["price"] as? String{

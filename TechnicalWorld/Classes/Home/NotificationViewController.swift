@@ -49,12 +49,11 @@ extension NotificationViewController: UITableViewDelegate,UITableViewDataSource{
         
         
         let profilePic = obj.strimage.trim()
+        print(profilePic)
         if profilePic != "" {
             let url = URL(string: profilePic)
-            cell.imgvw.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "logo"))
+            cell.imgvw.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "bid"))
         }
-        
-        
         return cell
     }
     

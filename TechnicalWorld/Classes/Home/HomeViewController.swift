@@ -22,26 +22,22 @@ class HomeViewController: UIViewController {
     @IBOutlet var lblOfferthree: UILabel!
     @IBOutlet var lblPriceOfferThree: UILabel!
     @IBOutlet var lblDescOfferThree: UILabel!
+    @IBOutlet var tfSearchBar: UITextField!
     
     var arrCategory = [CategoryModel]()
+    var arrCategoryFilter = [CategoryModel]()
     var arrOffer = [OfferModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.call_GetCategory()
-       
-//        let userID = objAppShareData.UserDetail.strUserId
-//       if userID != ""{
-//        self.call_GetProfile(strUserID: userID)
-//       }
-       
-        
-//        self.arrTitles = ["Consultants","Contractors","Suppliers","Real State","Services","Maintenance", "Jobs", "Lawyer and \n Arbitrations", "Bids"]
-//        self.arrImages = [#imageLiteral(resourceName: "consultants"),#imageLiteral(resourceName: "contractors"),#imageLiteral(resourceName: "suppliers"),#imageLiteral(resourceName: "real"),#imageLiteral(resourceName: "service"),#imageLiteral(resourceName: "main"),#imageLiteral(resourceName: "jobs"),#imageLiteral(resourceName: "lawyer"),#imageLiteral(resourceName: "bids")]
         
         self.cvCategories.delegate = self
         self.cvCategories.dataSource = self
+        
+        self.tfSearchBar.delegate = self
+        self.tfSearchBar.addTarget(self, action: #selector(searchContactAsPerText(_ :)), for: .editingChanged)
         
         //Setup SideMenu
         if revealViewController() != nil {
@@ -59,8 +55,14 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func btnOnProfile(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController")as! ProfileViewController
-        self.navigationController?.pushViewController(vc, animated: true)
+        if objAppShareData.UserDetail.strUserId == ""{
+            objAlert.showAlertCallBack(alertLeftBtn: "", alertRightBtn: "OK", title: "Alert", message: "Please Login/Register for profile", controller: self) {
+                ObjAppdelegate.LoginNavigation()
+            }
+        }else{
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController")as! ProfileViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
 }
@@ -70,13 +72,13 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.arrCategory.count
+        return self.arrCategoryFilter.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath)as? HomeCollectionViewCell{
             
-           let objCategory = self.arrCategory[indexPath.row]
+           let objCategory = self.arrCategoryFilter[indexPath.row]
             
             cell.lblTitle.text = objCategory.strCategoryName
             
@@ -183,6 +185,29 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
      */
 }
 
+//MARK:- Searching
+extension HomeViewController{
+    
+    @objc func searchContactAsPerText(_ textfield:UITextField) {
+        self.arrCategoryFilter.removeAll()
+        if textfield.text?.count != 0 {
+            for dicData in self.arrCategory {
+                let isMachingWorker : NSString = (dicData.strCategoryName) as NSString
+                let range = isMachingWorker.lowercased.range(of: textfield.text!, options: NSString.CompareOptions.caseInsensitive, range: nil,   locale: nil)
+                if range != nil {
+                    self.arrCategoryFilter.append(dicData)
+                }
+            }
+        } else {
+            self.arrCategoryFilter = self.arrCategory
+        }
+//        self.arrSubCategoryFiltered = self.arrSubCategoryFiltered.sorted(by: { $0.sort > $1.sort})
+        self.cvCategories.reloadData()
+    }
+    
+    
+}
+
 extension HomeViewController{
     
     func call_GetCategory(){
@@ -213,6 +238,8 @@ extension HomeViewController{
                         let obj = CategoryModel.init(dict: dictdata)
                         self.arrCategory.append(obj)
                     }
+                    
+                    self.arrCategoryFilter = self.arrCategory
                     
                     self.cvCategories.reloadData()
                     

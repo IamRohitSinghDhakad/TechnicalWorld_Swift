@@ -56,7 +56,7 @@ class SubmittedBidsUsersViewController: UIViewController {
     }
     
     @IBAction func btnHome(_ sender: Any) {
-        
+        self.pushVc(viewConterlerId: "Reveal")
     }
     
     @IBAction func btnBackOnHeader(_ sender: Any) {

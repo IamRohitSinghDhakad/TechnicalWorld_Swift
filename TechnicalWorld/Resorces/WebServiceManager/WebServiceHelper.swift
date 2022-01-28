@@ -39,6 +39,9 @@ struct WsUrl{
     static let url_GetOfferBid = BASE_URL + "get_offer_bids"
     static let url_GetReview = BASE_URL + "review"
     static let url_UpdateProfile = BASE_URL + "complete_profile"
+    static let url_GiveReview = BASE_URL + "rating"
+    static let url_addUserImage = BASE_URL + "add_user_image"
+    static let url_deleteUserImage = BASE_URL + "delete_user_image"
 
 }
 

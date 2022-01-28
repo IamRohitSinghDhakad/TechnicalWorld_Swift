@@ -65,7 +65,7 @@ extension JobsPostListViewController: UITableViewDelegate,UITableViewDataSource{
             }else{
                 cell.lblAED.text =  obj.strFees + " AED per " + obj.strFeesUnit
             }
-           
+            cell.lblAED.isHidden = false
             
         }else{
             cell.vwUserImage.isHidden = false
@@ -75,8 +75,8 @@ extension JobsPostListViewController: UITableViewDelegate,UITableViewDataSource{
             cell.lblField.text = "Field : " + obj.strUserSubCategory
             cell.lblDegree.text = "Degree : " + obj.strDegree
             cell.lblJobtype.text = "Job Type : " + obj.strPostFor
-            cell.lblExperience.text = obj.strFees + " AED per month"
-            cell.lblAED.text =  obj.strWorkingHour + " Hours per " + obj.strWorkingHourUnit
+            cell.lblExperience.text = obj.strMinAmount + " - " + obj.strMaxAmount + " AED per month"
+            cell.lblAED.isHidden = true//text =  obj.strWorkingHour + " Hours per " + obj.strWorkingHourUnit
             
             let profilePic = obj.strUserImage
             if profilePic != "" {

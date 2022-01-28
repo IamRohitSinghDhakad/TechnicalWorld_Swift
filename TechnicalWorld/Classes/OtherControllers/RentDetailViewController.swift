@@ -87,7 +87,7 @@ class RentDetailViewController: UIViewController {
     }
     
     @IBAction func btnHome(_ sender: Any) {
-        
+        self.pushVc(viewConterlerId: "Reveal")
     }
     
     @IBAction func btnOpenWhatsapp(_ sender: Any) {

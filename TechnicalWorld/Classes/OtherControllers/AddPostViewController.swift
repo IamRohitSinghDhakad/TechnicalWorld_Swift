@@ -164,7 +164,7 @@ class AddPostViewController: UIViewController,UINavigationControllerDelegate,Get
         self.vwValidityInside.isHidden = true
         self.imgVwSell.image = #imageLiteral(resourceName: "radio")
         self.imgVwRent.image = #imageLiteral(resourceName: "circle")
-        self.postFor = "Sell"
+        self.postFor = "Sale"
     }
     
     
@@ -347,16 +347,6 @@ extension AddPostViewController: UIImagePickerControllerDelegate{
         
     }
     
-    
-//    func makeRounded() {
-//
-//        self.imgVwUser.layer.borderWidth = 0
-//        self.imgVwUser.layer.masksToBounds = false
-//        //self.imgUpload.layer.borderColor = UIColor.blackColor().CGColor
-//        self.imgVwUser.layer.cornerRadius = self.imgVwUser.frame.height/2 //This will change with corners of image and height/2 will make this circle shape
-//        self.imgVwUser.clipsToBounds = true
-//    }
-    
 }
 
 
@@ -419,7 +409,7 @@ extension AddPostViewController{
                          "listed_by":self.tfListedBy.text!,
                          "user_id":strUserID]as [String:Any]
         
-        
+        print(dicrParam)
         
         objWebServiceManager.uploadMultipartWithImagesData(strURL: WsUrl.url_AddPost, params: dicrParam, showIndicator: true, customValidation: "", imageData: imgData1, imageToUpload: arrImageData, imagesParam: arrImageParam, fileName: "user_image", mimeType: "image/jpeg") { (response) in
             objWebServiceManager.hideIndicator()

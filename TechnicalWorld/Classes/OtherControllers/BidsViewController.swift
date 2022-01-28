@@ -178,7 +178,6 @@ extension BidsViewController: UITableViewDelegate,UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         if self.myBidClicked == true{
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "SubmittedBidsViewController")as! SubmittedBidsViewController
             vc.strBidId = self.arrMyBidList[indexPath.row].strBid_id

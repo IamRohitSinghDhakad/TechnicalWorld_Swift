@@ -10,8 +10,8 @@ import WebKit
 
 class AboutUsViewController: UIViewController {
     
-    
     @IBOutlet var webVw: WKWebView!
+    @IBOutlet var lblTitile: UILabel!
     
     var strIsComingFrom = ""
     var strTitle = ""
@@ -21,13 +21,17 @@ class AboutUsViewController: UIViewController {
 
         switch strTitle {
         case "AboutUs":
-            self.loadUrl(strUrl: "https://technicalworld.ae/admin/index.php/api/page/AboutUs")
+            self.lblTitile.text = "About Us"
+            self.loadUrl(strUrl: "https://technicalworld.ae/admin/index.php/api/page/About%20Us")
         case "FAQ":
             self.loadUrl(strUrl: "https://technicalworld.ae/admin/index.php/api/page/FAQ")
         case "Privacy":
             self.loadUrl(strUrl: "https://technicalworld.ae/admin/index.php/api/page/Privacy")
         case "Terms":
             self.loadUrl(strUrl: "https://technicalworld.ae/admin/index.php/api/page/Terms")
+        case "ContactUs":
+            self.lblTitile.text = "Contact Us"
+            self.loadUrl(strUrl: "https://technicalworld.ae/admin/index.php/api/page/Contact%20Us")
         default:
             break
         }

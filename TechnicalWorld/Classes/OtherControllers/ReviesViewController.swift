@@ -15,6 +15,7 @@ class ReviesViewController: UIViewController {
     @IBOutlet var vwContainerButtons: UIView!
     @IBOutlet var btnIndividual: UIButton!
     @IBOutlet var btnCompany: UIButton!
+    @IBOutlet var vwReview: UIView!
     
     var objUser:UserModel?
     var isType = ""
@@ -29,6 +30,12 @@ class ReviesViewController: UIViewController {
         self.tblVw.delegate = self
         self.tblVw.dataSource = self
         self.call_GetReview(strReview: objUser?.strUserID ?? "0")
+        
+        if objUser?.strReviewwed == "0"{
+            self.vwReview.isHidden = false
+        }else{
+            self.vwReview.isHidden = true
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -88,6 +95,14 @@ class ReviesViewController: UIViewController {
                         }else{
                             self.arrReviewCompany.append(obj)
                         }
+                        
+//                        for data in self.arrReviewIndividual{
+//                            if data.str == objAppShareData.UserDetail.strUserId{
+//
+//                            }else{
+//
+//                            }
+//                        }
                        
                     }
                     self.tblVw.reloadData()

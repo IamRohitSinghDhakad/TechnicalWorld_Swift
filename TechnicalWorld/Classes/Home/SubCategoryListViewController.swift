@@ -52,14 +52,16 @@ class SubCategoryListViewController: UIViewController {
     }
     
     @IBAction func btnHomeAction(_ sender: Any) {
+        self.pushVc(viewConterlerId: "Reveal")
     }
+    
     @IBAction func btnOnRent(_ sender: Any) {
         self.isType = "Rent"
         self.vwRentBg.backgroundColor = UIColor.init(named: "lightGreen")
         self.vwBuyBg.backgroundColor = UIColor.white
     }
     @IBAction func btnOnBuy(_ sender: Any) {
-        self.isType = "Sell"
+        self.isType = "Sale"
         self.vwRentBg.backgroundColor = UIColor.white
         self.vwBuyBg.backgroundColor = UIColor.init(named: "lightGreen")
         
@@ -94,6 +96,7 @@ extension SubCategoryListViewController: UITableViewDelegate,UITableViewDataSour
             vc.strSubCategoryID = "\(strSubCategoryID)"
             vc.strType = self.arrSubCategoryFiltered[indexPath.row].strSubCategoryName
             vc.strPostFor = self.isType
+            vc.strTitle = self.isType + "/" + self.arrSubCategoryFiltered[indexPath.row].strSubCategoryName
             self.navigationController?.pushViewController(vc, animated: true)
         }else if self.isComingfrom == "7"{
             let strCategoryID = self.arrSubCategoryFiltered[indexPath.row].strCategoryID

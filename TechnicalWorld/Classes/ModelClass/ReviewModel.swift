@@ -14,6 +14,7 @@ class ReviewModel: NSObject {
     var strSignup_as :String = ""
     var strimage :String = ""
     var drating :Double = 0.0
+    var strRating :String = ""
     
     
     init(dict : [String:Any]) {
@@ -40,6 +41,15 @@ class ReviewModel: NSObject {
         }else  if let rating = dict["rating"] as? String{
             self.drating = Double(rating) ?? 0.0
         }
+        
+        
+//        if let rating_by = dict["rating_by"] as? Double{
+//            self.drating = rating_by
+//        }else  if let rating_by = dict["rating_by"] as? String{
+//            self.drating = Double(rating_by) ?? 0.0
+//        }
+        
+        
         
         
         

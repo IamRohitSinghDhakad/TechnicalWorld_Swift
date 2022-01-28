@@ -56,6 +56,7 @@
 		F910C08C273FC364001F897A /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F910C08B273FC364001F897A /* NotificationViewController.swift */; };
 		F910C08E273FC45E001F897A /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F910C08D273FC45E001F897A /* NotificationTableViewCell.swift */; };
 		F910C090273FE71D001F897A /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F910C08F273FE71D001F897A /* NotificationModel.swift */; };
+		F91C54DB27A4386900BFDFD2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F91C54DD27A4386900BFDFD2 /* Localizable.strings */; };
 		F91E0B0B277495DD00C9ECCD /* SubmittedBidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91E0B0A277495DC00C9ECCD /* SubmittedBidsViewController.swift */; };
 		F91E0B0D277496F400C9ECCD /* SubmittedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91E0B0C277496F400C9ECCD /* SubmittedTableViewCell.swift */; };
 		F91E470A26342E9100E058F8 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91E470926342E9100E058F8 /* CategoryModel.swift */; };
@@ -90,6 +91,8 @@
 		F9FB30C826255F98003BA51C /* GeneralAccountantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FB30C726255F98003BA51C /* GeneralAccountantViewController.swift */; };
 		F9FC4C5C277F187E0073DB3C /* JobsPostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FC4C5B277F187E0073DB3C /* JobsPostListViewController.swift */; };
 		F9FC4C5E277F18AF0073DB3C /* JobsPostListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FC4C5D277F18AF0073DB3C /* JobsPostListTableViewCell.swift */; };
+		F9FE0D10279804F000A58571 /* MyImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FE0D0F279804F000A58571 /* MyImagesViewController.swift */; };
+		F9FE0D122798059200A58571 /* MyImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FE0D112798059200A58571 /* MyImagesCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,6 +151,12 @@
 		F910C08B273FC364001F897A /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		F910C08D273FC45E001F897A /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		F910C08F273FE71D001F897A /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		F91C54D427A42F2600BFDFD2 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		F91C54D527A42F2600BFDFD2 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LocationPicker.strings; sourceTree = "<group>"; };
+		F91C54D627A42F2700BFDFD2 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F91C54D827A4307A00BFDFD2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		F91C54DC27A4386900BFDFD2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F91C54DE27A4386F00BFDFD2 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F91E0B0A277495DC00C9ECCD /* SubmittedBidsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmittedBidsViewController.swift; sourceTree = "<group>"; };
 		F91E0B0C277496F400C9ECCD /* SubmittedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmittedTableViewCell.swift; sourceTree = "<group>"; };
 		F91E470926342E9100E058F8 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
@@ -183,6 +192,8 @@
 		F9FB30C726255F98003BA51C /* GeneralAccountantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralAccountantViewController.swift; sourceTree = "<group>"; };
 		F9FC4C5B277F187E0073DB3C /* JobsPostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsPostListViewController.swift; sourceTree = "<group>"; };
 		F9FC4C5D277F18AF0073DB3C /* JobsPostListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsPostListTableViewCell.swift; sourceTree = "<group>"; };
+		F9FE0D0F279804F000A58571 /* MyImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImagesViewController.swift; sourceTree = "<group>"; };
+		F9FE0D112798059200A58571 /* MyImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImagesCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,6 +371,7 @@
 		6AFAF6B92621E87300580F96 /* TechnicalWorld */ = {
 			isa = PBXGroup;
 			children = (
+				F91C54D327A42EB500BFDFD2 /* Localization */,
 				6A5CACDA2623407000C66434 /* BridgingHeader */,
 				6A5CACCF2623403900C66434 /* Resorces */,
 				6A2A2731262B3FF200CF7418 /* AppSharedClass */,
@@ -406,6 +418,14 @@
 				2892D5AAA0C4D7171BD3AB64 /* Pods_TechnicalWorld.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F91C54D327A42EB500BFDFD2 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				F91C54DD27A4386900BFDFD2 /* Localizable.strings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		F92C4E232776F6290067D97B /* FloatingRatingView */ = {
@@ -459,6 +479,7 @@
 				F9CACAF6277620680052F4D8 /* ReviewListViewController.swift */,
 				F9FC4C5B277F187E0073DB3C /* JobsPostListViewController.swift */,
 				F9EB4EA22782FBDE00C6DFF8 /* SubmittedOfferViewController.swift */,
+				F9FE0D0F279804F000A58571 /* MyImagesViewController.swift */,
 			);
 			path = OtherControllers;
 			sourceTree = "<group>";
@@ -473,6 +494,7 @@
 				F99952DC2778DC4E0057F13E /* ReviewTableViewCell.swift */,
 				F9FC4C5D277F18AF0073DB3C /* JobsPostListTableViewCell.swift */,
 				F9EB4EA42782FFFA00C6DFF8 /* SubmittedOfferTableViewCell.swift */,
+				F9FE0D112798059200A58571 /* MyImagesCollectionViewCell.swift */,
 			);
 			path = CellClasses;
 			sourceTree = "<group>";
@@ -521,6 +543,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 6AFAF6AE2621E87300580F96;
 			productRefGroup = 6AFAF6B82621E87300580F96 /* Products */;
@@ -537,6 +560,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F91C54DB27A4386900BFDFD2 /* Localizable.strings in Resources */,
 				6AFAF6C72621E87300580F96 /* LaunchScreen.storyboard in Resources */,
 				6AFAF6C42621E87300580F96 /* Assets.xcassets in Resources */,
 				6AFAF6C22621E87300580F96 /* Main.storyboard in Resources */,
@@ -627,6 +651,7 @@
 				6A5CACA02623174300C66434 /* SideMenuViewController.swift in Sources */,
 				F926A17326358BD900F3EC52 /* UserModel.swift in Sources */,
 				F9EB4EA52782FFFA00C6DFF8 /* SubmittedOfferTableViewCell.swift in Sources */,
+				F9FE0D10279804F000A58571 /* MyImagesViewController.swift in Sources */,
 				6A2A2735262B3FF200CF7418 /* AppSharedData.swift in Sources */,
 				6AF564EC262C47D700F30263 /* ReviesViewController.swift in Sources */,
 				F94A084E2647B7CE00461D19 /* Location.swift in Sources */,
@@ -637,6 +662,7 @@
 				F91E470A26342E9100E058F8 /* CategoryModel.swift in Sources */,
 				F9FB30C526255F19003BA51C /* RentDetailCollectionViewCell.swift in Sources */,
 				6A832D08262495A40070FA90 /* MapViewViewController.swift in Sources */,
+				F9FE0D122798059200A58571 /* MyImagesCollectionViewCell.swift in Sources */,
 				6A7FCAA62627466500939BF0 /* BidsViewController.swift in Sources */,
 				6A5CACD72623406400C66434 /* SWRevealViewController+Extensions.swift in Sources */,
 				6A7C6250262459AB00C82894 /* DetailViewController.swift in Sources */,
@@ -698,6 +724,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				6AFAF6C12621E87300580F96 /* Base */,
+				F91C54D427A42F2600BFDFD2 /* ar */,
+				F91C54D827A4307A00BFDFD2 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -706,14 +734,25 @@
 			isa = PBXVariantGroup;
 			children = (
 				6AFAF6C62621E87300580F96 /* Base */,
+				F91C54D627A42F2700BFDFD2 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F91C54DD27A4386900BFDFD2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F91C54DC27A4386900BFDFD2 /* en */,
+				F91C54DE27A4386F00BFDFD2 /* ar */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		F94A08522647BB1200461D19 /* LocationPicker.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F94A08532647BB1200461D19 /* Base */,
+				F91C54D527A42F2600BFDFD2 /* ar */,
 			);
 			name = LocationPicker.storyboard;
 			sourceTree = "<group>";
@@ -725,6 +764,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -786,6 +826,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -845,7 +886,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7E7WKW772Q;
+				DEVELOPMENT_TEAM = C4F68K28HP;
 				INFOPLIST_FILE = TechnicalWorld/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -869,7 +910,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7E7WKW772Q;
+				DEVELOPMENT_TEAM = C4F68K28HP;
 				INFOPLIST_FILE = TechnicalWorld/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
