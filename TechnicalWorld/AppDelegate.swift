@@ -37,6 +37,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       //  self.registerForRemoteNotification()
        // Messaging.messaging().delegate = self
         
+        let value = LocalizationSystem.sharedInstance.getLanguage()
+        print("Language is \(value)")
+            if value == "en"{
+                LocalizationSystem.sharedInstance.setLanguage(languageCode: "en")
+            }else{
+                LocalizationSystem.sharedInstance.setLanguage(languageCode: "ar")
+            }
+        
         (UIApplication.shared.delegate as? AppDelegate)?.self.window = window
         
         return true

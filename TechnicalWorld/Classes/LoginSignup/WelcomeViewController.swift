@@ -27,6 +27,10 @@ class WelcomeViewController: UIViewController {
      
     
         self.call_GetBanner()
+        
+        
+        
+        
     }
     
     

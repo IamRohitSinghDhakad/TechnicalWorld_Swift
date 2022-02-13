@@ -3,10 +3,10 @@
 "09K-SH-HSE.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Select  Sub category"; ObjectID = "0Dg-fF-7W2"; */
-"0Dg-fF-7W2.placeholder" = "Select  Sub category";
+"0Dg-fF-7W2.placeholder" =  "اختر التصنيف الفرعي";
 
 /* Class = "UILabel"; text = "Want a Job"; ObjectID = "0cb-aM-JDI"; */
-"0cb-aM-JDI.text" = "Want a Job";
+"0cb-aM-JDI.text" = "ابحث عن عمل";
 
 /* Class = "UIButton"; configuration.title = " "; ObjectID = "0gv-D9-ZMc"; */
 "0gv-D9-ZMc.configuration.title" = " ";
@@ -15,67 +15,67 @@
 "0gv-D9-ZMc.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "BATHROOMS"; ObjectID = "16d-j7-E34"; */
-"16d-j7-E34.text" = "BATHROOMS";
+"16d-j7-E34.text" = "الحمامات";
 
 /* Class = "UILabel"; text = "          "; ObjectID = "1SP-DZ-3oW"; */
-"1SP-DZ-3oW.text" = "          ";
+"1SP-DZ-3oW.text" = " ";
 
 /* Class = "UILabel"; text = "$ 12,000"; ObjectID = "1mV-kG-3hE"; */
 "1mV-kG-3hE.text" = "$ 12,000";
 
 /* Class = "UIButton"; normalTitle = "Buy"; ObjectID = "1yk-r7-s77"; */
-"1yk-r7-s77.normalTitle" = "Buy";
+"1yk-r7-s77.normalTitle" = "شراء";
 
 /* Class = "UILabel"; text = "Details"; ObjectID = "23H-s9-YhS"; */
-"23H-s9-YhS.text" = "Details";
+"23H-s9-YhS.text" = "تفاصيل";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "2H3-9W-4vm"; */
 "2H3-9W-4vm.text" = "Label";
 
 /* Class = "UILabel"; text = "Individual : 5.0"; ObjectID = "2LL-uW-Uog"; */
-"2LL-uW-Uog.text" = "Individual : 5.0";
+"2LL-uW-Uog.text" = "شخصي:";
 
 /* Class = "UILabel"; text = "Add Photos"; ObjectID = "2La-bh-lHf"; */
-"2La-bh-lHf.text" = "Add Photos";
+"2La-bh-lHf.text" = "اضف صور";
 
 /* Class = "UITextField"; placeholder = "Type"; ObjectID = "2QY-lY-doF"; */
-"2QY-lY-doF.placeholder" = "Type";
+"2QY-lY-doF.placeholder" = "نوع";
 
 /* Class = "UITextField"; placeholder = "Validity"; ObjectID = "2sW-zX-gHY"; */
-"2sW-zX-gHY.placeholder" = "Validity";
+"2sW-zX-gHY.placeholder" = "صلاحية";
 
 /* Class = "UITextField"; placeholder = "Price"; ObjectID = "3JF-0L-grW"; */
-"3JF-0L-grW.placeholder" = "Price";
+"3JF-0L-grW.placeholder" = "سعر";
 
 /* Class = "UILabel"; text = "Minimum Education Level"; ObjectID = "3Y1-R1-ck1"; */
-"3Y1-R1-ck1.text" = "Minimum Education Level";
+"3Y1-R1-ck1.text" = "الحد الادنى للمستوى التعليمي";
 
 /* Class = "UILabel"; text = "   "; ObjectID = "3ht-PD-6mk"; */
 "3ht-PD-6mk.text" = "   ";
 
 /* Class = "UITextField"; placeholder = "Other Qualification"; ObjectID = "3yc-Xb-UIv"; */
-"3yc-Xb-UIv.placeholder" = "Other Qualification";
+"3yc-Xb-UIv.placeholder" = "المأهلات الاخرى";
 
 /* Class = "UITextField"; placeholder = "Enter Email"; ObjectID = "4ET-7y-6hn"; */
-"4ET-7y-6hn.placeholder" = "Enter Email";
+"4ET-7y-6hn.placeholder" = "أدخل البريد الإلكتروني";
 
 /* Class = "UILabel"; text = "Offered Package"; ObjectID = "4GG-0s-yzy"; */
-"4GG-0s-yzy.text" = "Offered Package";
+"4GG-0s-yzy.text" = "المميزات المعروضة";
 
 /* Class = "UILabel"; text = "2BHK available for rent"; ObjectID = "4NN-GS-Wlv"; */
 "4NN-GS-Wlv.text" = "2BHK available for rent";
 
 /* Class = "UILabel"; text = "Rakesh Pandey"; ObjectID = "4YV-xN-95n"; */
-"4YV-xN-95n.text" = "Rakesh Pandey";
+"4YV-xN-95n.text" = "  ";
 
 /* Class = "UIButton"; normalTitle = "Next"; ObjectID = "4ft-B8-bTR"; */
-"4ft-B8-bTR.normalTitle" = "Next";
+"4ft-B8-bTR.normalTitle" = "التالي";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "4pE-wY-o2y"; */
 "4pE-wY-o2y.text" = "Label";
 
 /* Class = "UILabel"; text = "Individual : 5.0"; ObjectID = "53O-ur-ipa"; */
-"53O-ur-ipa.text" = "Individual : 5.0";
+"53O-ur-ipa.text" = "شخصي: ";
 
 /* Class = "UILabel"; text = "  "; ObjectID = "5N2-zM-dCf"; */
 "5N2-zM-dCf.text" = "  ";
@@ -93,85 +93,85 @@
 "5uk-Yf-cSh.text" = "Label";
 
 /* Class = "UILabel"; text = "Sale"; ObjectID = "65v-Pu-wFL"; */
-"65v-Pu-wFL.text" = "Sale";
+"65v-Pu-wFL.text" = "تخفيض السعر";
 
 /* Class = "UIButton"; normalTitle = "Individual"; ObjectID = "6Bv-Xg-FYA"; */
-"6Bv-Xg-FYA.normalTitle" = "Individual";
+"6Bv-Xg-FYA.normalTitle" = "شخصي";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "6WY-TA-sU7"; */
 "6WY-TA-sU7.text" = "Label";
 
 /* Class = "UILabel"; text = "Price:- 3000 AED"; ObjectID = "6qt-cp-xcS"; */
-"6qt-cp-xcS.text" = "Price:- 3000 AED";
+"6qt-cp-xcS.text" =   "سعر :-";
 
 /* Class = "UILabel"; text = "SUPER BUILTUP  AREA(FT)"; ObjectID = "6v0-cM-Xg7"; */
-"6v0-cM-Xg7.text" = "SUPER BUILTUP  AREA(FT)";
+"6v0-cM-Xg7.text" = " مساحة البناء(sq/ft)";
 
 /* Class = "UILabel"; text = "Minimum Year of experience"; ObjectID = "7KQ-tB-ZbG"; */
-"7KQ-tB-ZbG.text" = "Minimum Year of experience";
+"7KQ-tB-ZbG.text" = "الحد الادنى للخبرة";
 
 /* Class = "UIButton"; normalTitle = "Forgot Password"; ObjectID = "7Lx-BV-EKb"; */
-"7Lx-BV-EKb.normalTitle" = "Forgot Password";
+"7Lx-BV-EKb.normalTitle" = "نسيت كلمة السر";
 
 /* Class = "UITextField"; placeholder = "Select Category"; ObjectID = "7MG-By-PBf"; */
-"7MG-By-PBf.placeholder" = "Select Category";
+"7MG-By-PBf.placeholder" = "اختر التصنيف";
 
 /* Class = "UIButton"; normalTitle = "Term of Service"; ObjectID = "7Sw-2e-2nK"; */
-"7Sw-2e-2nK.normalTitle" = "Term of Service";
+"7Sw-2e-2nK.normalTitle" = "شرط الخدمة";
 
 /* Class = "UILabel"; text = "Reviews"; ObjectID = "7Y7-34-06k"; */
-"7Y7-34-06k.text" = "Reviews";
+"7Y7-34-06k.text" = "تعليقات";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "7ea-O0-aMq"; */
 "7ea-O0-aMq.text" = "Label";
 
 /* Class = "UILabel"; text = "Other Expected Benifits"; ObjectID = "80Y-xe-jO3"; */
-"80Y-xe-jO3.text" = "Other Expected Benifits";
+"80Y-xe-jO3.text" = "مميزات اخرى : ";
 
 /* Class = "UILabel"; text = "Individual rating (high to low)"; ObjectID = "8Cs-sB-ebB"; */
-"8Cs-sB-ebB.text" = "Individual rating (high to low)";
+"8Cs-sB-ebB.text" = "تقمييم شخصي (الاعلى الى الاقل)";
 
 /* Class = "UILabel"; text = "Minimum Qualification"; ObjectID = "8E4-7f-IrP"; */
-"8E4-7f-IrP.text" = "Minimum Qualification";
+"8E4-7f-IrP.text" = "الحد الادنى للمأهل العلمي";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "8JE-CS-yc9"; */
 "8JE-CS-yc9.text" = "Label";
 
 /* Class = "UILabel"; text = "Jobs"; ObjectID = "8Lo-1y-ctq"; */
-"8Lo-1y-ctq.text" = "Jobs";
+"8Lo-1y-ctq.text" = "وظائف";
 
 /* Class = "UILabel"; text = "Submitted Offer -"; ObjectID = "8NP-5y-NAI"; */
-"8NP-5y-NAI.text" = "Submitted Offer -";
+"8NP-5y-NAI.text" = "العروض المرسلة";
 
 /* Class = "UILabel"; text = "Add Image"; ObjectID = "8Sp-s6-nTv"; */
-"8Sp-s6-nTv.text" = "Add Image";
+"8Sp-s6-nTv.text" = "إضافة صورة";
 
 /* Class = "UILabel"; text = "Accident"; ObjectID = "8We-CI-OVq"; */
-"8We-CI-OVq.text" = "Accident";
+"8We-CI-OVq.text" = "حادثة";
 
 /* Class = "UILabel"; text = "Offer Desription"; ObjectID = "8sm-w3-Lai"; */
-"8sm-w3-Lai.text" = "Offer Desription";
+"8sm-w3-Lai.text" = "الوصف";
 
 /* Class = "UITextField"; placeholder = "Date Of Birth"; ObjectID = "90m-kI-gth"; */
-"90m-kI-gth.placeholder" = "Date Of Birth";
+"90m-kI-gth.placeholder" = "تاريخ الميلاد";
 
 /* Class = "UILabel"; text = "Total Hours"; ObjectID = "99B-sk-Rdo"; */
-"99B-sk-Rdo.text" = "Total Hours";
+"99B-sk-Rdo.text" = "اجمالي الساعات";
 
 /* Class = "UILabel"; text = "Set your profile picture"; ObjectID = "9kO-B9-iEM"; */
-"9kO-B9-iEM.text" = "Set your profile picture";
+"9kO-B9-iEM.text" = "ضع الصورة الشخصية";
 
 /* Class = "UILabel"; text = "Select Location"; ObjectID = "9oC-Z8-8kJ"; */
-"9oC-Z8-8kJ.text" = "Select Location";
+"9oC-Z8-8kJ.text" = "اختر موقعا";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "ADa-Xv-jTH"; */
 "ADa-Xv-jTH.text" = "Label";
 
 /* Class = "UILabel"; text = "Part Time"; ObjectID = "ATE-00-xXK"; */
-"ATE-00-xXK.text" = "Part Time";
+"ATE-00-xXK.text" = "جرئي";
 
 /* Class = "UIButton"; normalTitle = "Post"; ObjectID = "Ag7-JX-Jf4"; */
-"Ag7-JX-Jf4.normalTitle" = "Post";
+"Ag7-JX-Jf4.normalTitle" = "عرض";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "AgU-qe-mts"; */
 "AgU-qe-mts.text" = "Label";
@@ -180,37 +180,37 @@
 "Aka-Fr-cZY.text" = "Label";
 
 /* Class = "UILabel"; text = "My Images"; ObjectID = "Ash-f5-tpt"; */
-"Ash-f5-tpt.text" = "My Images";
+"Ash-f5-tpt.text" = "صورتي";
 
 /* Class = "UILabel"; text = "Companies : 5.0"; ObjectID = "BQo-Ta-cML"; */
-"BQo-Ta-cML.text" = "Companies : 5.0";
+"BQo-Ta-cML.text" = "شركات: ";
 
 /* Class = "UILabel"; text = "Individual : 5.0"; ObjectID = "BrP-nZ-4Sd"; */
-"BrP-nZ-4Sd.text" = "Individual : 5.0";
+"BrP-nZ-4Sd.text" = "شخصي: ";
 
 /* Class = "UILabel"; text = "Give Reviews"; ObjectID = "Byd-cT-ofq"; */
-"Byd-cT-ofq.text" = "Give Reviews";
+"Byd-cT-ofq.text" = "اضف تعليق";
 
 /* Class = "UILabel"; text = "Companies : 5.0"; ObjectID = "BzI-Mf-aPt"; */
-"BzI-Mf-aPt.text" = "Companies : 5.0";
+"BzI-Mf-aPt.text" = "شركات: ";
 
 /* Class = "UIButton"; normalTitle = "Continue"; ObjectID = "CIS-jV-dgS"; */
-"CIS-jV-dgS.normalTitle" = "Continue";
+"CIS-jV-dgS.normalTitle" = "تابع";
 
 /* Class = "UILabel"; text = "Select Delivery Location"; ObjectID = "Ca9-ZP-RNz"; */
-"Ca9-ZP-RNz.text" = "Select Delivery Location";
+"Ca9-ZP-RNz.text" = "حدد مكان التسليم";
 
 /* Class = "UILabel"; text = "Date Of Birth"; ObjectID = "Cal-o7-vvY"; */
-"Cal-o7-vvY.text" = "Date Of Birth";
+"Cal-o7-vvY.text" = "تاريخ الميلاد";
 
 /* Class = "UILabel"; text = "My Images"; ObjectID = "Ckj-vg-PeU"; */
-"Ckj-vg-PeU.text" = "My Images";
+"Ckj-vg-PeU.text" = "صورتي";
 
 /* Class = "UILabel"; text = "          "; ObjectID = "Cy6-rx-4Nq"; */
 "Cy6-rx-4Nq.text" = "          ";
 
 /* Class = "UILabel"; text = "to"; ObjectID = "D4N-mk-YyC"; */
-"D4N-mk-YyC.text" = "to";
+"D4N-mk-YyC.text" = "الى";
 
 /* Class = "UIButton"; configuration.title = " "; ObjectID = "D8Z-lm-iAn"; */
 "D8Z-lm-iAn.configuration.title" = " ";
@@ -225,37 +225,37 @@
 "DKz-24-c1s.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "BEEDROOMS"; ObjectID = "DV0-U2-qSH"; */
-"DV0-U2-qSH.text" = "BEEDROOMS";
+"DV0-U2-qSH.text" = "غرف النوم";
 
 /* Class = "UIButton"; normalTitle = "Update"; ObjectID = "DY1-nc-O17"; */
-"DY1-nc-O17.normalTitle" = "Update";
+"DY1-nc-O17.normalTitle" = "تحديث";
 
 /* Class = "UILabel"; text = "Bids"; ObjectID = "DyI-4h-k4W"; */
-"DyI-4h-k4W.text" = "Bids";
+"DyI-4h-k4W.text" = "مناقصات";
 
 /* Class = "UILabel"; text = "Time Remaining - 03hr : 25m :48s"; ObjectID = "E2w-lA-dQy"; */
-"E2w-lA-dQy.text" = "Time Remaining - 03hr : 25m :48s";
+"E2w-lA-dQy.text" = "الوقت المتبقي - ";
 
 /* Class = "UIButton"; normalTitle = "  "; ObjectID = "ENr-J8-dF1"; */
 "ENr-J8-dF1.normalTitle" = "  ";
 
 /* Class = "UITextField"; placeholder = "Location"; ObjectID = "EZ1-IP-Msb"; */
-"EZ1-IP-Msb.placeholder" = "Location";
+"EZ1-IP-Msb.placeholder" = "الموقع";
 
 /* Class = "UILabel"; text = "Forgot Password"; ObjectID = "EaX-wD-rlv"; */
-"EaX-wD-rlv.text" = "Forgot Password";
+"EaX-wD-rlv.text" = "نسيت كلمة السر";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Eab-ty-rSU"; */
 "Eab-ty-rSU.text" = "Label";
 
 /* Class = "UILabel"; text = "Location"; ObjectID = "FBg-21-4AG"; */
-"FBg-21-4AG.text" = "Location";
+"FBg-21-4AG.text" = "الموقع";
 
 /* Class = "UILabel"; text = "Jessica Fox"; ObjectID = "FX4-VY-SOa"; */
 "FX4-VY-SOa.text" = "Jessica Fox";
 
 /* Class = "UILabel"; text = "(in sft)"; ObjectID = "G0a-lV-4be"; */
-"G0a-lV-4be.text" = "(in sft)";
+"G0a-lV-4be.text" = "(في SFT)";
 
 /* Class = "UITextField"; placeholder = "10000"; ObjectID = "G8o-hc-QiX"; */
 "G8o-hc-QiX.placeholder" = "10000";
@@ -270,61 +270,61 @@
 "Gk8-nz-7d3.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "LISTED BY"; ObjectID = "GrF-Qh-mIi"; */
-"GrF-Qh-mIi.text" = "LISTED BY";
+"GrF-Qh-mIi.text" = " مدرجة من قبل";
 
 /* Class = "UITextField"; placeholder = "Field"; ObjectID = "GvU-3r-Qaa"; */
-"GvU-3r-Qaa.placeholder" = "Field";
+"GvU-3r-Qaa.placeholder" = "المجال";
 
 /* Class = "UILabel"; text = "I agree to the"; ObjectID = "H2a-n6-EE6"; */
-"H2a-n6-EE6.text" = "I agree to the";
+"H2a-n6-EE6.text" = " اوافق على <u> شروط و احكام التطبيق . ";
 
 /* Class = "UITextField"; placeholder = "Date Of Birth"; ObjectID = "H6U-WH-piD"; */
-"H6U-WH-piD.placeholder" = "Date Of Birth";
+"H6U-WH-piD.placeholder" = "تاريخ الميلاد";
 
 /* Class = "UIButton"; normalTitle = "Register Now!"; ObjectID = "HBl-2z-72o"; */
-"HBl-2z-72o.normalTitle" = "Register Now!";
+"HBl-2z-72o.normalTitle" = "سجل الان!";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "I6p-hJ-qO4"; */
 "I6p-hJ-qO4.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Enter Password"; ObjectID = "I8C-OD-qJ7"; */
-"I8C-OD-qJ7.placeholder" = "Enter Password";
+"I8C-OD-qJ7.placeholder" = "أدخل كلمة المرور";
 
 /* Class = "UITextField"; placeholder = "Enter Email"; ObjectID = "IGv-BG-1RM"; */
-"IGv-BG-1RM.placeholder" = "Enter Email";
+"IGv-BG-1RM.placeholder" = "أدخل البريد الإلكتروني";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "II9-W1-10v"; */
 "II9-W1-10v.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Search..."; ObjectID = "IIt-7j-9bY"; */
-"IIt-7j-9bY.placeholder" = "Search...";
+"IIt-7j-9bY.placeholder" = "بحث...";
 
 /* Class = "UILabel"; text = "Minimum Work Experience"; ObjectID = "InO-tQ-WwV"; */
-"InO-tQ-WwV.text" = "Minimum Work Experience";
+"InO-tQ-WwV.text" = "الحد الادنى للخبرة";
 
 /* Class = "UILabel"; text = "CARPET  AREA  (FT)"; ObjectID = "Ing-Gk-wJa"; */
-"Ing-Gk-wJa.text" = "CARPET  AREA  (FT)";
+"Ing-Gk-wJa.text" = "منطقة السجاد (قدم)";
 
 /* Class = "UILabel"; text = "(26)"; ObjectID = "JEj-b0-wzS"; */
 "JEj-b0-wzS.text" = "(26)";
 
 /* Class = "UITextField"; placeholder = "Desription"; ObjectID = "JQo-si-9I5"; */
-"JQo-si-9I5.placeholder" = "Desription";
+"JQo-si-9I5.placeholder" = "وصف";
 
 /* Class = "UILabel"; text = "For : "; ObjectID = "JTz-es-peY"; */
-"JTz-es-peY.text" = "For : ";
+"JTz-es-peY.text" = "ل : ";
 
 /* Class = "UILabel"; text = "Price:- 00 AED"; ObjectID = "JYJ-H3-evm"; */
-"JYJ-H3-evm.text" = "Price:- 00 AED";
+"JYJ-H3-evm.text" = "السعر:- ";
 
 /* Class = "UILabel"; text = "Category -"; ObjectID = "JaV-mE-Vis"; */
-"JaV-mE-Vis.text" = "Category -";
+"JaV-mE-Vis.text" = "فئة -";
 
 /* Class = "UILabel"; text = "By : Company"; ObjectID = "JfG-pf-zpk"; */
-"JfG-pf-zpk.text" = "By : Company";
+"JfG-pf-zpk.text" = "بواسطة : شركة";
 
 /* Class = "UIButton"; normalTitle = "Continue"; ObjectID = "JhM-N9-O1o"; */
-"JhM-N9-O1o.normalTitle" = "Continue";
+"JhM-N9-O1o.normalTitle" = "تابع";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Jl8-K9-vkH"; */
 "Jl8-K9-vkH.text" = "Label";
@@ -342,7 +342,7 @@
 "KN3-XM-uV8.placeholder" = "10,000";
 
 /* Class = "UIButton"; normalTitle = "Location"; ObjectID = "Kcw-hE-BOb"; */
-"Kcw-hE-BOb.normalTitle" = "Location";
+"Kcw-hE-BOb.normalTitle" = "الموقع";
 
 /* Class = "UITextField"; placeholder = "10000"; ObjectID = "Kku-eN-Cfc"; */
 "Kku-eN-Cfc.placeholder" = "10000";
@@ -354,28 +354,28 @@
 "LBP-eC-R5M.text" = "   ";
 
 /* Class = "UILabel"; text = "Year of experience"; ObjectID = "LGD-rR-54H"; */
-"LGD-rR-54H.text" = "Year of experience";
+"LGD-rR-54H.text" = "عدد سنوات الخبرة";
 
 /* Class = "UIButton"; normalTitle = "Rent"; ObjectID = "LZS-Lx-30C"; */
-"LZS-Lx-30C.normalTitle" = "Rent";
+"LZS-Lx-30C.normalTitle" =  "اجار";
 
 /* Class = "UILabel"; text = "Your Location"; ObjectID = "LaP-12-Jpn"; */
 "LaP-12-Jpn.text" = "Your Location";
 
 /* Class = "UIButton"; normalTitle = "Offer a Job"; ObjectID = "LbB-H5-7Dn"; */
-"LbB-H5-7Dn.normalTitle" = "Offer a Job";
+"LbB-H5-7Dn.normalTitle" = "اعرض فرصة عمل";
 
 /* Class = "UILabel"; text = "Price:- 00 AED"; ObjectID = "Lpk-Qi-y8S"; */
 "Lpk-Qi-y8S.text" = "Price:- 00 AED";
 
 /* Class = "UILabel"; text = "Date Of Birth"; ObjectID = "Lqn-TG-fZf"; */
-"Lqn-TG-fZf.text" = "Date Of Birth";
+"Lqn-TG-fZf.text" = "تاريخ الميلاد";
 
 /* Class = "UILabel"; text = "         "; ObjectID = "M1H-6w-Xnc"; */
 "M1H-6w-Xnc.text" = "         ";
 
 /* Class = "UIButton"; normalTitle = "All Bids"; ObjectID = "MLd-dP-YOa"; */
-"MLd-dP-YOa.normalTitle" = "All Bids";
+"MLd-dP-YOa.normalTitle" = "كل المناقصات";
 
 /* Class = "UILabel"; text = "By : Bina "; ObjectID = "MbX-wE-A57"; */
 "MbX-wE-A57.text" = "By : Bina ";
@@ -387,13 +387,13 @@
 "N0W-AO-Srx.text" = "Label";
 
 /* Class = "UILabel"; text = "Individual"; ObjectID = "N1J-hY-UO6"; */
-"N1J-hY-UO6.text" = "Individual";
+"N1J-hY-UO6.text" = "شخصي";
 
 /* Class = "UILabel"; text = "to"; ObjectID = "N3u-Xn-u8j"; */
-"N3u-Xn-u8j.text" = "to";
+"N3u-Xn-u8j.text" = "الى";
 
 /* Class = "UILabel"; text = "Notification"; ObjectID = "NNU-Kz-OJ6"; */
-"NNU-Kz-OJ6.text" = "Notification";
+"NNU-Kz-OJ6.text" = "تنبيهات";
 
 /* Class = "UILabel"; text = "     "; ObjectID = "NRK-zW-5El"; */
 "NRK-zW-5El.text" = "     ";
@@ -402,10 +402,10 @@
 "Na0-lq-6kQ.text" = "(26)";
 
 /* Class = "UILabel"; text = "Add Post"; ObjectID = "Nbe-XZ-8j7"; */
-"Nbe-XZ-8j7.text" = "Add Post";
+"Nbe-XZ-8j7.text" = "اضف العرض";
 
 /* Class = "UILabel"; text = "Full Time"; ObjectID = "NqN-1K-Ab8"; */
-"NqN-1K-Ab8.text" = "Full Time";
+"NqN-1K-Ab8.text" = "كامل";
 
 /* Class = "UILabel"; text = "(26)"; ObjectID = "Nyg-98-ZON"; */
 "Nyg-98-ZON.text" = "(26)";
@@ -414,19 +414,19 @@
 "O6g-mD-L1E.text" = "         ";
 
 /* Class = "UIButton"; normalTitle = "Submit Offer"; ObjectID = "O7K-0t-tU1"; */
-"O7K-0t-tU1.normalTitle" = "Submit Offer";
+"O7K-0t-tU1.normalTitle" = "ارسال عرض";
 
 /* Class = "UIButton"; normalTitle = "Post"; ObjectID = "Ojv-v0-ELZ"; */
-"Ojv-v0-ELZ.normalTitle" = "Post";
+"Ojv-v0-ELZ.normalTitle" = "عرض";
 
 /* Class = "UILabel"; text = "Companies rating (low to high)"; ObjectID = "OkY-lf-K0x"; */
-"OkY-lf-K0x.text" = "Companies rating (low to high)";
+"OkY-lf-K0x.text" = "تقييم الشركات (الاقل الى الاعلى)";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "OpM-IN-612"; */
 "OpM-IN-612.text" = "Label";
 
 /* Class = "UIButton"; normalTitle = "Continue"; ObjectID = "P7S-kZ-VxL"; */
-"P7S-kZ-VxL.normalTitle" = "Continue";
+"P7S-kZ-VxL.normalTitle" = "تابع";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "PEq-nV-U0V"; */
 "PEq-nV-U0V.text" = "Label";
@@ -435,16 +435,16 @@
 "PXo-8f-S5i.text" = "Label";
 
 /* Class = "UILabel"; text = "Submitted Bids"; ObjectID = "PlY-pJ-i9r"; */
-"PlY-pJ-i9r.text" = "Submitted Bids";
+"PlY-pJ-i9r.text" = "المناقصات المرسلة";
 
 /* Class = "UIButton"; normalTitle = "Existing User? back to Login"; ObjectID = "Q5R-ns-sCb"; */
-"Q5R-ns-sCb.normalTitle" = "Existing User? back to Login";
+"Q5R-ns-sCb.normalTitle" = "مستخدم حالي ";
 
 /* Class = "UILabel"; text = "Add Job Post"; ObjectID = "Q6Z-5Q-y4r"; */
-"Q6Z-5Q-y4r.text" = "Add Job Post";
+"Q6Z-5Q-y4r.text" = "اضف عرض عمل";
 
 /* Class = "UILabel"; text = "TYPE"; ObjectID = "QQy-Kl-ot1"; */
-"QQy-Kl-ot1.text" = "TYPE";
+"QQy-Kl-ot1.text" = "نوع";
 
 /* Class = "UILabel"; text = "(26)"; ObjectID = "QUa-oh-NU9"; */
 "QUa-oh-NU9.text" = "(26)";
@@ -456,13 +456,13 @@
 "QaW-bH-4Pq.text" = "   ";
 
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "Qae-bZ-6x4"; */
-"Qae-bZ-6x4.normalTitle" = "Submit";
+"Qae-bZ-6x4.normalTitle" = "ارسل";
 
 /* Class = "UITextField"; placeholder = "Enter Full Name"; ObjectID = "Qkv-7h-LR2"; */
 "Qkv-7h-LR2.placeholder" = "Enter Full Name";
 
 /* Class = "UILabel"; text = "Companies : 5.0"; ObjectID = "Qu9-am-zjQ"; */
-"Qu9-am-zjQ.text" = "Companies : 5.0";
+"Qu9-am-zjQ.text" = "شركات: ";
 
 /* Class = "UILabel"; text = "(52)"; ObjectID = "R3v-qC-qsW"; */
 "R3v-qC-qsW.text" = "(52)";
@@ -471,10 +471,10 @@
 "R5s-KH-pms.placeholder" = "Enter Phone Number";
 
 /* Class = "UIButton"; normalTitle = "Sort"; ObjectID = "RAQ-BG-4L7"; */
-"RAQ-BG-4L7.normalTitle" = "Sort";
+"RAQ-BG-4L7.normalTitle" = "ترتيب";
 
 /* Class = "UITextField"; placeholder = "Field"; ObjectID = "RCU-li-78k"; */
-"RCU-li-78k.placeholder" = "Field";
+"RCU-li-78k.placeholder" = "المجال";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "RRQ-EW-4tb"; */
 "RRQ-EW-4tb.text" = "Label";
@@ -483,10 +483,10 @@
 "RW8-1y-iEc.text" = "Label";
 
 /* Class = "UILabel"; text = "Room"; ObjectID = "RYA-iJ-TcW"; */
-"RYA-iJ-TcW.text" = "Room";
+"RYA-iJ-TcW.text" = "غرفة";
 
 /* Class = "UILabel"; text = "For : "; ObjectID = "RbU-1T-YgJ"; */
-"RbU-1T-YgJ.text" = "For : ";
+"RbU-1T-YgJ.text" = "ل : ";
 
 /* Class = "UILabel"; text = "(26)"; ObjectID = "SJF-rK-qZZ"; */
 "SJF-rK-qZZ.text" = "(26)";
@@ -495,16 +495,16 @@
 "SUq-8o-R3K.placeholder" = "Enter your password";
 
 /* Class = "UIButton"; normalTitle = "Company"; ObjectID = "SZi-mB-tAL"; */
-"SZi-mB-tAL.normalTitle" = "Company";
+"SZi-mB-tAL.normalTitle" = "شركة";
 
 /* Class = "UILabel"; text = "Employment Type"; ObjectID = "SxW-fG-Ylw"; */
-"SxW-fG-Ylw.text" = "Employment Type";
+"SxW-fG-Ylw.text" = "نوع الوظيفة";
 
 /* Class = "UILabel"; text = "Expected Monthly Salery (in AED)"; ObjectID = "T5Q-QX-IwG"; */
-"T5Q-QX-IwG.text" = "Expected Monthly Salery (in AED)";
+"T5Q-QX-IwG.text" = "الراتب الشهري المتوقع (درهم)";
 
 /* Class = "UILabel"; text = "About Us"; ObjectID = "TLM-PY-5h1"; */
-"TLM-PY-5h1.text" = "About Us";
+"TLM-PY-5h1.text" = "عنا";
 
 /* Class = "UILabel"; text = "50 AED"; ObjectID = "TTK-FB-Za8"; */
 "TTK-FB-Za8.text" = "50 AED";
@@ -516,13 +516,13 @@
 "UBq-Ul-d0b.text" = "          ";
 
 /* Class = "UIButton"; normalTitle = "Full Time"; ObjectID = "UMH-Dz-Hme"; */
-"UMH-Dz-Hme.normalTitle" = "Full Time";
+"UMH-Dz-Hme.normalTitle" = "كامل";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "UNN-xI-YlD"; */
 "UNN-xI-YlD.text" = "Label";
 
 /* Class = "UILabel"; text = "(in AED)"; ObjectID = "UVv-va-0uO"; */
-"UVv-va-0uO.text" = "(in AED)";
+"UVv-va-0uO.text" = "( درهم)";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "UhV-FS-8dg"; */
 "UhV-FS-8dg.text" = "Label";
@@ -534,13 +534,13 @@
 "Uue-74-tRd.text" = "          ";
 
 /* Class = "UILabel"; text = "Field"; ObjectID = "V1h-3O-yZc"; */
-"V1h-3O-yZc.text" = "Field";
+"V1h-3O-yZc.text" = "المجال";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "VAK-rZ-A9f"; */
 "VAK-rZ-A9f.text" = "Label";
 
 /* Class = "UILabel"; text = "Price in (AED)"; ObjectID = "VcM-fH-sun"; */
-"VcM-fH-sun.text" = "Price in (AED)";
+"VcM-fH-sun.text" = "السعر (درهم)";
 
 /* Class = "UIButton"; configuration.title = " "; ObjectID = "ViZ-GA-ONz"; */
 "ViZ-GA-ONz.configuration.title" = " ";
@@ -549,10 +549,10 @@
 "ViZ-GA-ONz.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "to"; ObjectID = "W6J-7P-Fph"; */
-"W6J-7P-Fph.text" = "to";
+"W6J-7P-Fph.text" = "الى";
 
 /* Class = "UITextField"; placeholder = "Select Gender"; ObjectID = "WJ5-Cn-bhO"; */
-"WJ5-Cn-bhO.placeholder" = "Select Gender";
+"WJ5-Cn-bhO.placeholder" = "حدد نوع الجنس";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Wq5-gJ-znA"; */
 "Wq5-gJ-znA.text" = "Label";
@@ -564,37 +564,37 @@
 "Wqb-Wi-iPE.normalTitle" = "Button";
 
 /* Class = "UIButton"; normalTitle = "Location"; ObjectID = "XCA-hU-eTo"; */
-"XCA-hU-eTo.normalTitle" = "Location";
+"XCA-hU-eTo.normalTitle" = "موقع";
 
 /* Class = "UITextField"; placeholder = "Degree"; ObjectID = "XNH-Nt-NnP"; */
-"XNH-Nt-NnP.placeholder" = "Degree";
+"XNH-Nt-NnP.placeholder" = "الدرجة العلمية";
 
 /* Class = "UITextField"; placeholder = "Select category"; ObjectID = "XrL-s7-Jm1"; */
-"XrL-s7-Jm1.placeholder" = "Select category";
+"XrL-s7-Jm1.placeholder" = "اختر الفئة";
 
 /* Class = "UILabel"; text = "Rent"; ObjectID = "Xu4-8V-1Ce"; */
-"Xu4-8V-1Ce.text" = "Rent";
+"Xu4-8V-1Ce.text" = "إيجار";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Y6q-nV-A1G"; */
 "Y6q-nV-A1G.text" = "Label";
 
 /* Class = "UILabel"; text = "Companies : 5.0"; ObjectID = "YGp-PK-pcE"; */
-"YGp-PK-pcE.text" = "Companies : 5.0";
+"YGp-PK-pcE.text" = "شركات: ";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "YIe-SK-vFe"; */
 "YIe-SK-vFe.text" = "Label";
 
 /* Class = "UILabel"; text = "Company Side"; ObjectID = "YYd-uI-FbE"; */
-"YYd-uI-FbE.text" = "Company Side";
+"YYd-uI-FbE.text" = "حجم الشركة";
 
 /* Class = "UILabel"; text = "Posted On"; ObjectID = "Ycw-qn-GGy"; */
-"Ycw-qn-GGy.text" = "Posted On";
+"Ycw-qn-GGy.text" = "نشر على";
 
 /* Class = "UILabel"; text = "(52)"; ObjectID = "YpO-bN-SgZ"; */
 "YpO-bN-SgZ.text" = "(52)";
 
 /* Class = "UILabel"; text = "Loream Ipsum jksfgh ksdk fhks djksfhjk dshfdsfjkdhs fkjsdhfjk dsks hfjksdh fjksdh fjksdh fjkdhsfjksdh fjkdshfjk dhsfjkdhsfjkdhsfjkdhs fjkdhsfjkds"; ObjectID = "Ywj-O8-EPg"; */
-"Ywj-O8-EPg.text" = "Loream Ipsum jksfgh ksdk fhks djksfhjk dshfdsfjkdhs fkjsdhfjk dsks hfjksdh fjksdh fjksdh fjkdhsfjksdh fjkdshfjk dhsfjkdhsfjkdhsfjkdhs fjkdhsfjkds";
+"Ywj-O8-EPg.text" = "   ";
 
 /* Class = "UIButton"; configuration.title = " "; ObjectID = "ZEq-ss-MRk"; */
 "ZEq-ss-MRk.configuration.title" = " ";
@@ -603,13 +603,13 @@
 "ZEq-ss-MRk.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "Email - "; ObjectID = "ZEu-Yf-dP8"; */
-"ZEu-Yf-dP8.text" = "Email - ";
+"ZEu-Yf-dP8.text" = "بريد الالكتروني - ";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "ZJT-Iz-fCU"; */
 "ZJT-Iz-fCU.text" = "Label";
 
 /* Class = "UILabel"; text = "Company"; ObjectID = "ZVz-em-xMh"; */
-"ZVz-em-xMh.text" = "Company";
+"ZVz-em-xMh.text" = "شركة";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "ZXL-vi-gyq"; */
 "ZXL-vi-gyq.text" = "Label";
@@ -618,10 +618,10 @@
 "ZlI-xN-d35.text" = " ";
 
 /* Class = "UILabel"; text = "Offer 2"; ObjectID = "Zqe-gC-aNd"; */
-"Zqe-gC-aNd.text" = "Offer 2";
+"Zqe-gC-aNd.text" = "عرض 2";
 
 /* Class = "UILabel"; text = "Add Bid"; ObjectID = "ZrR-yx-7RX"; */
-"ZrR-yx-7RX.text" = "Add Bid";
+"ZrR-yx-7RX.text" = "اضف مناقصة";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "a3Y-tj-y63"; */
 "a3Y-tj-y63.text" = "Label";
@@ -633,70 +633,70 @@
 "aCJ-9R-HcD.text" = "(26)";
 
 /* Class = "UILabel"; text = "Add Post"; ObjectID = "aCd-oJ-XkP"; */
-"aCd-oJ-XkP.text" = "Add Post";
+"aCd-oJ-XkP.text" = "أضف منشورا";
 
 /* Class = "UILabel"; text = "(26)"; ObjectID = "aXt-ax-DFq"; */
 "aXt-ax-DFq.text" = "(26)";
 
 /* Class = "UILabel"; text = "Reviews"; ObjectID = "aqN-xX-pLM"; */
-"aqN-xX-pLM.text" = "Reviews";
+"aqN-xX-pLM.text" = "تعليقات";
 
 /* Class = "UITextField"; placeholder = "Monthly"; ObjectID = "aye-5D-ont"; */
-"aye-5D-ont.placeholder" = "Monthly";
+"aye-5D-ont.placeholder" = "شهريا";
 
 /* Class = "UILabel"; text = "Part Time"; ObjectID = "b4a-Fc-mvV"; */
-"b4a-Fc-mvV.text" = "Part Time";
+"b4a-Fc-mvV.text" = "دوام جزئى";
 
 /* Class = "UITextField"; placeholder = "Closing Days"; ObjectID = "b6D-3x-RwU"; */
-"b6D-3x-RwU.placeholder" = "Closing Days";
+"b6D-3x-RwU.placeholder" = "الاغلاق بالايام";
 
 /* Class = "UILabel"; text = "Business management Consultant "; ObjectID = "bNx-CK-j1C"; */
-"bNx-CK-j1C.text" = "Business management Consultant ";
+"bNx-CK-j1C.text" = "مستشار إدارة الأعمال";
 
 /* Class = "UILabel"; text = " "; ObjectID = "bWQ-Yn-lvx"; */
 "bWQ-Yn-lvx.text" = " ";
 
 /* Class = "UILabel"; text = "Full Time"; ObjectID = "biU-qI-hPf"; */
-"biU-qI-hPf.text" = "Full Time";
+"biU-qI-hPf.text" = "وقت كامل";
 
 /* Class = "UILabel"; text = "Email - "; ObjectID = "cBr-xv-noc"; */
-"cBr-xv-noc.text" = "Email - ";
+"cBr-xv-noc.text" = "بريد الالكتروني - ";
 
 /* Class = "UILabel"; text = "Technical World"; ObjectID = "cFH-VP-mT0"; */
-"cFH-VP-mT0.text" = "Technical World";
+"cFH-VP-mT0.text" = "بناء";
 
 /* Class = "UILabel"; text = "Individual rating (low to high)"; ObjectID = "cLk-jv-TbW"; */
-"cLk-jv-TbW.text" = "Individual rating (low to high)";
+"cLk-jv-TbW.text" = "تقييم شخصي (الاقل الى الاعلى)";
 
 /* Class = "UITextField"; placeholder = "10"; ObjectID = "cYD-p6-9gX"; */
 "cYD-p6-9gX.placeholder" = "10";
 
 /* Class = "UITextField"; placeholder = "Select Sub category"; ObjectID = "cbE-NK-Y3c"; */
-"cbE-NK-Y3c.placeholder" = "Select Sub category";
+"cbE-NK-Y3c.placeholder" = "حدد فئة فرعية";
 
 /* Class = "UILabel"; text = "Alexander Joy"; ObjectID = "ccv-4G-3ff"; */
 "ccv-4G-3ff.text" = "Alexander Joy";
 
 /* Class = "UILabel"; text = "Offer Job"; ObjectID = "cw1-e0-X4q"; */
-"cw1-e0-X4q.text" = "Offer Job";
+"cw1-e0-X4q.text" = "عرض الوظيفة";
 
 /* Class = "UILabel"; text = "Individual : 5.0"; ObjectID = "dEz-Hg-U4b"; */
-"dEz-Hg-U4b.text" = "Individual : 5.0";
+"dEz-Hg-U4b.text" = "فرد : 5.0";
 
 /* Class = "UIButton"; normalTitle = "Sort"; ObjectID = "dXu-LP-nZd"; */
-"dXu-LP-nZd.normalTitle" = "Sort";
+"dXu-LP-nZd.normalTitle" = "فرز";
 
 /* Class = "UILabel"; text = "Business Management Consultant"; ObjectID = "de2-E0-bSB"; */
-"de2-E0-bSB.text" = "Business Management Consultant";
+"de2-E0-bSB.text" = "مستشار إدارة الأعمال";
 
 /* Class = "UIButton"; normalTitle = "Next"; ObjectID = "ded-Mc-0jh"; */
-"ded-Mc-0jh.normalTitle" = "Next";
+"ded-Mc-0jh.normalTitle" = "التالي";
 
 /* Class = "UITextField"; placeholder = "Last Current Job"; ObjectID = "dfe-7R-QkN"; */
-"dfe-7R-QkN.placeholder" = "Last Current Job";
+"dfe-7R-QkN.placeholder" = "آخر وظيفة حالية";
 
 /* Class = "UIButton"; normalTitle = "Get Started"; ObjectID = "drr-GP-u8j"; */
-"drr-GP-u8j.normalTitle" = "Get Started";
+"drr-GP-u8j.normalTitle" = "البدء";
 
 /* Class = "UILabel"; text = "Rakesh Pandey"; ObjectID = "dxa-jw-yPe"; */
 "dxa-jw-yPe.text" = "Rakesh Pandey";
@@ -705,22 +705,22 @@
 "e0t-Oh-W0B.text" = "   ";
 
 /* Class = "UILabel"; text = "Details"; ObjectID = "eFd-ee-vxl"; */
-"eFd-ee-vxl.text" = "Details";
+"eFd-ee-vxl.text" = "تفاصيل";
 
 /* Class = "UILabel"; text = "(26)"; ObjectID = "eWG-Zv-a5x"; */
 "eWG-Zv-a5x.text" = "(26)";
 
 /* Class = "UILabel"; text = "Max 100 words"; ObjectID = "ehY-DP-s5w"; */
-"ehY-DP-s5w.text" = "Max 100 words";
+"ehY-DP-s5w.text" = "100 كلمة كحد أقصى";
 
 /* Class = "UITextField"; placeholder = "Looking For (Role)"; ObjectID = "ek0-n5-jz1"; */
-"ek0-n5-jz1.placeholder" = "Looking For (Role)";
+"ek0-n5-jz1.placeholder" = "أبحث عن (دور)";
 
 /* Class = "UILabel"; text = "Individual : 5.0"; ObjectID = "emy-6n-BTv"; */
-"emy-6n-BTv.text" = "Individual : 5.0";
+"emy-6n-BTv.text" = "فرد : 5.0";
 
 /* Class = "UITextField"; placeholder = "Search..."; ObjectID = "end-bn-M17"; */
-"end-bn-M17.placeholder" = "Search...";
+"end-bn-M17.placeholder" = "هنا...";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "fF5-es-R7z"; */
 "fF5-es-R7z.text" = "Label";
@@ -729,7 +729,7 @@
 "fHU-cQ-jkY.text" = "(26)";
 
 /* Class = "UILabel"; text = "Price"; ObjectID = "fTQ-VH-fMc"; */
-"fTQ-VH-fMc.text" = "Price";
+"fTQ-VH-fMc.text" = "سعر";
 
 /* Class = "UILabel"; text = "          "; ObjectID = "fcg-MQ-EON"; */
 "fcg-MQ-EON.text" = "          ";
@@ -738,55 +738,55 @@
 "fka-wj-Moo.text" = "Label";
 
 /* Class = "UILabel"; text = "Companies : 5.0"; ObjectID = "fs6-zB-z3J"; */
-"fs6-zB-z3J.text" = "Companies : 5.0";
+"fs6-zB-z3J.text" = "شركات : 5.0";
 
 /* Class = "UILabel"; text = "Image View"; ObjectID = "g0p-Yt-LIV"; */
-"g0p-Yt-LIV.text" = "Image View";
+"g0p-Yt-LIV.text" = "عرض الصورة";
 
 /* Class = "UILabel"; text = "Login"; ObjectID = "g6F-7b-wv2"; */
-"g6F-7b-wv2.text" = "Login";
+"g6F-7b-wv2.text" = "دخول";
 
 /* Class = "UIButton"; normalTitle = "Part Time"; ObjectID = "gF9-Rf-hCx"; */
-"gF9-Rf-hCx.normalTitle" = "Part Time";
+"gF9-Rf-hCx.normalTitle" = "دوام جزئى";
 
 /* Class = "UILabel"; text = "How was the experience with Alesender"; ObjectID = "gGu-hC-FvY"; */
-"gGu-hC-FvY.text" = "How was the experience with Alesender";
+"gGu-hC-FvY.text" = "كيف كانت التجربة مع Alesender";
 
 /* Class = "UILabel"; text = "User Name - "; ObjectID = "gJb-BA-pvT"; */
-"gJb-BA-pvT.text" = "User Name - ";
+"gJb-BA-pvT.text" = "اسم االمستخدم - ";
 
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "gLB-1u-EwV"; */
-"gLB-1u-EwV.normalTitle" = "Submit";
+"gLB-1u-EwV.normalTitle" = "إرسال";
 
 /* Class = "UITextField"; placeholder = "Enter Password"; ObjectID = "ghg-OS-2JF"; */
-"ghg-OS-2JF.placeholder" = "Enter Password";
+"ghg-OS-2JF.placeholder" = "أدخل كلمة المرور";
 
 /* Class = "UILabel"; text = "Building Avrg Cost per SQM"; ObjectID = "h74-qs-pEk"; */
-"h74-qs-pEk.text" = "Building Avrg Cost per SQM";
+"h74-qs-pEk.text" = "متوسط ​​تكلفة البناء لكل متر مربع";
 
 /* Class = "UIButton"; normalTitle = "Give Review"; ObjectID = "hJ4-vO-HIu"; */
-"hJ4-vO-HIu.normalTitle" = "Give Review";
+"hJ4-vO-HIu.normalTitle" = "أعط مراجعة";
 
 /* Class = "UILabel"; text = "Desription"; ObjectID = "hvC-0S-e8J"; */
-"hvC-0S-e8J.text" = "Desription";
+"hvC-0S-e8J.text" = "وصف";
 
 /* Class = "UILabel"; text = "Bid by - "; ObjectID = "hvw-Oc-c2J"; */
-"hvw-Oc-c2J.text" = "Bid by - ";
+"hvw-Oc-c2J.text" = "المزايدة عن طريق - ";
 
 /* Class = "UITextField"; placeholder = "5000"; ObjectID = "i0Y-f9-5nW"; */
 "i0Y-f9-5nW.placeholder" = "5000";
 
 /* Class = "UILabel"; text = "Profile"; ObjectID = "iOu-NL-pRX"; */
-"iOu-NL-pRX.text" = "Profile";
+"iOu-NL-pRX.text" = "الملف الشخصي";
 
 /* Class = "UIButton"; normalTitle = "Individual"; ObjectID = "ix3-se-aia"; */
-"ix3-se-aia.normalTitle" = "Individual";
+"ix3-se-aia.normalTitle" = "فرد";
 
 /* Class = "UITextField"; placeholder = "10"; ObjectID = "j6U-b8-3JJ"; */
 "j6U-b8-3JJ.placeholder" = "10";
 
 /* Class = "UILabel"; text = "Location"; ObjectID = "jCz-IY-EFM"; */
-"jCz-IY-EFM.text" = "Location";
+"jCz-IY-EFM.text" = "موقع";
 
 /* Class = "UIButton"; configuration.title = " "; ObjectID = "jLj-70-Bdc"; */
 "jLj-70-Bdc.configuration.title" = " ";
@@ -798,124 +798,124 @@
 "jWR-by-gsd.text" = "  ";
 
 /* Class = "UILabel"; text = "Companies rating (high to low)"; ObjectID = "jn4-KC-qnl"; */
-"jn4-KC-qnl.text" = "Companies rating (high to low)";
+"jn4-KC-qnl.text" =  "تقييم الشركات (الاعلى الى الاقل)";
 
 /* Class = "UILabel"; text = "          "; ObjectID = "jto-qi-Rqq"; */
 "jto-qi-Rqq.text" = "          ";
 
 /* Class = "UILabel"; text = "Sort By"; ObjectID = "jyT-aV-uh2"; */
-"jyT-aV-uh2.text" = "Sort By";
+"jyT-aV-uh2.text" = "ترتيب حسب";
 
 /* Class = "UILabel"; text = "Expected Fees"; ObjectID = "k2U-Mk-CDR"; */
-"k2U-Mk-CDR.text" = "Expected Fees";
+"k2U-Mk-CDR.text" = "الرسوم المتوقعة";
 
 /* Class = "UILabel"; text = "FURNISHING"; ObjectID = "kD7-jr-XxX"; */
-"kD7-jr-XxX.text" = "FURNISHING";
+"kD7-jr-XxX.text" = "تأثيث";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "kEn-zR-axd"; */
 "kEn-zR-axd.text" = "Label";
 
 /* Class = "UILabel"; text = "CONTINUE AS GUEST"; ObjectID = "kLy-zK-T6t"; */
-"kLy-zK-T6t.text" = "CONTINUE AS GUEST";
+"kLy-zK-T6t.text" = "تابع كزائر";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "kOf-5d-dSU"; */
 "kOf-5d-dSU.text" = "Label";
 
 /* Class = "UILabel"; text = "and"; ObjectID = "keK-xM-2HX"; */
-"keK-xM-2HX.text" = "and";
+"keK-xM-2HX.text" = "و";
 
 /* Class = "UITextField"; placeholder = "Listed By"; ObjectID = "khb-Fn-AEq"; */
-"khb-Fn-AEq.placeholder" = "Listed By";
+"khb-Fn-AEq.placeholder" = "المدرجة من قبل";
 
 /* Class = "UILabel"; text = "Business Management Consultant"; ObjectID = "ko2-D1-5Xe"; */
-"ko2-D1-5Xe.text" = "Business Management Consultant";
+"ko2-D1-5Xe.text" = "مستشار إدارة الأعمال";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "ktd-Yq-brv"; */
 "ktd-Yq-brv.text" = "Label";
 
 /* Class = "UILabel"; text = "Offer Desription"; ObjectID = "kup-wc-MPR"; */
-"kup-wc-MPR.text" = "Offer Desription";
+"kup-wc-MPR.text" = "عرض الوصف";
 
 /* Class = "UITextField"; placeholder = "Select Category"; ObjectID = "lMe-kg-71C"; */
-"lMe-kg-71C.placeholder" = "Select Category";
+"lMe-kg-71C.placeholder" = "اختر التصنيف الفرعي";
 
 /* Class = "UILabel"; text = "Loream Ipsum"; ObjectID = "lOa-kY-OYU"; */
 "lOa-kY-OYU.text" = "Loream Ipsum";
 
 /* Class = "UITextField"; placeholder = "Desription"; ObjectID = "lQy-qJ-JgB"; */
-"lQy-qJ-JgB.placeholder" = "Desription";
+"lQy-qJ-JgB.placeholder" = "وصف";
 
 /* Class = "UIButton"; normalTitle = "Continue"; ObjectID = "llg-Cr-KgV"; */
-"llg-Cr-KgV.normalTitle" = "Continue";
+"llg-Cr-KgV.normalTitle" = "يكمل";
 
 /* Class = "UILabel"; text = "Submitted Bids"; ObjectID = "loG-ZG-NxG"; */
-"loG-ZG-NxG.text" = "Submitted Bids";
+"loG-ZG-NxG.text" = "المناقصات المرسلة";
 
 /* Class = "UILabel"; text = "Toilet"; ObjectID = "n5f-n2-bls"; */
-"n5f-n2-bls.text" = "Toilet";
+"n5f-n2-bls.text" = "الحمام";
 
 /* Class = "UITextField"; placeholder = "Property Heading"; ObjectID = "nYd-eo-Y0K"; */
-"nYd-eo-Y0K.placeholder" = "Property Heading";
+"nYd-eo-Y0K.placeholder" = "عنوان الخاصية";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "or2-uX-hDw"; */
 "or2-uX-hDw.text" = "Label";
 
 /* Class = "UIButton"; normalTitle = "Real States"; ObjectID = "p0X-J5-KND"; */
-"p0X-J5-KND.normalTitle" = "Real States";
+"p0X-J5-KND.normalTitle" = "العقارات";
 
 /* Class = "UITextField"; placeholder = "What I Can Do"; ObjectID = "p44-Eo-81Y"; */
-"p44-Eo-81Y.placeholder" = "What I Can Do";
+"p44-Eo-81Y.placeholder" = "ماذا استطيع ان افعل";
 
 /* Class = "UIButton"; normalTitle = "Continue"; ObjectID = "pjF-pz-dvV"; */
-"pjF-pz-dvV.normalTitle" = "Continue";
+"pjF-pz-dvV.normalTitle" = "يكمل";
 
 /* Class = "UILabel"; text = "Description"; ObjectID = "qAM-pA-uAi"; */
-"qAM-pA-uAi.text" = "Description";
+"qAM-pA-uAi.text" = "وصف";
 
 /* Class = "UILabel"; text = "   "; ObjectID = "qDN-gV-JaY"; */
 "qDN-gV-JaY.text" = "   ";
 
 /* Class = "UITextField"; placeholder = "Enter your email address..."; ObjectID = "qfT-gg-Fxp"; */
-"qfT-gg-Fxp.placeholder" = "Enter your email address...";
+"qfT-gg-Fxp.placeholder" = "أدخل عنوان بريدك الالكتروني...";
 
 /* Class = "UILabel"; text = "    "; ObjectID = "qhe-HF-JBT"; */
 "qhe-HF-JBT.text" = "    ";
 
 /* Class = "UITextField"; placeholder = "Select Category"; ObjectID = "qjY-pI-HaO"; */
-"qjY-pI-HaO.placeholder" = "Select Category";
+"qjY-pI-HaO.placeholder" = "اختر الفئة";
 
 /* Class = "UITextField"; placeholder = "Degree"; ObjectID = "qpz-vB-2LG"; */
-"qpz-vB-2LG.placeholder" = "Degree";
+"qpz-vB-2LG.placeholder" = "الدرجة العلمية";
 
 /* Class = "UIButton"; normalTitle = "My Bids"; ObjectID = "r39-td-Y3m"; */
-"r39-td-Y3m.normalTitle" = "My Bids";
+"r39-td-Y3m.normalTitle" = "العطاءات الخاصة بي";
 
 /* Class = "UILabel"; text = "For : "; ObjectID = "rFN-oS-bap"; */
-"rFN-oS-bap.text" = "For : ";
+"rFN-oS-bap.text" = "ل : ";
 
 /* Class = "UITextField"; placeholder = "Monthly"; ObjectID = "rKv-LV-ra6"; */
-"rKv-LV-ra6.placeholder" = "Monthly";
+"rKv-LV-ra6.placeholder" = "شهريا";
 
 /* Class = "UILabel"; text = "          "; ObjectID = "rof-Y1-BeP"; */
 "rof-Y1-BeP.text" = "          ";
 
 /* Class = "UILabel"; text = "By : Company"; ObjectID = "ruy-tZ-0kH"; */
-"ruy-tZ-0kH.text" = "By : Company";
+"ruy-tZ-0kH.text" = "بواسطة : شركة";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "sEa-rG-jTh"; */
 "sEa-rG-jTh.text" = "Label";
 
 /* Class = "UILabel"; text = "Companies : 5.0"; ObjectID = "scV-Ev-2KL"; */
-"scV-Ev-2KL.text" = "Companies : 5.0";
+"scV-Ev-2KL.text" = "شركات : 5.0";
 
 /* Class = "UIButton"; normalTitle = "Want a Job"; ObjectID = "sgi-ye-1bj"; */
-"sgi-ye-1bj.normalTitle" = "Want a Job";
+"sgi-ye-1bj.normalTitle" = "ابحث عن عمل";
 
 /* Class = "UITextField"; placeholder = "Enter Full Name"; ObjectID = "tDM-9y-lDn"; */
-"tDM-9y-lDn.placeholder" = "Enter Full Name";
+"tDM-9y-lDn.placeholder" = "أدخل الاسم الكامل";
 
 /* Class = "UITextField"; placeholder = "Search here..."; ObjectID = "tOu-SS-wa6"; */
-"tOu-SS-wa6.placeholder" = "Search here...";
+"tOu-SS-wa6.placeholder" = "ابحث هنا";
 
 /* Class = "UILabel"; text = "Other Benifits :"; ObjectID = "tRB-Fi-bWZ"; */
 "tRB-Fi-bWZ.text" = "Other Benifits :";
@@ -924,58 +924,58 @@
 "thq-PC-whG.text" = "Label";
 
 /* Class = "UIButton"; normalTitle = "Post"; ObjectID = "tlU-rq-HMT"; */
-"tlU-rq-HMT.normalTitle" = "Post";
+"tlU-rq-HMT.normalTitle" = "بريد";
 
 /* Class = "UILabel"; text = "Desription"; ObjectID = "tqK-Hw-elo"; */
-"tqK-Hw-elo.text" = "Desription";
+"tqK-Hw-elo.text" = "وصف";
 
 /* Class = "UILabel"; text = " "; ObjectID = "tsz-lw-Buo"; */
 "tsz-lw-Buo.text" = " ";
 
 /* Class = "UILabel"; text = "sgh fhsgf dhsf sfh sfh sfh f dsf gsfg dsjfg djsfg djsgh fdjsfg f dhs fgdhs dsfg djsfh gdhsfdgsfjgdsfsa asj asjk a ak "; ObjectID = "tuJ-Gp-3fv"; */
-"tuJ-Gp-3fv.text" = "sgh fhsgf dhsf sfh sfh sfh f dsf gsfg dsjfg djsfg djsgh fdjsfg f dhs fgdhs dsfg djsfh gdhsfdgsfjgdsfsa asj asjk a ak ";
+"tuJ-Gp-3fv.text" = "   ";
 
 /* Class = "UILabel"; text = "Size"; ObjectID = "uD7-ox-PTy"; */
-"uD7-ox-PTy.text" = "Size";
+"uD7-ox-PTy.text" = "بحجم";
 
 /* Class = "UITextField"; placeholder = "10000"; ObjectID = "uNg-dQ-Kq8"; */
 "uNg-dQ-Kq8.placeholder" = "10000";
 
 /* Class = "UITextField"; placeholder = "Select Furnished Status"; ObjectID = "uOT-ee-6wn"; */
-"uOT-ee-6wn.placeholder" = "Select Furnished Status";
+"uOT-ee-6wn.placeholder" = "حدد حالة مفروش";
 
 /* Class = "UILabel"; text = "Register"; ObjectID = "uWL-ES-Te3"; */
-"uWL-ES-Te3.text" = "Register";
+"uWL-ES-Te3.text" = "يسجل";
 
 /* Class = "UILabel"; text = "Individual : 5.0"; ObjectID = "ukf-YR-mZO"; */
-"ukf-YR-mZO.text" = "Individual : 5.0";
+"ukf-YR-mZO.text" = "فرد : 5.0";
 
 /* Class = "UILabel"; text = "Update profile picture"; ObjectID = "ux5-yq-Mt5"; */
-"ux5-yq-Mt5.text" = "Update profile picture";
+"ux5-yq-Mt5.text" = "تحديث صورة الملف الشخصي";
 
 /* Class = "UITextField"; placeholder = "Select category"; ObjectID = "v1k-rR-1zg"; */
-"v1k-rR-1zg.placeholder" = "Select category";
+"v1k-rR-1zg.placeholder" = "اختر الفئة";
 
 /* Class = "UITextField"; placeholder = "Enter your email address..."; ObjectID = "vBv-ir-jTl"; */
-"vBv-ir-jTl.placeholder" = "Enter your email address...";
+"vBv-ir-jTl.placeholder" = "ادخل البريد الالكتروني";
 
 /* Class = "UILabel"; text = "Max 100 words"; ObjectID = "vWS-KO-YbR"; */
-"vWS-KO-YbR.text" = "Max 100 words";
+"vWS-KO-YbR.text" = "حد اقصى 100 كلمة";
 
 /* Class = "UILabel"; text = "Jobs"; ObjectID = "va9-gc-HA3"; */
-"va9-gc-HA3.text" = "Jobs";
+"va9-gc-HA3.text" = "وظائف";
 
 /* Class = "UIButton"; normalTitle = "Give Review"; ObjectID = "vb5-0e-nbR"; */
-"vb5-0e-nbR.normalTitle" = "Give Review";
+"vb5-0e-nbR.normalTitle" = "أعط مراجعة";
 
 /* Class = "UIButton"; normalTitle = "Jobs"; ObjectID = "vpe-F5-hhx"; */
-"vpe-F5-hhx.normalTitle" = "Jobs";
+"vpe-F5-hhx.normalTitle" = "وظائف";
 
 /* Class = "UIButton"; normalTitle = "Company"; ObjectID = "vrT-mY-vzp"; */
-"vrT-mY-vzp.normalTitle" = "Company";
+"vrT-mY-vzp.normalTitle" = "شركة";
 
 /* Class = "UIButton"; normalTitle = "Add Bid"; ObjectID = "wBe-4w-dZh"; */
-"wBe-4w-dZh.normalTitle" = "Add Bid";
+"wBe-4w-dZh.normalTitle" = "أضف محاولة";
 
 /* Class = "UIButton"; configuration.title = " "; ObjectID = "wNz-LE-4OX"; */
 "wNz-LE-4OX.configuration.title" = " ";
@@ -984,19 +984,19 @@
 "wNz-LE-4OX.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "Desription"; ObjectID = "woD-at-Lrp"; */
-"woD-at-Lrp.text" = "Desription";
+"woD-at-Lrp.text" = "وصف";
 
 /* Class = "UILabel"; text = "Bid Detail"; ObjectID = "xPU-j9-q1D"; */
-"xPU-j9-q1D.text" = "Bid Detail";
+"xPU-j9-q1D.text" = "تفاصيل العطاء";
 
 /* Class = "UILabel"; text = "Submit Offer"; ObjectID = "xTh-R6-vAw"; */
-"xTh-R6-vAw.text" = "Submit Offer";
+"xTh-R6-vAw.text" = "تقديم صفقة";
 
 /* Class = "UIButton"; normalTitle = "Privacy Policy."; ObjectID = "xyc-Cw-d9G"; */
-"xyc-Cw-d9G.normalTitle" = "Privacy Policy.";
+"xyc-Cw-d9G.normalTitle" = "سياسة الخصوصية.";
 
 /* Class = "UITextField"; placeholder = "Offered role"; ObjectID = "ySJ-be-TSJ"; */
-"ySJ-be-TSJ.placeholder" = "Offered role";
+"ySJ-be-TSJ.placeholder" = "الدور المعروض";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "yqK-gq-VKe"; */
 "yqK-gq-VKe.text" = "Label";
@@ -1005,4 +1005,4 @@
 "yyY-MB-rFh.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Select Gender"; ObjectID = "zQX-yg-bS9"; */
-"zQX-yg-bS9.placeholder" = "Select Gender";
+"zQX-yg-bS9.placeholder" = "حدد نوع الجنس";

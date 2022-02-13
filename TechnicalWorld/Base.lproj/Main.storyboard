@@ -2274,6 +2274,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="sEa-rG-jTh" firstAttribute="leading" secondItem="Hs8-GE-PHr" secondAttribute="leading" constant="20" symbolic="YES" id="4n2-4V-zCU"/>
                                     <constraint firstAttribute="height" constant="200" id="RB7-ZI-WuD"/>
                                     <constraint firstItem="G2O-UZ-Dz2" firstAttribute="centerX" secondItem="sEa-rG-jTh" secondAttribute="centerX" id="UNN-UC-vAv"/>
                                     <constraint firstItem="6kV-8R-mfc" firstAttribute="top" secondItem="Hs8-GE-PHr" secondAttribute="top" constant="30" id="bk9-xR-amx"/>
@@ -2295,18 +2296,23 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Vqh-zH-vTl">
-                                        <rect key="frame" x="20" y="39" width="200" height="41"/>
+                                        <rect key="frame" x="20" y="39" width="200" height="40"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wX4-aQ-AjD">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="41"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nQ3-ay-T6j">
-                                                        <rect key="frame" x="2" y="2" width="96" height="37"/>
+                                                        <rect key="frame" x="2" y="2" width="96" height="36"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vul-kW-rkq">
-                                                                <rect key="frame" x="0.0" y="0.0" width="96" height="37"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="96" height="36"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="Arabic"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Arabic">
+                                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="btnOnArabic:" destination="e4s-uG-sGL" eventType="touchUpInside" id="lfB-b7-6s4"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -2335,15 +2341,20 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hn-vL-8lC">
-                                                <rect key="frame" x="100" y="0.0" width="100" height="41"/>
+                                                <rect key="frame" x="100" y="0.0" width="100" height="40"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ugg-mW-aTR">
-                                                        <rect key="frame" x="2" y="2" width="96" height="37"/>
+                                                        <rect key="frame" x="2" y="2" width="96" height="36"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdw-IK-Ofe">
-                                                                <rect key="frame" x="0.0" y="0.0" width="96" height="37"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="96" height="36"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="English"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="English">
+                                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="btnOnEnglish:" destination="e4s-uG-sGL" eventType="touchUpInside" id="Xg7-Fb-gbY"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -2372,17 +2383,19 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="9Kx-bd-muU"/>
+                                            <constraint firstAttribute="height" constant="40" id="f1W-Gk-u8N"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Vqh-zH-vTl" secondAttribute="trailing" constant="20" id="GzZ-Fo-qge"/>
+                                    <constraint firstItem="Vqh-zH-vTl" firstAttribute="centerX" secondItem="NYk-Yg-A3N" secondAttribute="centerX" id="0D3-hk-h2F"/>
+                                    <constraint firstItem="Vqh-zH-vTl" firstAttribute="top" secondItem="NYk-Yg-A3N" secondAttribute="bottom" constant="8" symbolic="YES" id="0GV-mt-7wS"/>
                                     <constraint firstAttribute="trailing" secondItem="NYk-Yg-A3N" secondAttribute="trailing" constant="10" id="Y2g-rP-PLf"/>
                                     <constraint firstItem="NYk-Yg-A3N" firstAttribute="leading" secondItem="qCQ-37-dpV" secondAttribute="leading" constant="10" id="YNJ-50-wW1"/>
-                                    <constraint firstItem="Vqh-zH-vTl" firstAttribute="top" secondItem="NYk-Yg-A3N" secondAttribute="bottom" constant="8" symbolic="YES" id="eho-P7-EC2"/>
-                                    <constraint firstItem="Vqh-zH-vTl" firstAttribute="leading" secondItem="qCQ-37-dpV" secondAttribute="leading" constant="20" id="lxd-pi-6YB"/>
                                     <constraint firstItem="NYk-Yg-A3N" firstAttribute="top" secondItem="qCQ-37-dpV" secondAttribute="top" constant="10" id="paJ-A6-dHk"/>
-                                    <constraint firstAttribute="bottom" secondItem="Vqh-zH-vTl" secondAttribute="bottom" constant="10" id="uqV-fQ-SYE"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -2403,9 +2416,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnArabic" destination="vul-kW-rkq" id="UFr-lv-7jA"/>
+                        <outlet property="btnEnglish" destination="qdw-IK-Ofe" id="qai-5R-fLS"/>
                         <outlet property="imgVwUser" destination="6kV-8R-mfc" id="dnH-7k-s1D"/>
+                        <outlet property="lblSelectLanguage" destination="NYk-Yg-A3N" id="xgX-ms-3YP"/>
                         <outlet property="lblUserName" destination="sEa-rG-jTh" id="bbc-VX-0jx"/>
                         <outlet property="tblSideMenuOptions" destination="SIX-2l-WHe" id="pKS-jh-fF4"/>
+                        <outlet property="veContainerArabic" destination="nQ3-ay-T6j" id="znF-fU-HKd"/>
+                        <outlet property="veContainerEnglish" destination="Ugg-mW-aTR" id="2GT-CZ-B4x"/>
+                        <outlet property="vwLanguageContainer" destination="qCQ-37-dpV" id="u0E-p0-dep"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r8C-rS-t2G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -3026,8 +3045,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wB7-Ra-QKS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="52.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Technical World" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFH-VP-mT0">
-                                        <rect key="frame" x="106" y="13" width="163" height="26.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bina" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFH-VP-mT0">
+                                        <rect key="frame" x="165" y="13" width="45.5" height="26.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -3699,6 +3718,7 @@
                                                                                 </imageView>
                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EmW-DS-wwF">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="39"/>
+                                                                                    <state key="normal" title="  "/>
                                                                                 </button>
                                                                             </subviews>
                                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -3722,6 +3742,7 @@
                                                                                 </imageView>
                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWA-JA-WU8">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="39"/>
+                                                                                    <state key="normal" title="  "/>
                                                                                 </button>
                                                                             </subviews>
                                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -4696,7 +4717,7 @@
                                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gk8-nz-7d3">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="29.5"/>
                                                                                             <state key="normal" title="Button"/>
-                                                                                            <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                                                                            <buttonConfiguration key="configuration" style="plain" title="     "/>
                                                                                         </button>
                                                                                     </subviews>
                                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -4722,7 +4743,7 @@
                                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNz-LE-4OX">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="29.5"/>
                                                                                             <state key="normal" title="Button"/>
-                                                                                            <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                                                                            <buttonConfiguration key="configuration" style="plain" title="     "/>
                                                                                         </button>
                                                                                     </subviews>
                                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -5078,6 +5099,7 @@
                                                                                         </imageView>
                                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jz1-wL-eAG">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="39" height="40"/>
+                                                                                            <state key="normal" title="   "/>
                                                                                         </button>
                                                                                     </subviews>
                                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -5101,6 +5123,7 @@
                                                                                         </imageView>
                                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WuG-i5-uAq">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="39" height="40"/>
+                                                                                            <state key="normal" title="   "/>
                                                                                         </button>
                                                                                     </subviews>
                                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -7226,8 +7249,8 @@
                                                                                     <color key="textColor" name="TextGreyColour"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0t-Oh-W0B">
-                                                                                    <rect key="frame" x="334.5" y="38" width="10.5" height="14.5"/>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0t-Oh-W0B">
+                                                                                    <rect key="frame" x="328" y="38" width="17" height="14.5"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                     <color key="textColor" name="TextGreyColour"/>
                                                                                     <nil key="highlightedColor"/>
@@ -7241,8 +7264,8 @@
                                                                                     <color key="textColor" name="TextGreyColour"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBP-eC-R5M">
-                                                                                    <rect key="frame" x="334.5" y="57.5" width="10.5" height="14.5"/>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="      " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBP-eC-R5M">
+                                                                                    <rect key="frame" x="324.5" y="57.5" width="20.5" height="14.5"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                     <color key="textColor" name="TextGreyColour"/>
                                                                                     <nil key="highlightedColor"/>
@@ -7280,6 +7303,7 @@
                                                                                                 </imageView>
                                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XyT-K3-8MK">
                                                                                                     <rect key="frame" x="0.0" y="0.0" width="30" height="20"/>
+                                                                                                    <state key="normal" title="   "/>
                                                                                                 </button>
                                                                                             </subviews>
                                                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -9930,7 +9954,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nz9-Vr-VEd">
                                                                 <rect key="frame" x="2" y="1" width="311" height="46"/>
                                                                 <subviews>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lMe-kg-71C" customClass="DropDown" customModule="iOSDropDown">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Sub Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lMe-kg-71C" customClass="DropDown" customModule="iOSDropDown">
                                                                         <rect key="frame" x="10" y="0.0" width="291" height="46"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <textInputTraits key="textInputTraits"/>
@@ -12772,6 +12796,7 @@
                                                                                                         </imageView>
                                                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8u-v6-Q4e">
                                                                                                             <rect key="frame" x="0.0" y="0.0" width="60" height="53"/>
+                                                                                                            <state key="normal" title="   "/>
                                                                                                         </button>
                                                                                                     </subviews>
                                                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -12795,6 +12820,7 @@
                                                                                                         </imageView>
                                                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDY-Qy-i9A">
                                                                                                             <rect key="frame" x="0.0" y="0.0" width="60" height="53"/>
+                                                                                                            <state key="normal" title="   "/>
                                                                                                         </button>
                                                                                                     </subviews>
                                                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -13237,7 +13263,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEq-ss-MRk">
                                         <rect key="frame" x="237" y="10" width="130" height="40"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                        <buttonConfiguration key="configuration" style="plain" title="    "/>
                                         <connections>
                                             <action selector="btnReview:" destination="pfE-4p-1Jh" eventType="touchUpInside" id="cXW-Tn-cHp"/>
                                         </connections>
@@ -14233,7 +14259,7 @@
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JvA-Sl-5LX">
                                                                             <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
                                                                             <state key="normal" title="Button"/>
-                                                                            <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                                                            <buttonConfiguration key="configuration" style="plain" title="    "/>
                                                                         </button>
                                                                     </subviews>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -14347,7 +14373,7 @@
             <size key="intrinsicContentSize" width="88" height="34"/>
         </designable>
         <designable name="lMe-kg-71C">
-            <size key="intrinsicContentSize" width="104" height="18.5"/>
+            <size key="intrinsicContentSize" width="133" height="18.5"/>
         </designable>
         <designable name="qjY-pI-HaO">
             <size key="intrinsicContentSize" width="104" height="18.5"/>

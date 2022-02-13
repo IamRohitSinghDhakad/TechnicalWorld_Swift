@@ -30,7 +30,7 @@ class SubCategoryListViewController: UIViewController {
 
         self.tblVw.delegate = self
         self.tblVw.dataSource = self
-        self.lblTitle.text = self.strTtitle
+        self.lblTitle.text = self.strTtitle.localized()
        
         self.tfSearchBar.addTarget(self, action: #selector(searchContactAsPerText(_ :)), for: .editingChanged)
         

@@ -80,7 +80,7 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
             
            let objCategory = self.arrCategoryFilter[indexPath.row]
             
-            cell.lblTitle.text = objCategory.strCategoryName
+            cell.lblTitle.text = objCategory.strCategoryName.localized()
             
             let profilePic = objCategory.strCategoryImage
             

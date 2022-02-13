@@ -8,9 +8,16 @@
 import UIKit
 
 class SideMenuViewController: UIViewController {
+    
     @IBOutlet weak var imgVwUser: UIImageView!
     @IBOutlet weak var lblUserName: UILabel!
+    @IBOutlet var btnArabic: UIButton!
+    @IBOutlet var veContainerEnglish: UIView!
+    @IBOutlet var veContainerArabic: UIView!
+    @IBOutlet var btnEnglish: UIButton!
     @IBOutlet weak var tblSideMenuOptions: UITableView!
+    @IBOutlet var lblSelectLanguage: UILabel!
+    @IBOutlet var vwLanguageContainer: UIView!
     
     var titleName = [String]()
     
@@ -18,11 +25,7 @@ class SideMenuViewController: UIViewController {
         super.viewDidLoad()
         self.tblSideMenuOptions.delegate = self
         self.tblSideMenuOptions.dataSource = self
-        if objAppShareData.UserDetail.strUserId == ""{
-            titleName = ["Home","Add Post","Contact Us","About Us"]
-        }else{
-            titleName = ["Home","Add Post","Profile","Contact Us","About Us", "LogOut"]
-        }
+      
        
         // Do any additional setup after loading the view.
     }
@@ -30,10 +33,30 @@ class SideMenuViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if objAppShareData.UserDetail.strName != ""{
-            self.lblUserName.text = objAppShareData.UserDetail.strName
+        if LocalizationSystem.sharedInstance.getLanguage() == "en" {
+            self.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            self.lblUserName.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         }else{
-            self.lblUserName.text = "Guest User"
+            self.view.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+            self.lblUserName.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        }
+        
+        
+        self.lblSelectLanguage.text = "Select Language :".localized()
+        self.btnArabic.setTitle("Arabic".localized(), for: .normal)
+        self.btnEnglish.setTitle("English".localized(), for: .normal)
+        
+        if objAppShareData.UserDetail.strUserId == ""{
+            titleName = ["Home".localized(),"Add Post".localized(),"Contact Us".localized(),"About Us".localized()]
+        }else{
+            titleName = ["Home".localized(),"Add Post".localized(),"Profile".localized(),"Contact Us".localized(),"About Us".localized(), "Logout".localized()]
+        }
+        
+        
+        if objAppShareData.UserDetail.strName != ""{
+            self.lblUserName.text = objAppShareData.UserDetail.strName.localized()
+        }else{
+            self.lblUserName.text = "Guest User".localized()
         }
        
         
@@ -43,7 +66,32 @@ class SideMenuViewController: UIViewController {
             self.imgVwUser.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "logo"))
         }
     }
-
+    
+    func setEnglish() {
+        if LocalizationSystem.sharedInstance.getLanguage() == "ar" {
+            LocalizationSystem.sharedInstance.setLanguage(languageCode: "en")
+            UIView.appearance().semanticContentAttribute = .forceLeftToRight
+            objAlert.showAlert(message: "English language set please restart app.", title: "Success", controller: self)
+        }
+    }
+    
+    func setArabic() {
+        if LocalizationSystem.sharedInstance.getLanguage() == "en" {
+            LocalizationSystem.sharedInstance.setLanguage(languageCode: "ar")
+            UIView.appearance().semanticContentAttribute = .forceLeftToRight
+            print("english to arabic set")
+            objAlert.showAlert(message: "Arabic language set please restart app.", title: "Success", controller: self)
+        }
+    }
+    
+    
+    @IBAction func btnOnArabic(_ sender: Any) {
+        self.setArabic()
+    }
+    @IBAction func btnOnEnglish(_ sender: Any) {
+        self.setEnglish()
+    }
+    
 }
 
 

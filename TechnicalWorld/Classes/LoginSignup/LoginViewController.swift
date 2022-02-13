@@ -12,16 +12,27 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
         self.tfEmail.delegate = self
         self.tfPassword.delegate = self
-    
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if LocalizationSystem.sharedInstance.getLanguage() == "en"{
+            self.tfEmail.textAlignment = .left
+        }else{
+            self.tfEmail.textAlignment = .right
+        }
+        
+        self.tfEmail.placeholder = "Enter your email address...".localized()
+        self.tfPassword.placeholder = "Enter your email address...".localized()
+    }
 
     @IBAction func btnOnContinue(_ sender: Any) {
 //        self.tfEmail.text = "a@yopmail.com"

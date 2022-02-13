@@ -160,6 +160,16 @@ extension UIViewController : UITextFieldDelegate  {
   //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Convert Way64 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 extension String {
     
+//    var localized: String {
+//        return NSLocalizedString(self, comment: "")
+//    }
+//
+    func localized() -> String{
+        return NSLocalizedString(self, tableName: "Localizable", bundle: .main, value: self, comment: self)
+    }
+    
+    
+    
      func fromBase64() -> String? {
         guard let data = Data(base64Encoded: self, options: Data.Base64DecodingOptions(rawValue: 0)) else {
             return nil

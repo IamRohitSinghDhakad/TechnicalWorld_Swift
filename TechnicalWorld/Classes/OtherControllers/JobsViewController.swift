@@ -21,7 +21,7 @@ class JobsViewController: UIViewController {
     var strSubCategoryID = ""
     var strType = ""
     var strPostFor = ""
-    var arrJobs = ["Vacancies", "Searching for a job"]
+    var arrJobs = ["Vacancies".localized(), "Searching for a job".localized()]
    // var arrDetailsSubcategory = [DetailsSubCategoryModel]()
     
     override func viewDidLoad() {
@@ -36,14 +36,14 @@ class JobsViewController: UIViewController {
     }
     
     @IBAction func btnOnFullTime(_ sender: Any) {
-        self.strType = "Full Time"
+        self.strType = "Full Time".localized()
         self.vwFulltime.backgroundColor = UIColor.init(named: "lightGreen")
         self.vwPartTime.backgroundColor = UIColor.white
     }
     
     
     @IBAction func btnOnPartTime(_ sender: Any) {
-        self.strType = "Part Time"
+        self.strType = "Part Time".localized()
         self.vwFulltime.backgroundColor = UIColor.white
         self.vwPartTime.backgroundColor = UIColor.init(named: "lightGreen")
     }

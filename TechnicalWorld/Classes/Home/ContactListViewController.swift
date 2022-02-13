@@ -26,7 +26,7 @@ class ContactListViewController: UIViewController {
         self.tblVwContacts.delegate = self
         self.tblVwContacts.dataSource = self
         
-        self.lblTitle.text = self.strTitle
+        self.lblTitle.text = self.strTitle.localized()
         
         self.subVwSort.isHidden = true
         print(strCategoryID, strType, strPostFor)

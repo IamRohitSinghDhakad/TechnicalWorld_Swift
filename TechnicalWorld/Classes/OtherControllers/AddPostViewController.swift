@@ -43,9 +43,9 @@ class AddPostViewController: UIViewController,UINavigationControllerDelegate,Get
     var arrTypesOfCategoryID = [Int]()
     var strTypeOfPropertID = ""
     
-    var arrListedBy = ["Broker", "Owner"]
-    var arrValidity = ["Monthly", "Yearly"]
-    var arrFurnishedStatus = ["Un-Furnished","Semi-Furnished","Full-Furnished"]
+    var arrListedBy = ["Broker".localized(), "Owner".localized()]
+    var arrValidity = ["Monthly".localized(), "Yearly".localized()]
+    var arrFurnishedStatus = ["Un-Furnished".localized(),"Semi-Furnished".localized(),"Full-Furnished".localized()]
     
     var location: Location? {
         didSet {
@@ -204,25 +204,25 @@ extension AddPostViewController{
 //        }
 
         else if (tfListedBy.text?.isEmpty)! {
-            objAlert.showAlert(message: "Please Select Listed By", title:MessageConstant.k_AlertTitle, controller: self)
+            objAlert.showAlert(message: "Please Select Listed By".localized(), title:MessageConstant.k_AlertTitle, controller: self)
         }
         else if (tfFurnishedStatus.text?.isEmpty)! {
-            objAlert.showAlert(message: "Please Select Furnished Status", title:MessageConstant.k_AlertTitle, controller: self)
+            objAlert.showAlert(message: "Please Select Furnished Status".localized(), title:MessageConstant.k_AlertTitle, controller: self)
         }
         else if (lblLocation.text?.isEmpty)! {
-            objAlert.showAlert(message: "Please Select Location", title:MessageConstant.k_AlertTitle, controller: self)
+            objAlert.showAlert(message: "Please Select Location".localized(), title:MessageConstant.k_AlertTitle, controller: self)
         }
         else if (tfPrice.text?.isEmpty)! {
-            objAlert.showAlert(message:"Please Enter Price", title:MessageConstant.k_AlertTitle, controller: self)
+            objAlert.showAlert(message:"Please Enter Price".localized(), title:MessageConstant.k_AlertTitle, controller: self)
         }
         else if (tfVaidity.text?.isEmpty)! {
-            objAlert.showAlert(message: "Please Select Validity", title:MessageConstant.k_AlertTitle, controller: self)
+            objAlert.showAlert(message: "Please Select Validity".localized(), title:MessageConstant.k_AlertTitle, controller: self)
         }
         else if (tfProperyHeading.text?.isEmpty)! {
-            objAlert.showAlert(message: "Please Enter Property Heading", title:MessageConstant.k_AlertTitle, controller: self)
+            objAlert.showAlert(message: "Please Enter Property Heading".localized(), title:MessageConstant.k_AlertTitle, controller: self)
         }
         else if (txtVw.text?.isEmpty)! {
-            objAlert.showAlert(message: "Please Enter Desription", title:MessageConstant.k_AlertTitle, controller: self)
+            objAlert.showAlert(message: "Please Enter Desription".localized(), title:MessageConstant.k_AlertTitle, controller: self)
         }
 
         else{
@@ -242,19 +242,19 @@ extension AddPostViewController: UIImagePickerControllerDelegate{
         imagePicker.allowsEditing = true
         imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
         let alert:UIAlertController=UIAlertController(title: "Choose Image", message: nil, preferredStyle: UIAlertController.Style.actionSheet)
-        let cameraAction = UIAlertAction(title: "Camera", style: UIAlertAction.Style.default)
+        let cameraAction = UIAlertAction(title: "Camera".localized(), style: UIAlertAction.Style.default)
         {
             UIAlertAction in
             self.openCamera()
         }
         
-        let galleryAction = UIAlertAction(title: "Gallery", style: UIAlertAction.Style.default)
+        let galleryAction = UIAlertAction(title: "Gallery".localized(), style: UIAlertAction.Style.default)
         {
             UIAlertAction in
             self.openGallery()
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
+        let cancelAction = UIAlertAction(title: "Cancel".localized(), style: UIAlertAction.Style.cancel)
         {
             UIAlertAction in
         }
